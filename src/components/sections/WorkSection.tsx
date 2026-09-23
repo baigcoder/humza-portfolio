@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
+import CaseStudyDrawer from "@/components/sections/CaseStudyDrawer";
+import { playTactileSound } from "@/components/effects/SoundEffects";
 
 const caseStudies = [
   {
@@ -69,6 +71,8 @@ const caseStudies = [
 ];
 
 export default function WorkSection() {
+  const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
+
   return (
     <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06]">
       <div className="max-w-[1420px] mx-auto">
@@ -99,7 +103,11 @@ export default function WorkSection() {
           {caseStudies.map((cs) => (
             <TiltCard key={cs.id} maxTilt={3.5} scale={1.01} className="h-full">
               <div
-                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#E07A38]/50 hover:shadow-[0_16px_44px_rgba(224,122,56,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                onClick={() => {
+                  playTactileSound("modal");
+                  setSelectedCaseId(cs.id);
+                }}
+                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#E07A38]/50 hover:shadow-[0_16px_44px_rgba(224,122,56,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 {/* Corner Architectural Crosshairs (+) */}
                 <span className="absolute top-2.5 left-2.5 z-10 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
@@ -163,16 +171,23 @@ export default function WorkSection() {
                       </span>
                     </div>
 
-                    {/* Tags */}
-                    <div className="hidden sm:flex items-center gap-1">
-                      {cs.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="px-2 py-0.5 rounded text-[9px] font-mono text-white/40 bg-white/[0.03] border border-white/[0.06]"
-                        >
-                          {t}
-                        </span>
-                      ))}
+                    {/* Tags & Action Link */}
+                    <div className="flex items-center gap-2">
+                      <div className="hidden sm:flex items-center gap-1">
+                        {cs.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="px-2 py-0.5 rounded text-[9px] font-mono text-white/40 bg-white/[0.03] border border-white/[0.06]"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+
+                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                        <span>Dossier</span>
+                        <span>→</span>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -193,6 +208,12 @@ export default function WorkSection() {
           </Link>
         </div>
       </div>
+
+      {/* Slide-out Full Case Dossier Drawer */}
+      <CaseStudyDrawer
+        caseId={selectedCaseId}
+        onClose={() => setSelectedCaseId(null)}
+      />
     </section>
   );
 }

@@ -3,15 +3,17 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { isSoundEnabled, setSoundEnabled, playTactileSound } from "@/components/effects/SoundEffects";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Simulator", href: "#simulator" },
+  { label: "Engine", href: "#simulator" },
   { label: "Cases", href: "#work" },
   { label: "Credentials", href: "#credentials" },
   { label: "Journal", href: "#journal" },
-  { label: "Engagements", href: "#engagements" },
+  { label: "Endorsements", href: "#endorsements" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -19,8 +21,17 @@ export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [soundOn, setSoundOn] = useState(false);
 
   useEffect(() => {
+    setSoundOn(isSoundEnabled());
+
+    const handleSoundState = (e: Event) => {
+      const custom = e as CustomEvent<boolean>;
+      setSoundOn(custom.detail);
+    };
+    window.addEventListener("humza-sound-state-change", handleSoundState);
+
     const onScroll = () => setScrolled(window.scrollY > 25);
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -32,7 +43,9 @@ export default function SiteHeader() {
       "work",
       "credentials",
       "journal",
+      "endorsements",
       "engagements",
+      "faq",
       "contact",
     ];
     const handleSectionScroll = () => {
@@ -57,6 +70,7 @@ export default function SiteHeader() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", handleSectionScroll);
+      window.removeEventListener("humza-sound-state-change", handleSoundState);
     };
   }, []);
 
@@ -112,10 +126,41 @@ export default function SiteHeader() {
         </nav>
 
         {/* Right Area: Controls & Mobile Hamburger */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Tactile Audio Sound Toggle Pill */}
+          <button
+            onClick={() => {
+              const next = !soundOn;
+              setSoundOn(next);
+              setSoundEnabled(next);
+            }}
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border text-[10px] font-mono transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.5)] ${
+              soundOn
+                ? "bg-[#10B981]/10 border-[#10B981]/30 text-[#10B981]"
+                : "bg-white/[0.04] border-white/[0.08] text-white/50 hover:text-white"
+            }`}
+            title={soundOn ? "Mute Tactile Haptic Audio" : "Enable Tactile Haptic Audio"}
+          >
+            {soundOn ? (
+              <span className="flex items-center gap-0.5">
+                <span className="w-1 h-2 bg-[#10B981] rounded-full animate-pulse" />
+                <span className="w-1 h-3 bg-[#10B981] rounded-full animate-pulse delay-75" />
+                <span className="w-1 h-1.5 bg-[#10B981] rounded-full animate-pulse delay-150" />
+              </span>
+            ) : (
+              <span className="text-[11px] leading-none">🔇</span>
+            )}
+            <span className="hidden sm:inline font-bold">
+              {soundOn ? "AUDIO ON" : "AUDIO"}
+            </span>
+          </button>
+
           {/* Executive Dossier Button */}
           <button
-            onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
+            onClick={() => {
+              playTactileSound("modal");
+              window.dispatchEvent(new CustomEvent("open-dossier"));
+            }}
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-[#E07A38]/15 border border-white/[0.08] hover:border-[#E07A38]/40 text-[11px] font-mono text-white/80 hover:text-white transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38]" />
@@ -123,7 +168,7 @@ export default function SiteHeader() {
           </button>
 
           {/* Subtle Desktop Status Pill */}
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono text-white/50">
+          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono text-white/50">
             <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
             <span>Active Practice · PK</span>
           </div>

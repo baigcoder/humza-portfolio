@@ -58,11 +58,17 @@ export default function SiteFooter() {
               <Link href="#credentials" className="block text-white/60 hover:text-white transition-colors">
                 Credentials & Standards
               </Link>
+              <Link href="#endorsements" className="block text-white/60 hover:text-white transition-colors">
+                Boardroom Endorsements
+              </Link>
               <Link href="#journal" className="block text-white/60 hover:text-white transition-colors">
                 Strategic Journal
               </Link>
               <Link href="#engagements" className="block text-white/60 hover:text-white transition-colors">
                 Ministerial Summit
+              </Link>
+              <Link href="#faq" className="block text-white/60 hover:text-white transition-colors">
+                Advisory Protocols & FAQ
               </Link>
               <Link href="#contact" className="block text-white/60 hover:text-[#E07A38] transition-colors">
                 Submit Brief →

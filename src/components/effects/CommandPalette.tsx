@@ -89,6 +89,15 @@ export default function CommandPalette() {
       action: () => navigateTo("#credentials"),
     },
     {
+      id: "endorsements",
+      category: "Navigation",
+      title: "Boardroom Endorsements & Peer Citations",
+      subtitle: "Verified commentary from corporate CEOs, audit chairs, and VC partners",
+      icon: "🎖️",
+      badge: "C-Suite",
+      action: () => navigateTo("#endorsements"),
+    },
+    {
       id: "journal",
       category: "Navigation",
       title: "Executive Financial Journal",
@@ -104,6 +113,15 @@ export default function CommandPalette() {
       icon: "🏛️",
       badge: "Summit",
       action: () => navigateTo("#engagements"),
+    },
+    {
+      id: "faq",
+      category: "Navigation",
+      title: "Advisory Protocols & Commercial Governance (FAQ)",
+      subtitle: "Retainers, Big-4 audit liaison, FBR appeals defense, cross-border GCC",
+      icon: "⚖️",
+      badge: "Protocol",
+      action: () => navigateTo("#faq"),
     },
     {
       id: "contact",
