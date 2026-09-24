@@ -3,6 +3,7 @@
 import React from "react";
 import TiltCard from "@/components/effects/TiltCard";
 import SectionLabel from "@/components/layout/SectionLabel";
+import { ChartColumn, ShieldCheck, Landmark, TrendingUp } from "lucide-react";
 
 export default function CredentialsSection() {
   return (
@@ -168,17 +169,17 @@ export default function CredentialsSection() {
         {/* ── Secondary Competency Grid ──────────────────────────── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
           {[
-            { code: "IFRS", title: "IFRS / IAS Standards", body: "IFRS 9, 15, 16 & statutory disclosure frameworks", authority: "IASB", icon: "📊" },
-            { code: "ISA", title: "Auditing Standards", body: "Risk-based audit, COSO controls & fraud detection", authority: "IAASB", icon: "🛡" },
-            { code: "TAX-PK", title: "Pakistan Tax Law", body: "ITO 2001, FBR e-filing, PRA/SRB provincial sales tax", authority: "FBR", icon: "🏛" },
-            { code: "FM-VAL", title: "Financial Modelling", body: "3-statement models, DCF, WACC & transaction support", authority: "Corp. Finance", icon: "📈" },
+            { code: "IFRS", title: "IFRS / IAS Standards", body: "IFRS 9, 15, 16 & statutory disclosure frameworks", authority: "IASB", icon: ChartColumn },
+            { code: "ISA", title: "Auditing Standards", body: "Risk-based audit, COSO controls & fraud detection", authority: "IAASB", icon: ShieldCheck },
+            { code: "TAX-PK", title: "Pakistan Tax Law", body: "ITO 2001, FBR e-filing, PRA/SRB provincial sales tax", authority: "FBR", icon: Landmark },
+            { code: "FM-VAL", title: "Financial Modelling", body: "3-statement models, DCF, WACC & transaction support", authority: "Corp. Finance", icon: TrendingUp },
           ].map((c) => (
             <div
               key={c.code}
               className="group rounded-xl border border-white/[0.06] bg-[#0C0C0C] p-4 hover:border-white/[0.12] hover:bg-[#0E0E0E] transition-all duration-300"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="text-base">{c.icon}</span>
+                <c.icon className="w-4 h-4 text-[#E07A38]" strokeWidth={1.75} aria-hidden />
                 <span className="text-[9px] font-mono tracking-[0.15em] text-[#E07A38] uppercase font-bold">{c.code}</span>
               </div>
               <h4 className="text-sm font-bold text-white mb-1 leading-snug">{c.title}</h4>
