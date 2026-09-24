@@ -187,11 +187,14 @@ export default function SiteHeader() {
             <span>Dossier</span>
           </button>
 
-          {/* Subtle Desktop Status Pill */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] font-mono text-white/50">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-            <span>Active Practice · PK</span>
-          </div>
+          {/* Primary call to action */}
+          <Link
+            href="#contact"
+            className="group hidden xl:inline-flex items-center gap-1.5 pl-4 pr-3.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[12.5px] font-semibold tracking-wide shadow-[0_0_18px_rgba(255,255,255,0.18)] hover:shadow-[0_0_24px_rgba(224,122,56,0.45)] transition-shadow duration-300"
+          >
+            <span>Let&apos;s Talk</span>
+            <span className="text-[#E07A38] transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+          </Link>
 
           {/* Mobile/Tablet Hamburger */}
           <button

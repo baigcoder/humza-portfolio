@@ -6,7 +6,7 @@ import SectionLabel from "@/components/layout/SectionLabel";
 
 export default function CredentialsSection() {
   return (
-    <section id="credentials" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06]">
+    <section id="credentials" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
         <SectionLabel index="05" label="Professional Credentials & Standards" />
@@ -19,7 +19,7 @@ export default function CredentialsSection() {
             </span>{" "}
             standards.
           </h2>
-          <p className="text-xs text-white/50 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
             Globally recognized accreditations underpinning every deliverable.
           </p>
         </div>

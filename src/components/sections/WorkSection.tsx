@@ -75,7 +75,7 @@ export default function WorkSection() {
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
 
   return (
-    <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06]">
+    <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header — Compact */}
         <SectionLabel index="04" label="Selected Case Engagements" />
@@ -88,7 +88,7 @@ export default function WorkSection() {
             </span>{" "}
             impact.
           </h2>
-          <p className="text-xs text-white/50 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
             Resolving intricate accounting complexities and delivering stakeholder assurance.
           </p>
         </div>

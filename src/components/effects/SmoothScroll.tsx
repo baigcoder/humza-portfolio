@@ -67,8 +67,19 @@ export default function SmoothScroll() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-            revealObserver.unobserve(entry.target);
+            const el = entry.target as HTMLElement;
+            // Stagger siblings that enter together (e.g. a row of grid cards)
+            const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
+            const index = siblings.filter((s) => s.classList.contains("reveal-init")).indexOf(el);
+            const delay = Math.min(Math.max(index, 0), 5) * 80;
+            el.style.transitionDelay = `${delay}ms`;
+            el.classList.add("reveal-visible");
+            revealObserver.unobserve(el);
+            // Hand the element back to its own transitions/transforms (hover lifts etc.)
+            window.setTimeout(() => {
+              el.classList.remove("reveal-init", "reveal-visible");
+              el.style.transitionDelay = "";
+            }, 900 + delay);
           }
         });
       },

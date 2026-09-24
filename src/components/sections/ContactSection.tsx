@@ -68,7 +68,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06] overflow-hidden">
+    <section id="contact" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden">
       {/* Toast Alert */}
       {toastMsg && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#E07A38]/50 shadow-[0_8px_30px_rgba(224,122,56,0.3)] animate-fade-in flex items-center gap-2">
