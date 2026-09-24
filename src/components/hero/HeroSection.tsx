@@ -174,7 +174,7 @@ export default function HeroSection() {
           >
             <div className="anim-fade-up delay-600 anim-initial pl-4 pr-5 py-3 rounded-2xl bg-black/30 backdrop-blur-xl border border-white/[0.16] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
               <span className="block text-[10px] font-mono tracking-[0.16em] text-white/60 uppercase">Audit Scope</span>
-              <span className="block text-2xl font-bold text-white tracking-tight leading-none mt-1">₨ 2.4B+</span>
+              <span className="block text-2xl font-bold text-white tracking-tight leading-none mt-1">₨ 2.1B+</span>
               <span className="mt-2 flex items-center gap-1.5 text-[10px] font-mono text-[#FFD2A1]/90">
                 <span className="w-1 h-1 rounded-full bg-[#FFD2A1]" />
                 IFRS 9 · 15 · 16
