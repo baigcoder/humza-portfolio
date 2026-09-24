@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { isSoundEnabled, setSoundEnabled, playTactileSound } from "@/components/effects/SoundEffects";
+import { VolumeX } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -168,7 +169,7 @@ export default function SiteHeader() {
                 <span className="w-1 h-1.5 bg-[#10B981] rounded-full animate-pulse delay-150" />
               </span>
             ) : (
-              <span className="text-[11px] leading-none">🔇</span>
+              <VolumeX className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
             )}
             <span className="hidden sm:inline font-bold">
               {soundOn ? "AUDIO ON" : "AUDIO"}

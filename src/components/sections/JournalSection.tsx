@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Magnetic from "@/components/effects/Magnetic";
 import SectionLabel from "@/components/layout/SectionLabel";
+import { ClipboardCopy } from "lucide-react";
 
 interface ArticleKeyPoint {
   title: string;
@@ -375,7 +376,8 @@ export default function JournalSection() {
                 onClick={() => copyBriefing(selectedArticle)}
                 className="inline-flex items-center gap-2 text-xs font-mono text-white/60 hover:text-white transition-colors cursor-pointer"
               >
-                <span>📋 Copy Briefing Summary</span>
+                <ClipboardCopy className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
+                <span>Copy Briefing Summary</span>
               </button>
 
               <div className="flex items-center gap-3">

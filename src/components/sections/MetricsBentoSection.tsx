@@ -5,6 +5,7 @@ import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
 import { playTactileSound } from "@/components/effects/SoundEffects";
 import SectionLabel from "@/components/layout/SectionLabel";
+import { Zap, Landmark, ChartColumn } from "lucide-react";
 
 type ToolTab = "working-capital" | "super-tax" | "ifrs-16";
 
@@ -128,7 +129,7 @@ export const MetricsBentoSection: React.FC = () => {
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>⚡</span>
+              <Zap className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>Working Capital DSO</span>
             </button>
 
@@ -140,7 +141,7 @@ export const MetricsBentoSection: React.FC = () => {
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>🏛</span>
+              <Landmark className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>Super Tax 4C (FBR)</span>
             </button>
 
@@ -152,7 +153,7 @@ export const MetricsBentoSection: React.FC = () => {
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>📊</span>
+              <ChartColumn className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>IFRS 16 Lease Engine</span>
             </button>
           </div>
