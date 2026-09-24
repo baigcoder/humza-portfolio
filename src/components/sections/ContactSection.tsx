@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Magnetic from "@/components/effects/Magnetic";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 export default function ContactSection() {
   const [pktTime, setPktTime] = useState("");
@@ -80,13 +81,7 @@ export default function ContactSection() {
 
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            07 · Strategic Engagement
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="10" label="Strategic Engagement" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Direct Contact & Advisory Information */}
@@ -94,7 +89,7 @@ export default function ContactSection() {
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight mb-4">
                 Initiate a dialogue.{" "}
-                <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+                <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                   Engineer
                 </span>{" "}
                 value.

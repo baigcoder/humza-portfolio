@@ -18,6 +18,15 @@ export default function CommandPalette() {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [showTrigger, setShowTrigger] = useState(false);
+
+  // Keep the floating trigger out of the hero's first impression
+  useEffect(() => {
+    const onScroll = () => setShowTrigger(window.scrollY > 400);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const showToast = (msg: string) => {
@@ -209,7 +218,9 @@ export default function CommandPalette() {
       {/* Floating Trigger Button (Bottom Left, Subtle Luxury Pill) */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 left-5 z-40 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E0E0E]/80 hover:bg-[#161412] text-white/50 hover:text-white border border-white/[0.08] hover:border-[#E07A38]/40 shadow-lg backdrop-blur-xl transition-all duration-300 text-[11px] font-mono group cursor-pointer"
+        className={`fixed bottom-5 left-5 z-40 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E0E0E]/80 hover:bg-[#161412] text-white/50 hover:text-white border border-white/[0.08] hover:border-[#E07A38]/40 shadow-lg backdrop-blur-xl transition-all duration-300 text-[11px] font-mono group cursor-pointer ${
+          showTrigger ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
         aria-label="Open Command Menu"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] group-hover:scale-125 transition-transform" />

@@ -227,6 +227,9 @@
 .reveal-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
+  /* Release the compositor layer once revealed — a lingering will-change
+     rasterises text at fractional offsets and makes it look soft. */
+  will-change: auto;
 }
 
 /* Custom Executive Range Sliders */
@@ -287,6 +290,75 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
   -webkit-background-clip: text;
   background-clip: text;
   animation: shimmerGlow 6s linear infinite;
+}
+
+/* ——— Editorial Type Treatments ——— */
+
+/* Soft amber halo for italic accent words (text-shadow, not a filter, so no
+   compositing box is painted behind the glyphs) */
+.text-glow-amber {
+  text-shadow: 0 0 18px rgba(224, 122, 56, 0.22);
+}
+
+/* Warm ivory→amber gradient fill for hero accent lines */
+.text-gradient-warm {
+  background: linear-gradient(100deg, #FFFFFF 0%, #FAF3E8 38%, #FFD2A1 72%, #F5A25E 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Hero back-text: bright at the cap line, dissolving into the stage floor so
+   it never competes with the headline sitting over its lower half */
+.hero-backtext {
+  background: linear-gradient(to bottom, rgba(255, 186, 120, 0.92) 0%, rgba(240, 142, 92, 0.62) 38%, rgba(196, 91, 43, 0.18) 78%, rgba(196, 91, 43, 0) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ——— Film Grain ——— */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Gradient hairline used between hero stage and telemetry */
+.hairline-fade {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(224, 122, 56, 0.35) 50%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+}
+
+/* Scroll cue — a light bead travelling down a hairline */
+@keyframes scrollCue {
+  0% { transform: translateY(-100%); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(220%); opacity: 0; }
+}
+.animate-scroll-cue {
+  animation: scrollCue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* ——— Accessibility ——— */
+:focus-visible {
+  outline: 2px solid rgba(224, 122, 56, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Print styles for Executive Dossier */

@@ -6,6 +6,7 @@ import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
 import CaseStudyDrawer from "@/components/sections/CaseStudyDrawer";
 import { playTactileSound } from "@/components/effects/SoundEffects";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 const caseStudies = [
   {
@@ -77,18 +78,12 @@ export default function WorkSection() {
     <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06]">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header — Compact */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            03 · Selected Case Engagements
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="04" label="Selected Case Engagements" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
             Demonstrated results.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               Quantified
             </span>{" "}
             impact.
