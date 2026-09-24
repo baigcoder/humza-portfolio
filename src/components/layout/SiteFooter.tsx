@@ -8,12 +8,12 @@ export default function SiteFooter() {
   return (
     <footer className="relative bg-[#050505] border-t border-white/[0.08] overflow-hidden">
       {/* Infinite Subtle Architectural Marquee Ribbon */}
-      <div className="py-6 border-b border-white/[0.04] overflow-hidden select-none">
+      <div className="py-8 border-b border-white/[0.04] overflow-hidden select-none [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
         <div className="anim-marquee">
           {Array.from({ length: 4 }).map((_, i) => (
             <span
               key={i}
-              className="text-[48px] sm:text-[70px] md:text-[84px] font-black tracking-tighter text-white/[0.03] uppercase whitespace-nowrap mx-8 font-sans"
+              className="text-[64px] sm:text-[92px] md:text-[112px] leading-none tracking-[0.01em] text-stroke-subtle uppercase whitespace-nowrap mx-8 font-bebas hover:[-webkit-text-stroke-color:rgba(224,122,56,0.45)] transition-[-webkit-text-stroke-color] duration-500"
             >
               HUMZA · ACCA CERTIFIED · FINANCIAL ARCHITECTURE · LAHORE ·
             </span>

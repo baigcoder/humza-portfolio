@@ -3,6 +3,7 @@
 import React from "react";
 import TiltCard from "@/components/effects/TiltCard";
 import { playTactileSound } from "@/components/effects/SoundEffects";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 interface Testimonial {
   id: string;
@@ -79,19 +80,13 @@ export default function TestimonialsSection() {
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            05 · Boardroom Endorsements & Peer Citations
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="06" label="Boardroom Endorsements & Peer Citations" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
               C-Suite authority.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 Quantified
               </span>{" "}
               boardroom trust.
@@ -124,7 +119,7 @@ export default function TestimonialsSection() {
                 <span className="absolute bottom-2.5 right-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
                 {/* Decorative Quotation Glyph in background */}
-                <span className="absolute top-3 right-6 text-6xl font-serif text-white/[0.03] select-none pointer-events-none group-hover:text-[#E07A38]/[0.08] transition-colors">
+                <span className="absolute -top-2 right-6 text-[120px] leading-none font-serif text-white/[0.04] select-none pointer-events-none group-hover:text-[#E07A38]/[0.12] transition-colors">
                   “
                 </span>
 
@@ -138,7 +133,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Quote Body */}
-                  <p className="text-[13px] sm:text-[13.5px] text-white/80 leading-relaxed font-light italic mb-6">
+                  <p className="font-serif italic text-[15px] sm:text-[16.5px] text-white/85 leading-[1.6] mb-6">
                     “{t.quote}”
                   </p>
                 </div>

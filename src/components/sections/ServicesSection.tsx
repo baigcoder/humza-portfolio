@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Counter from "@/components/effects/Counter";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 function MetricCounter({ value }: { value: string }) {
   const match = value.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
@@ -223,18 +224,12 @@ export default function ServicesSection() {
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            02 · Core Advisory Capabilities
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="02" label="Core Advisory Capabilities" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight max-w-2xl">
             Precision services for{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               demanding
             </span>{" "}
             capital.

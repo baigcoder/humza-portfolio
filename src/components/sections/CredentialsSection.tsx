@@ -2,24 +2,19 @@
 
 import React from "react";
 import TiltCard from "@/components/effects/TiltCard";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 export default function CredentialsSection() {
   return (
     <section id="credentials" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06]">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            04 · Professional Credentials & Standards
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="05" label="Professional Credentials & Standards" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
             Certified authority.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               Uncompromising
             </span>{" "}
             standards.

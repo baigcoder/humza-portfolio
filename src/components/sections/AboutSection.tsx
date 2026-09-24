@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 export default function AboutSection() {
   return (
@@ -14,25 +15,19 @@ export default function AboutSection() {
 
       <div className="max-w-[1420px] mx-auto">
         {/* Section Overline */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            01 · About The Practitioner
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="01" label="About The Practitioner" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Editorial Philosophy & Biography (7 Cols) */}
           <div className="lg:col-span-7 space-y-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-bold text-white leading-[1.08] tracking-tight">
               Finance is the language of{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 discipline.
               </span>
               <br />
               I make it speak{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 clearly.
               </span>
             </h2>

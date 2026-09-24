@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { playTactileSound } from "@/components/effects/SoundEffects";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 interface FaqItem {
   id: string;
@@ -90,19 +91,13 @@ export default function FaqSection() {
     >
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            07 · Advisory Protocols & Commercial Governance
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="09" label="Advisory Protocols & Commercial Governance" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
               Engagement terms.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 Institutional
               </span>{" "}
               clarity.
