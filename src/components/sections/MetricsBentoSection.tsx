@@ -119,10 +119,10 @@ export const MetricsBentoSection: React.FC = () => {
           </div>
 
           {/* Master Tool Switcher Tabs */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-[#0E0E0E] border border-white/[0.08] overflow-x-auto max-w-full">
+          <div className="grid grid-cols-3 sm:flex sm:items-center gap-1.5 p-1.5 rounded-xl bg-[#0E0E0E] border border-white/[0.08] w-full sm:w-auto">
             <button
               onClick={() => handleTabChange("working-capital")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "working-capital"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
@@ -134,7 +134,7 @@ export const MetricsBentoSection: React.FC = () => {
 
             <button
               onClick={() => handleTabChange("super-tax")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "super-tax"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
@@ -146,7 +146,7 @@ export const MetricsBentoSection: React.FC = () => {
 
             <button
               onClick={() => handleTabChange("ifrs-16")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "ifrs-16"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
@@ -179,7 +179,7 @@ export const MetricsBentoSection: React.FC = () => {
                   <div className="flex items-center gap-1 p-1 rounded-full bg-[#121212] border border-white/[0.06]">
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("PKR"); setRevenue(3.5); }}
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
                         currency === "PKR" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >
@@ -187,7 +187,7 @@ export const MetricsBentoSection: React.FC = () => {
                     </button>
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("USD"); setRevenue(12); }}
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
                         currency === "USD" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >

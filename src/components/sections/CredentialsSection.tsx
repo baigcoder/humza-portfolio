@@ -84,18 +84,18 @@ export default function CredentialsSection() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-[10px] font-mono text-white/40">
-                    <span className="flex items-center gap-1">
+                <div className="pt-3 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <div className="flex items-center gap-x-4 gap-y-1 flex-wrap text-[10px] font-mono text-white/40">
+                    <span className="flex items-center gap-1 whitespace-nowrap">
                       <svg className="w-3 h-3 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       CPD Compliant
                     </span>
                     <span>·</span>
-                    <span>Global Code of Ethics</span>
+                    <span className="whitespace-nowrap">Global Code of Ethics</span>
                   </div>
-                  <span className="text-[9px] font-mono text-[#E07A38]/75 font-semibold">ACTIVE & IN GOOD STANDING</span>
+                  <span className="text-[9px] font-mono text-[#E07A38]/75 font-semibold whitespace-nowrap">ACTIVE & IN GOOD STANDING</span>
                 </div>
               </div>
             </div>

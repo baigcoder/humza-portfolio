@@ -94,7 +94,7 @@ export default function WorkSection() {
         </div>
 
         {/* ── Compact Case Grid with 3D Tilt & Animated Metric Tickers ─ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {caseStudies.map((cs) => (
             <TiltCard key={cs.id} maxTilt={3.5} scale={1.01} className="h-full">
               <div
@@ -137,14 +137,14 @@ export default function WorkSection() {
                     </p>
 
                     {/* Challenge → Solution — single compact row */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
                         <span className="text-[8px] font-mono tracking-[0.15em] text-[#E07A38]/70 uppercase block mb-1">Challenge</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-3">{cs.challenge}</p>
+                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.challenge}</p>
                       </div>
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
                         <span className="text-[8px] font-mono tracking-[0.15em] text-[#10B981]/70 uppercase block mb-1">Intervention</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-3">{cs.solution}</p>
+                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function WorkSection() {
 
                     {/* Tags & Action Link */}
                     <div className="flex items-center gap-2">
-                      <div className="hidden sm:flex items-center gap-1">
+                      <div className="hidden xl:flex items-center gap-1">
                         {cs.tags.map((t) => (
                           <span
                             key={t}
@@ -179,7 +179,7 @@ export default function WorkSection() {
                         ))}
                       </div>
 
-                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold whitespace-nowrap">
                         <span>Dossier</span>
                         <span>→</span>
                       </span>
