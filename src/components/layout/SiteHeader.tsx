@@ -74,10 +74,30 @@ export default function SiteHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const root = document.documentElement;
+    const prevOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const onBreakpoint = () => desktop.matches && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    desktop.addEventListener("change", onBreakpoint);
+    return () => {
+      root.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", onBreakpoint);
+    };
+  }, [menuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        scrolled
+        menuOpen
+          ? // no backdrop-filter while open: it would become the containing block for the fixed sheet
+            `${scrolled ? "py-2.5" : "py-4"} bg-transparent border-b border-transparent`
+          : scrolled
           ? "py-2.5 bg-[#050505]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.9)]"
           : "py-4 bg-transparent"
       }`}
@@ -177,7 +197,9 @@ export default function SiteHeader() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden w-10 h-10 rounded-full bg-[#0E0E0E]/90 border border-white/[0.12] flex flex-col items-center justify-center gap-1.5 cursor-pointer shadow-lg hover:border-white/20 transition-colors"
-            aria-label="Toggle Menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <span
               className={`w-4 h-[1.5px] bg-white transition-all duration-300 ${
@@ -193,39 +215,65 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile/Tablet Nav Overlay — High-Contrast Frosted Glass Card */}
+      {/* Mobile/Tablet Nav — full-screen sheet behind the header bar */}
       {menuOpen && (
-        <div className="lg:hidden mx-4 sm:mx-8 mt-2.5 p-3 rounded-2xl bg-[#0D0D0D]/95 backdrop-blur-2xl border border-white/[0.12] shadow-[0_24px_60px_rgba(0,0,0,0.95)] space-y-1 anim-fade-in">
-          {navLinks.map((l) => {
-            const isActive = activeSection === l.href.replace("#", "");
-            return (
-              <Link
-                key={l.label}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  isActive
-                    ? "bg-white text-[#050505] font-semibold shadow-md"
-                    : "text-white/80 hover:text-white hover:bg-white/[0.06]"
-                }`}
-              >
-                <span>{l.label}</span>
-                <span className={`text-xs ${isActive ? "text-[#050505]" : "text-[#E07A38]"}`}>→</span>
-              </Link>
-            );
-          })}
-          <div className="pt-2">
+        <div className="lg:hidden fixed inset-0 -z-10 anim-fade-in" data-lenis-prevent>
+          <div
+            aria-hidden
+            onClick={() => setMenuOpen(false)}
+            className="absolute inset-0 bg-[#050505] bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(224,122,56,0.12),transparent_70%)]"
+          />
+          <nav
+            id="mobile-menu"
+            aria-label="Mobile navigation"
+            className="relative h-full overflow-y-auto px-4 sm:px-8 pt-[88px] pb-10 flex flex-col"
+          >
+            <ul className="border-t border-white/[0.08]">
+              {navLinks.map((l, i) => {
+                const isActive = activeSection === l.href.replace("#", "");
+                return (
+                  <li key={l.label} className="border-b border-white/[0.08]">
+                    <Link
+                      href={l.href}
+                      onClick={() => setMenuOpen(false)}
+                      aria-current={isActive ? "true" : undefined}
+                      className="group flex items-center gap-4 py-3.5 sm:py-4 anim-fade-up anim-initial"
+                      style={{ animationDelay: `${40 + i * 35}ms` }}
+                    >
+                      <span className={`w-6 text-[10px] font-mono tabular-nums ${isActive ? "text-[#E07A38]" : "text-white/30"}`}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className={`flex-1 text-[22px] sm:text-2xl font-semibold tracking-[-0.02em] transition-colors ${isActive ? "text-white" : "text-white/75 group-hover:text-white"}`}>
+                        {l.label}
+                      </span>
+                      <span className={`text-sm transition-transform duration-300 group-hover:translate-x-1 ${isActive ? "text-[#E07A38]" : "text-white/25"}`}>
+                        →
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
             <button
               onClick={() => {
                 setMenuOpen(false);
                 window.dispatchEvent(new CustomEvent("open-dossier"));
               }}
-              className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium text-[#E07A38] bg-[#E07A38]/10 border border-[#E07A38]/20 transition-all cursor-pointer"
+              className="mt-6 w-full flex items-center justify-between px-5 py-4 rounded-2xl text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] transition-colors cursor-pointer shadow-[0_0_24px_rgba(255,255,255,0.18)]"
             >
-              <span className="font-mono text-xs font-bold uppercase tracking-wider">View Executive Dossier / CV</span>
-              <span className="text-xs">↗</span>
+              <span className="text-sm font-semibold">View Executive Dossier / CV</span>
+              <span className="text-[#E07A38]">↗</span>
             </button>
-          </div>
+
+            <div className="mt-auto pt-8 flex items-center justify-between text-[10px] font-mono tracking-[0.18em] text-white/35 uppercase">
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
+                Open for Advisory
+              </span>
+              <span>Lahore · PK</span>
+            </div>
+          </nav>
         </div>
       )}
     </header>

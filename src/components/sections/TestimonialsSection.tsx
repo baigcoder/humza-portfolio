@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
                 <span className="absolute bottom-2.5 right-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
                 {/* Decorative Quotation Glyph in background */}
-                <span className="absolute -top-2 right-6 text-[120px] leading-none font-serif text-white/[0.04] select-none pointer-events-none group-hover:text-[#E07A38]/[0.12] transition-colors">
+                <span aria-hidden className="absolute top-12 right-5 text-[110px] leading-none font-serif text-white/[0.035] select-none pointer-events-none group-hover:text-[#E07A38]/[0.1] transition-colors">
                   “
                 </span>
 

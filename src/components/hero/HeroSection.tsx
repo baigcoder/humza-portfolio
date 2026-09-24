@@ -61,7 +61,7 @@ export default function HeroSection() {
 
       {/* ── Main Hero Stage Frame ── */}
       <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-14">
-        <div className="relative w-full aspect-[16/9.4] min-h-[620px] sm:min-h-[560px] max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A] isolate">
+        <div className="relative w-full aspect-[16/9.4] min-h-[620px] sm:min-h-[600px] lg:min-h-[560px] max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A] isolate">
 
           {/* ── LAYER 1: Cinematic stage artwork ── */}
           <div className="absolute inset-0 z-[1] pointer-events-none anim-scale-in">
@@ -90,24 +90,24 @@ export default function HeroSection() {
           <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-[#050505]/95 via-[#050505]/50 to-transparent z-[2] pointer-events-none" />
 
           {/* ── LAYER 2: Back-text ("ACCA" & "FINANCE") passing behind the cutout ── */}
-          <div className="hidden sm:flex absolute inset-x-0 bottom-[3%] z-[3] pointer-events-none items-end justify-between px-10 md:px-14 overflow-hidden">
+          <div className="hidden lg:flex absolute inset-x-0 bottom-[3%] z-[3] pointer-events-none items-end justify-between px-14 overflow-hidden">
             <div
               className="animate-float-acca transition-transform duration-700 ease-out"
               style={{
                 transform: `translate3d(calc(var(--mx) * ${-BACKTEXT_DEPTH_X}px), calc(var(--my) * ${-BACKTEXT_DEPTH_Y}px), 0)`,
               }}
             >
-              <span className="hero-backtext block font-bebas text-[18vw] md:text-[200px] lg:text-[230px] leading-none tracking-tight">
+              <span className="hero-backtext block font-bebas text-[200px] xl:text-[230px] leading-none tracking-tight">
                 ACCA
               </span>
             </div>
             <div
-              className="animate-float-finance transition-transform duration-700 ease-out mr-[-1vw] md:mr-0"
+              className="animate-float-finance transition-transform duration-700 ease-out"
               style={{
                 transform: `translate3d(calc(var(--mx) * ${BACKTEXT_DEPTH_X}px), calc(var(--my) * ${BACKTEXT_DEPTH_Y}px), 0)`,
               }}
             >
-              <span className="hero-backtext block font-bebas text-[18vw] md:text-[200px] lg:text-[230px] leading-none tracking-tight">
+              <span className="hero-backtext block font-bebas text-[200px] xl:text-[230px] leading-none tracking-tight">
                 FINANCE
               </span>
             </div>
@@ -228,18 +228,18 @@ export default function HeroSection() {
       {/* ── Under-frame editorial rail ── */}
       <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-14">
         <div className="relative flex items-center justify-between px-2 sm:px-3 py-4 md:py-5 text-[10px] md:text-[10.5px] font-mono tracking-[0.2em] text-white/40 uppercase">
-          <span className="hidden sm:inline">Est. Practice · Lahore — PK</span>
+          <span className="hidden lg:inline">Est. Practice · Lahore — PK</span>
           <Link
             href="#about"
             aria-label="Scroll to About"
-            className="group mx-auto sm:mx-0 sm:absolute sm:left-1/2 sm:-translate-x-1/2 inline-flex items-center gap-3 text-white/55 hover:text-white transition-colors"
+            className="group mx-auto lg:mx-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 inline-flex items-center gap-3 text-white/55 hover:text-white transition-colors"
           >
             <span className="relative h-7 w-px overflow-hidden bg-white/[0.12]">
               <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-transparent to-[#E07A38] animate-scroll-cue" />
             </span>
             <span>Scroll to explore</span>
           </Link>
-          <span className="hidden sm:inline">IFRS · Audit · Tax · Valuation</span>
+          <span className="hidden lg:inline">IFRS · Audit · Tax · Valuation</span>
         </div>
       </div>
     </section>
