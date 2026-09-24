@@ -59,7 +59,7 @@ export default function AboutSection() {
 
               <div className="group relative p-4 rounded-xl bg-[#0C0C0C] border border-white/[0.08] hover:border-[#E07A38]/50 hover:bg-[#110E0B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(224,122,56,0.12)] cursor-default">
                 <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 group-hover:text-[#FAF8F5] transition-colors">
-                  <Counter value={2.4} decimals={1} prefix="₨ " suffix="B+" />
+                  <Counter value={2.1} decimals={1} prefix="₨ " suffix="B+" />
                 </div>
                 <div className="text-[9px] font-mono tracking-widest text-[#E07A38] uppercase font-medium">Audit Scope</div>
                 <p className="text-[10px] text-white/40 mt-1">Big 4 Sign-offs</p>
