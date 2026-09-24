@@ -125,7 +125,7 @@ export default function GallerySection() {
   return (
     <section
       id="engagements"
-      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-[#E07A38]/[0.05] blur-3xl pointer-events-none" />
@@ -144,7 +144,7 @@ export default function GallerySection() {
               </span>{" "}
               of Fiscal Policy.
             </h2>
-            <p className="text-xs text-white/50 max-w-xl font-light leading-relaxed mt-2">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-xl mt-4">
               Documenting strategic ministerial consultations, policymaker delegations, and institutional summits shaping Pakistan&apos;s economic architecture.
             </p>
           </div>

@@ -214,7 +214,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden"
     >
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -234,7 +234,7 @@ export default function ServicesSection() {
             </span>{" "}
             capital.
           </h2>
-          <p className="text-sm text-white/60 max-w-md font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md">
             Every engagement is executed with the discipline, technical depth, and global ethical rigor demanded by the ACCA charter.
           </p>
         </div>

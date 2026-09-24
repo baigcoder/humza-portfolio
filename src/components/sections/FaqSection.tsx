@@ -87,7 +87,7 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider overflow-hidden"
     >
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
@@ -102,7 +102,7 @@ export default function FaqSection() {
               </span>{" "}
               clarity.
             </h2>
-            <p className="text-xs text-white/50 max-w-md font-light leading-relaxed mt-1">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
               Standard commercial frameworks, Big-4 audit coordination, FBR tax defense, and bilateral confidentiality protocols.
             </p>
           </div>

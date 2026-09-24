@@ -95,7 +95,7 @@ export const MetricsBentoSection: React.FC = () => {
   return (
     <section
       id="simulator"
-      className="relative w-full py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06] overflow-hidden"
+      className="relative w-full py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider overflow-hidden"
     >
       {/* Background ambient warm illumination */}
       <div className="absolute top-1/2 left-1/3 w-[550px] h-[550px] rounded-full bg-[#E07A38]/[0.04] blur-[150px] pointer-events-none" />
@@ -113,7 +113,7 @@ export const MetricsBentoSection: React.FC = () => {
               </span>{" "}
               capital impact.
             </h2>
-            <p className="text-xs text-white/50 max-w-lg font-light leading-relaxed mt-1">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-lg mt-4">
               Select an institutional calculation engine below to model working capital liquidity, Pakistan Section 4C Super Tax liabilities, or IFRS 16 balance sheet capitalization.
             </p>
           </div>

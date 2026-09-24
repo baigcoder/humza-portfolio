@@ -9,7 +9,7 @@ import SectionLabel from "@/components/layout/SectionLabel";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#050505] overflow-hidden border-t border-white/[0.06]">
+    <section id="about" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#050505] overflow-hidden section-divider">
       {/* Background ambient warm illumination */}
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-[#E07A38]/[0.05] blur-[160px] pointer-events-none" />
 

@@ -185,7 +185,7 @@ export default function JournalSection() {
   return (
     <section
       id="journal"
-      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06]"
+      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider"
     >
       {/* Toast Alert */}
       {toastMsg && (
@@ -207,7 +207,7 @@ export default function JournalSection() {
               </span>{" "}
               thinking.
             </h2>
-            <p className="text-xs text-white/50 max-w-sm font-light leading-relaxed mt-1">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
               Analytical perspectives on IFRS, governance, and statutory compliance. Click any brief to read the full analysis.
             </p>
           </div>
@@ -228,7 +228,7 @@ export default function JournalSection() {
               {/* Top accent bar */}
               <div className="h-[2px] w-full bg-gradient-to-r from-[#E07A38]/40 via-[#E07A38]/20 to-transparent group-hover:from-[#E07A38] group-hover:via-[#FF8A3D] group-hover:to-[#E07A38]/40 transition-all duration-500" />
 
-              <div className="p-5 flex flex-col h-full justify-between">
+              <div className="p-6 flex flex-col h-full justify-between">
                 <div>
                   {/* Meta */}
                   <div className="flex items-center justify-between mb-3">
@@ -239,24 +239,24 @@ export default function JournalSection() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-sm sm:text-[15px] font-bold text-white group-hover:text-[#FAF8F3] transition-colors leading-snug mb-2 line-clamp-2 min-h-[2.5rem]">
+                  <h3 className="text-base sm:text-[17px] font-semibold tracking-[-0.01em] text-white group-hover:text-[#FAF8F3] transition-colors leading-snug mb-2.5 line-clamp-3 min-h-[3.3rem]">
                     {item.title}
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-[11px] text-white/50 leading-relaxed font-light line-clamp-3 mb-4">
+                  <p className="text-[12.5px] text-white/55 leading-relaxed line-clamp-3 mb-5">
                     {item.summary}
                   </p>
                 </div>
 
                 {/* Bottom bar */}
                 <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between mt-auto">
-                  <div className="flex items-center gap-2 text-[9px] font-mono text-white/40">
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-white/45">
                     <span>{item.date}</span>
                     <span className="text-white/20">·</span>
                     <span>{item.readTime}</span>
                   </div>
-                  <div className="w-7 h-7 rounded-full border border-white/[0.1] flex items-center justify-center group-hover:border-[#E07A38] group-hover:bg-[#E07A38] transition-all duration-300">
+                  <div className="w-8 h-8 rounded-full border border-white/[0.1] flex items-center justify-center group-hover:border-[#E07A38] group-hover:bg-[#E07A38] transition-all duration-300">
                     <span className="text-[10px] text-white/40 group-hover:text-[#050505] font-bold transition-all duration-300 group-hover:translate-x-0.5">
                       →
                     </span>

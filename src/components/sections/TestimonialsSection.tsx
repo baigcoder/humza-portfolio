@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="endorsements"
-      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#070707] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#070707] section-divider overflow-hidden"
     >
       {/* Background ambient radial glow */}
       <div className="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#E07A38]/[0.05] blur-[120px] pointer-events-none" />
@@ -91,7 +91,7 @@ export default function TestimonialsSection() {
               </span>{" "}
               boardroom trust.
             </h2>
-            <p className="text-xs text-white/50 max-w-md font-light leading-relaxed mt-1">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
               Direct citations from corporate directors, audit committee chairs, and institutional investment partners.
             </p>
           </div>
