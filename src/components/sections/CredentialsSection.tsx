@@ -44,8 +44,15 @@ export default function CredentialsSection() {
                   {/* Badge row */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-lg bg-[#E07A38]/15 border border-[#E07A38]/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                        <span className="text-lg font-bold text-[#E07A38]">A</span>
+                      {/* Stopgap ACCA wordmark — replace with the official logo file when available */}
+                      <div
+                        role="img"
+                        aria-label="ACCA"
+                        className="h-11 px-3 rounded-lg bg-white flex items-center justify-center shadow-[0_6px_18px_rgba(0,0,0,0.45)] ring-1 ring-white/20 group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <span aria-hidden className="font-sans text-[17px] font-extrabold tracking-[-0.02em] leading-none text-[#D6001C]">
+                          ACCA
+                        </span>
                       </div>
                       <div>
                         <span className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-bold block">ACCA-UK</span>
