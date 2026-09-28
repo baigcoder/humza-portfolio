@@ -65,7 +65,7 @@ export default function HeroSection() {
         <div className="relative w-full aspect-[16/9.4] min-h-[760px] sm:min-h-[600px] lg:min-h-[560px] max-h-none sm:max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A] isolate">
 
           {/* ── LAYER 1: Cinematic stage artwork ── */}
-          <div className="absolute inset-x-0 top-0 h-[48%] sm:inset-0 z-[1] pointer-events-none anim-scale-in">
+          <div className="absolute inset-x-0 top-0 h-[48%] sm:inset-0 sm:hidden z-[1] pointer-events-none anim-scale-in">
             <Image
               src="/images/humza-hero-master-4k.jpg"
               alt="Humza – ACCA Professional"
@@ -77,6 +77,16 @@ export default function HeroSection() {
               style={{ transform: stageTransform }}
             />
           </div>
+
+          {/* Desktop uses a clean light field behind the transparent portrait cutout,
+              avoiding a second copy of the subject from the source photograph. */}
+          <div
+            aria-hidden="true"
+            className="hidden sm:block absolute inset-0 z-[1] pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse 52% 92% at 62% 30%, rgba(242, 151, 67, 0.96) 0%, rgba(192, 82, 28, 0.9) 42%, rgba(86, 38, 22, 0.94) 72%, #080706 100%), linear-gradient(135deg, #21130d, #713419)",
+            }}
+          />
 
           {/* Warm golden backlight bloom */}
           <div
