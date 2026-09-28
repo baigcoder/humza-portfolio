@@ -52,20 +52,20 @@ export default function HeroSection() {
         <div className="absolute top-[76px] left-0 right-0 h-[1px] bg-white/[0.08]" />
         <div className="absolute top-0 bottom-0 left-4 sm:left-8 md:left-14 w-[1px] bg-white/[0.08]" />
         <div className="absolute top-0 bottom-0 right-4 sm:right-8 md:right-14 w-[1px] bg-white/[0.08]" />
-        <span className="absolute top-[76px] left-4 sm:left-8 md:left-14 -translate-x-1/2 -translate-y-1/2 text-[10px] font-mono text-white/40 select-none">
+        <span className="hidden sm:block absolute top-[76px] left-4 sm:left-8 md:left-14 -translate-x-1/2 -translate-y-1/2 text-[10px] font-mono text-white/40 select-none">
           +
         </span>
-        <span className="absolute top-[76px] right-4 sm:right-8 md:right-14 translate-x-1/2 -translate-y-1/2 text-[10px] font-mono text-white/40 select-none">
+        <span className="hidden sm:block absolute top-[76px] right-4 sm:right-8 md:right-14 translate-x-1/2 -translate-y-1/2 text-[10px] font-mono text-white/40 select-none">
           +
         </span>
       </div>
 
       {/* ── Main Hero Stage Frame ── */}
       <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-14">
-        <div className="relative w-full aspect-[16/9.4] min-h-[620px] sm:min-h-[600px] lg:min-h-[560px] max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A] isolate">
+        <div className="relative w-full aspect-[16/9.4] min-h-[760px] sm:min-h-[600px] lg:min-h-[560px] max-h-none sm:max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A] isolate">
 
           {/* ── LAYER 1: Cinematic stage artwork ── */}
-          <div className="absolute inset-0 z-[1] pointer-events-none anim-scale-in">
+          <div className="absolute inset-x-0 top-0 h-[48%] sm:inset-0 z-[1] pointer-events-none anim-scale-in">
             <Image
               src="/images/humza-hero-master-4k.jpg"
               alt="Humza – ACCA Professional"
@@ -73,7 +73,7 @@ export default function HeroSection() {
               priority
               quality={100}
               unoptimized
-              className="object-cover object-center transition-transform duration-700 ease-out"
+              className="object-cover object-[58%_32%] sm:object-center transition-transform duration-700 ease-out"
               style={{ transform: stageTransform }}
             />
           </div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
           </div>
 
           {/* ── LAYER 3: Subject cutout, pixel-matched to Layer 1 ── */}
-          <div className="absolute inset-0 z-[4] pointer-events-none anim-scale-in">
+          <div className="hidden sm:block absolute inset-0 z-[4] pointer-events-none anim-scale-in">
             <Image
               src="/images/humza-master-4k-cutout.png"
               alt=""
@@ -129,9 +129,9 @@ export default function HeroSection() {
           </div>
 
           {/* ── LAYER 3.5: Torso contrast scrim so the headline reads cleanly ── */}
-          <div className="absolute inset-x-0 bottom-0 h-[68%] sm:h-[55%] z-[5] bg-gradient-to-t from-[#050505] via-[#050505]/60 sm:from-[#050505]/90 sm:via-[#050505]/50 to-transparent pointer-events-none" />
+          <div className="hidden sm:block absolute inset-x-0 bottom-0 h-[68%] sm:h-[55%] z-[5] bg-gradient-to-t from-[#050505] via-[#050505]/60 sm:from-[#050505]/90 sm:via-[#050505]/50 to-transparent pointer-events-none" />
           <div
-            className="absolute inset-0 z-[5] pointer-events-none"
+            className="hidden sm:block absolute inset-0 z-[5] pointer-events-none"
             style={{
               background: "radial-gradient(ellipse 48% 40% at 50% 74%, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.28) 45%, transparent 75%)",
             }}
@@ -140,6 +140,15 @@ export default function HeroSection() {
           {/* Film grain + inner rim highlight for a printed, tactile finish */}
           <div className="grain absolute inset-0 z-[6] pointer-events-none opacity-[0.07] mix-blend-overlay" />
           <div className="absolute inset-0 z-[7] pointer-events-none rounded-[inherit] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),inset_0_0_0_1px_rgba(255,255,255,0.03)]" />
+
+          {/* Blend the mobile portrait into its separate, solid copy panel. */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-[37%] z-[8] h-[14%] sm:hidden pointer-events-none"
+            style={{
+              background: "linear-gradient(to bottom, transparent 0%, rgba(5, 5, 5, 0.72) 48%, #050505 100%)",
+            }}
+          />
 
           {/* ── Frame corner metadata ── */}
           <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-[9] anim-fade-in delay-300 anim-initial">
@@ -184,23 +193,23 @@ export default function HeroSection() {
           </div>
 
           {/* ── LAYER 4: Headline & conversion actions ── */}
-          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-8 sm:pb-10 md:pb-12 px-5 sm:px-6 xl:inset-x-auto xl:left-[6%] xl:top-[30%] xl:bottom-auto xl:w-[44%] xl:max-w-[560px] xl:items-start xl:text-left xl:px-0 xl:pb-0 2xl:left-[7%] 2xl:top-[31%]">
-            <span className="anim-fade-up anim-initial mb-4 inline-flex items-center gap-2.5 text-[10px] sm:text-[11px] font-mono tracking-[0.26em] text-white/75 uppercase xl:justify-start">
+          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-6 sm:pb-10 md:pb-12 px-5 sm:px-6 xl:inset-x-auto xl:left-[6%] xl:top-[30%] xl:bottom-auto xl:w-[44%] xl:max-w-[560px] xl:items-start xl:text-left xl:px-0 xl:pb-0 2xl:left-[7%] 2xl:top-[31%]">
+            <span className="anim-fade-up anim-initial mb-2 sm:mb-4 inline-flex items-center gap-2.5 text-[9px] sm:text-[11px] font-mono tracking-[0.2em] sm:tracking-[0.26em] text-white/80 uppercase xl:justify-start">
               <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#FFB070]" />
               ACCA · Corporate Finance
               <span className="h-px w-6 bg-gradient-to-l from-transparent to-[#FFB070]" />
             </span>
 
-            <h1 className="anim-fade-up anim-initial delay-100 leading-[1.02] mb-4 text-center xl:text-left xl:mb-3">
-              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-bold tracking-[-0.035em] xl:tracking-[-0.055em] text-white font-sans drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+            <h1 className="anim-fade-up anim-initial delay-100 leading-[1.02] mb-3 sm:mb-4 text-center xl:text-left xl:mb-3">
+              <span className="block text-[clamp(1.8rem,8.3vw,2.1rem)] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-bold tracking-[-0.04em] xl:tracking-[-0.055em] text-white font-sans drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
                 Where Precision
               </span>
-              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-serif italic tracking-[-0.01em] mt-0.5 sm:mt-1 pb-1 text-gradient-warm">
+              <span className="block text-[clamp(1.8rem,8.3vw,2.1rem)] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-serif italic tracking-[-0.01em] mt-0.5 sm:mt-1 pb-1 text-gradient-warm">
                 Meets Capital
               </span>
             </h1>
 
-            <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/80 leading-relaxed mb-6 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] xl:max-w-[430px] xl:text-left xl:mb-6">
+            <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/90 leading-relaxed mb-4 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] xl:max-w-[430px] xl:text-left xl:mb-6">
               ACCA-qualified financial advice for complex reporting, tax, governance, and growth decisions across Pakistan and the GCC.
             </p>
 
@@ -226,7 +235,7 @@ export default function HeroSection() {
             <button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
-              className="anim-fade-up anim-initial delay-400 mt-4 inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-white/65 transition-colors hover:text-[#C6956C] xl:justify-start"
+              className="anim-fade-up anim-initial delay-400 mt-3 sm:mt-4 min-h-11 px-3 -mx-3 inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-white/75 transition-colors hover:text-[#C6956C] xl:justify-start"
             >
               <Download className="h-3.5 w-3.5" aria-hidden />
               <span>Review CV · Save PDF</span>
