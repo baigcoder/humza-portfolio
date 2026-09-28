@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { type LucideIcon, User, Zap, Calculator, FolderOpen, Award, Medal, FileText, Landmark, Scale, Mail, Download, ClipboardCopy } from "lucide-react";
 
 interface CommandItem {
   id: string;
   category: "Navigation" | "Action" | "Contact";
   title: string;
   subtitle: string;
-  icon: string;
+  icon: LucideIcon;
   badge?: string;
   action: () => void;
 }
@@ -18,6 +19,15 @@ export default function CommandPalette() {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [showTrigger, setShowTrigger] = useState(false);
+
+  // Keep the floating trigger out of the hero's first impression
+  useEffect(() => {
+    const onScroll = () => setShowTrigger(window.scrollY > 400);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const showToast = (msg: string) => {
@@ -50,7 +60,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Executive Profile & Dossier",
       subtitle: "Overview, background, core statistics & credentials",
-      icon: "👤",
+      icon: User,
       action: () => navigateTo("#about"),
     },
     {
@@ -58,7 +68,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Advisory Capabilities & Scope",
       subtitle: "IFRS reporting, internal audit, FBR tax, DCF valuation",
-      icon: "⚡",
+      icon: Zap,
       badge: "PK · GCC",
       action: () => navigateTo("#services"),
     },
@@ -67,7 +77,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Working Capital Liberation Simulator",
       subtitle: "Model cash flow unlocking across revenue & DSO sliders",
-      icon: "🧮",
+      icon: Calculator,
       badge: "Interactive",
       action: () => navigateTo("#simulator"),
     },
@@ -76,7 +86,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Selected Case Engagements",
       subtitle: "Demonstrated client results & quantified audit impact",
-      icon: "📁",
+      icon: FolderOpen,
       badge: "4 Cases",
       action: () => navigateTo("#work"),
     },
@@ -85,7 +95,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Chartered Credentials & Standards",
       subtitle: "ACCA UK Charter, CFA Candidate, IASB & FBR standing",
-      icon: "🏆",
+      icon: Award,
       action: () => navigateTo("#credentials"),
     },
     {
@@ -93,7 +103,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Boardroom Endorsements & Peer Citations",
       subtitle: "Verified commentary from corporate CEOs, audit chairs, and VC partners",
-      icon: "🎖️",
+      icon: Medal,
       badge: "C-Suite",
       action: () => navigateTo("#endorsements"),
     },
@@ -102,7 +112,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Executive Financial Journal",
       subtitle: "IFRS 16, Pakistan Corporate Tax 2024, COSO controls",
-      icon: "📑",
+      icon: FileText,
       action: () => navigateTo("#journal"),
     },
     {
@@ -110,7 +120,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Leadership & Ministerial Engagements",
       subtitle: "Consultation alongside Finance Minister H.E. Muhammad Aurangzeb",
-      icon: "🏛️",
+      icon: Landmark,
       badge: "Summit",
       action: () => navigateTo("#engagements"),
     },
@@ -119,7 +129,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Advisory Protocols & Commercial Governance (FAQ)",
       subtitle: "Retainers, Big-4 audit liaison, FBR appeals defense, cross-border GCC",
-      icon: "⚖️",
+      icon: Scale,
       badge: "Protocol",
       action: () => navigateTo("#faq"),
     },
@@ -128,7 +138,7 @@ export default function CommandPalette() {
       category: "Navigation",
       title: "Submit Advisory Brief",
       subtitle: "Initiate confidential mandate discussion (24h response)",
-      icon: "✉️",
+      icon: Mail,
       badge: "Direct",
       action: () => navigateTo("#contact"),
     },
@@ -137,7 +147,7 @@ export default function CommandPalette() {
       category: "Action",
       title: "View Official Executive Dossier / CV",
       subtitle: "Printable Curriculum Vitae with full technical engagement history",
-      icon: "📥",
+      icon: Download,
       badge: "Dossier",
       action: downloadCV,
     },
@@ -146,7 +156,7 @@ export default function CommandPalette() {
       category: "Action",
       title: "Copy Direct Advisory Email",
       subtitle: "humza.acca@advisory.pk",
-      icon: "📋",
+      icon: ClipboardCopy,
       action: copyEmail,
     },
   ];
@@ -209,7 +219,9 @@ export default function CommandPalette() {
       {/* Floating Trigger Button (Bottom Left, Subtle Luxury Pill) */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-5 left-5 z-40 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E0E0E]/80 hover:bg-[#161412] text-white/50 hover:text-white border border-white/[0.08] hover:border-[#E07A38]/40 shadow-lg backdrop-blur-xl transition-all duration-300 text-[11px] font-mono group cursor-pointer"
+        className={`fixed bottom-5 left-5 z-40 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E0E0E]/80 hover:bg-[#161412] text-white/50 hover:text-white border border-white/[0.08] hover:border-[#E07A38]/40 shadow-lg backdrop-blur-xl transition-all duration-300 text-[11px] font-mono group cursor-pointer ${
+          showTrigger ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
         aria-label="Open Command Menu"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] group-hover:scale-125 transition-transform" />
@@ -274,7 +286,7 @@ export default function CommandPalette() {
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-base select-none">{cmd.icon}</span>
+                        <span className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0"><cmd.icon className="w-4 h-4 text-[#E07A38]" strokeWidth={1.75} aria-hidden /></span>
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="text-[13px] font-medium text-white">

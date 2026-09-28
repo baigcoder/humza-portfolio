@@ -47,8 +47,9 @@ export default function MacroTelemetryBar() {
     <div
       id="telemetry"
       onClick={handleBarClick}
-      className="relative w-full border-y border-white/[0.07] bg-[#070707] select-none overflow-hidden"
+      className="relative w-full border-b border-white/[0.07] bg-[#070707] select-none overflow-hidden"
     >
+      <div className="absolute top-0 inset-x-0 h-px hairline-fade" />
       {/* Corner crosshairs */}
       <span className="absolute top-1 left-3 text-[8px] font-mono text-white/20 pointer-events-none">+</span>
       <span className="absolute top-1 right-3 text-[8px] font-mono text-white/20 pointer-events-none">+</span>
@@ -61,11 +62,11 @@ export default function MacroTelemetryBar() {
             {/* Lahore Hub */}
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-              <span className="text-white/40 uppercase tracking-wider">LAHORE PKT</span>
+              <span className="text-white/40 uppercase tracking-wider whitespace-nowrap">LAHORE PKT</span>
               <span className="text-white font-semibold tabular-nums tracking-wide">
                 {mounted ? lahoreTime : "12:00:00"}
               </span>
-              <span className="text-white/25 text-[9px]">(UTC+5)</span>
+              <span className="hidden sm:inline text-white/25 text-[9px]">(UTC+5)</span>
             </div>
 
             <div className="h-3 w-[1px] bg-white/[0.1] hidden sm:block" />
@@ -73,11 +74,11 @@ export default function MacroTelemetryBar() {
             {/* Dubai Hub */}
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] animate-pulse" />
-              <span className="text-white/40 uppercase tracking-wider">DUBAI GST</span>
+              <span className="text-white/40 uppercase tracking-wider whitespace-nowrap">DUBAI GST</span>
               <span className="text-white font-semibold tabular-nums tracking-wide">
                 {mounted ? dubaiTime : "11:00:00"}
               </span>
-              <span className="text-white/25 text-[9px]">(UTC+4)</span>
+              <span className="hidden sm:inline text-white/25 text-[9px]">(UTC+4)</span>
             </div>
           </div>
 

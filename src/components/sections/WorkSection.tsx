@@ -6,6 +6,7 @@ import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
 import CaseStudyDrawer from "@/components/sections/CaseStudyDrawer";
 import { playTactileSound } from "@/components/effects/SoundEffects";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 const caseStudies = [
   {
@@ -74,32 +75,26 @@ export default function WorkSection() {
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
 
   return (
-    <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06]">
+    <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header — Compact */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            03 · Selected Case Engagements
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="04" label="Selected Case Engagements" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
             Demonstrated results.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               Quantified
             </span>{" "}
             impact.
           </h2>
-          <p className="text-xs text-white/50 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
             Resolving intricate accounting complexities and delivering stakeholder assurance.
           </p>
         </div>
 
         {/* ── Compact Case Grid with 3D Tilt & Animated Metric Tickers ─ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {caseStudies.map((cs) => (
             <TiltCard key={cs.id} maxTilt={3.5} scale={1.01} className="h-full">
               <div
@@ -142,14 +137,14 @@ export default function WorkSection() {
                     </p>
 
                     {/* Challenge → Solution — single compact row */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
                         <span className="text-[8px] font-mono tracking-[0.15em] text-[#E07A38]/70 uppercase block mb-1">Challenge</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-3">{cs.challenge}</p>
+                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.challenge}</p>
                       </div>
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
                         <span className="text-[8px] font-mono tracking-[0.15em] text-[#10B981]/70 uppercase block mb-1">Intervention</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-3">{cs.solution}</p>
+                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -173,7 +168,7 @@ export default function WorkSection() {
 
                     {/* Tags & Action Link */}
                     <div className="flex items-center gap-2">
-                      <div className="hidden sm:flex items-center gap-1">
+                      <div className="hidden xl:flex items-center gap-1">
                         {cs.tags.map((t) => (
                           <span
                             key={t}
@@ -184,7 +179,7 @@ export default function WorkSection() {
                         ))}
                       </div>
 
-                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold whitespace-nowrap">
                         <span>Dossier</span>
                         <span>→</span>
                       </span>

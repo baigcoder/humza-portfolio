@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Counter from "@/components/effects/Counter";
+import SectionLabel from "@/components/layout/SectionLabel";
+import { type LucideIcon, Landmark, ChartColumn, ShieldCheck, TrendingUp, BriefcaseBusiness } from "lucide-react";
 
 function MetricCounter({ value }: { value: string }) {
   const match = value.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
@@ -27,7 +29,7 @@ interface ServiceCard {
   id: string;
   title: string;
   subtitle: string;
-  icon: string;
+  icon: LucideIcon;
   tags: string[];
   desc: string;
   useCases: string[];
@@ -41,7 +43,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "01",
       title: "FBR Tax Strategy & Compliance",
       subtitle: "Income Tax Ordinance 2001 · WHT · PRA / SRB",
-      icon: "🏛",
+      icon: Landmark,
       tags: ["ITO 2001", "WHT Audit", "PRA / SRB", "FBR e-Filing"],
       desc: "End-to-end corporate tax planning under the Income Tax Ordinance 2001, provincial sales tax frameworks (Punjab Revenue Authority, Sindh Revenue Board), and FBR e-filing compliance. Mitigating withholding tax leakage through systematic reconciliation and representing entities before Commissioner Inland Revenue.",
       useCases: [
@@ -56,7 +58,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "02",
       title: "IFRS Transition & SBP Reporting",
       subtitle: "IFRS 9, 15, 16 · SECP · State Bank Prudential",
-      icon: "📊",
+      icon: ChartColumn,
       tags: ["IFRS 9/15/16", "SECP", "SBP BSD", "Consolidation"],
       desc: "Full IFRS adoption roadmaps for listed companies and financial institutions, including gap analysis against SECP and SBP prudential requirements. Specializing in IFRS 9 ECL modelling for banks, IFRS 16 lease accounting for real estate conglomerates, and consolidated financial statements for groups listed on PSX.",
       useCases: [
@@ -71,7 +73,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "03",
       title: "Internal Audit & SECP Governance",
       subtitle: "COSO Framework · Code of Corporate Governance",
-      icon: "🛡",
+      icon: ShieldCheck,
       tags: ["COSO", "CCG 2019", "Risk Matrix", "Internal Audit"],
       desc: "Designing internal audit programs aligned with the SECP Code of Corporate Governance 2019, mapping key process flows across supply chain, treasury, and procurement. Building risk matrices for board audit committees and liaising directly with Big 4 external auditors to achieve unqualified opinions.",
       useCases: [
@@ -86,7 +88,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "04",
       title: "FP&A & Business Advisory",
       subtitle: "3-Statement Models · KPI Dashboards · Growth Strategy",
-      icon: "📈",
+      icon: TrendingUp,
       tags: ["3-Statement", "Rolling Forecast", "EBITDA", "Unit Economics"],
       desc: "Dynamic budgeting, rolling forecasts, and executive dashboards for Pakistan's high-growth sectors — textiles, IT services, and agri-tech. Building investor-ready financial models for startups seeking Series A from local and international VCs, and fractional CFO advisory for SMEs navigating economic volatility.",
       useCases: [
@@ -101,7 +103,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "05",
       title: "Corporate Finance & M&A Advisory",
       subtitle: "DCF Valuation · Due Diligence · Capital Structuring",
-      icon: "💼",
+      icon: BriefcaseBusiness,
       tags: ["DCF", "M&A", "LBO", "NBFC Licensing"],
       desc: "Transaction advisory for mid-market M&A in Pakistan's banking, insurance, and manufacturing sectors. Robust DCF valuations, comparable company analysis, and due diligence support. Advising founders on NBFC/EMI licensing with SBP, and structuring Private Equity and venture capital deals.",
       useCases: [
@@ -118,7 +120,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "01",
       title: "UAE Corporate Tax & VAT Advisory",
       subtitle: "CT Law 2022 · VAT (FTA) · Transfer Pricing",
-      icon: "🏛",
+      icon: Landmark,
       tags: ["CT Law 2022", "VAT FTA", "Transfer Pricing", "Free Zone"],
       desc: "Strategic advisory on the UAE Corporate Tax Law (effective June 2023), including Free Zone Qualifying Income optimization, transfer pricing documentation (TP Local & Master Files), and Federal Tax Authority VAT compliance. Designing group structures that maximize the 0% CT rate for qualifying free zone entities while ensuring substance requirements.",
       useCases: [
@@ -133,7 +135,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "02",
       title: "IFRS & Regulatory Reporting",
       subtitle: "IFRS 17 · CBUAE · ADGM / DIFC Standards",
-      icon: "📊",
+      icon: ChartColumn,
       tags: ["IFRS 17", "CBUAE", "ADGM", "DIFC"],
       desc: "Full IFRS reporting for UAE-based entities, with specialized expertise in IFRS 17 (Insurance Contracts) for CBUAE-regulated insurers, and IFRS 9 ECL modelling for banks supervised by the Central Bank of the UAE. Supporting ADGM and DIFC-regulated entities with fund accounting and regulatory returns.",
       useCases: [
@@ -148,7 +150,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "03",
       title: "Internal Audit & AML/CFT Compliance",
       subtitle: "CBUAE AML Framework · FATF Recommendations",
-      icon: "🛡",
+      icon: ShieldCheck,
       tags: ["AML/CFT", "CBUAE", "FATF", "Sanctions Screening"],
       desc: "Designing enterprise-wide internal audit programs for UAE financial institutions and DNFBPs (Designated Non-Financial Businesses and Professions), ensuring compliance with CBUAE AML/CFT regulations and FATF recommendations. Implementing risk-based KYC/CDD frameworks and sanctions screening protocols.",
       useCases: [
@@ -163,7 +165,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "04",
       title: "FP&A & Gulf Expansion Strategy",
       subtitle: "Multi-Entity Budgeting · FX Treasury · Feasibility Studies",
-      icon: "📈",
+      icon: TrendingUp,
       tags: ["Multi-Entity", "FX Hedging", "Feasibility", "KSA Vision 2030"],
       desc: "Dynamic financial planning for Gulf conglomerates operating across UAE, KSA, Bahrain, and Oman. Multi-currency treasury management, consolidated rolling forecasts, and feasibility studies for KSA Vision 2030 projects. Building investor-ready models for entities exploring IPOs on ADX, DFM, or Tadawul.",
       useCases: [
@@ -178,7 +180,7 @@ const servicesByMarket: Record<MarketKey, ServiceCard[]> = {
       id: "05",
       title: "M&A and Cross-Border Advisory",
       subtitle: "Deal Structuring · Holdco Design · ADGM SPVs",
-      icon: "💼",
+      icon: BriefcaseBusiness,
       tags: ["Cross-Border M&A", "Holdco", "ADGM SPV", "Shariah Compliance"],
       desc: "Transaction advisory for cross-border M&A between GCC, South Asia, and Africa. Designing holding company structures through ADGM and DIFC, Shariah-compliant deal structuring for Islamic finance transactions, and due diligence support for sovereign wealth fund co-investments and family office acquisitions.",
       useCases: [
@@ -213,7 +215,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden"
     >
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -223,23 +225,17 @@ export default function ServicesSection() {
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            02 · Core Advisory Capabilities
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="02" label="Core Advisory Capabilities" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight max-w-2xl">
             Precision services for{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               demanding
             </span>{" "}
             capital.
           </h2>
-          <p className="text-sm text-white/60 max-w-md font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md">
             Every engagement is executed with the discipline, technical depth, and global ethical rigor demanded by the ACCA charter.
           </p>
         </div>
@@ -301,7 +297,7 @@ export default function ServicesSection() {
                         ? "bg-[#E07A38]/15 shadow-[0_0_24px_rgba(224,122,56,0.15)]"
                         : "bg-white/[0.03] group-hover:bg-white/[0.05]"
                     }`}>
-                      {s.icon}
+                      <s.icon className={`w-5 h-5 ${isActive ? "text-[#E07A38]" : "text-white/70"}`} strokeWidth={1.6} aria-hidden />
                     </div>
 
                     <div className="min-w-0">

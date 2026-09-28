@@ -30,23 +30,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 80;
-    pointer-events: none;
-    opacity: 0.14;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 0.45px, transparent 0.65px);
-    background-size: 5px 5px;
-    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--c-amber-hot);
-    outline-offset: 4px;
-  }
-
   ::selection {
     background: var(--c-amber);
     color: var(--c-ink);
@@ -244,68 +227,9 @@
 .reveal-visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
-}
-
-/* Polished interaction states shared by editorial cards and imagery. */
-.hero-master-image {
-  filter: saturate(0.92) contrast(1.025);
-}
-
-.hero-copy-enter {
-  animation: heroCopyEnter 900ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
-}
-
-.hero-copy-delay-1 { animation-delay: 100ms; }
-.hero-copy-delay-2 { animation-delay: 220ms; }
-.hero-copy-delay-3 { animation-delay: 340ms; }
-
-@keyframes heroCopyEnter {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-
-@media (min-width: 1024px) {
-  .hero-stage::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.73) 27%, rgba(5, 5, 5, 0.28) 48%, transparent 72%), linear-gradient(0deg, rgba(5, 5, 5, 0.4), transparent 23%);
-  }
-}
-
-section > div,
-article {
-  scroll-margin-top: 6rem;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .hero-master-image {
-    will-change: transform;
-  }
-
-  .glass-card,
-  .group\/card {
-    transition: border-color 240ms ease, background-color 240ms ease, box-shadow 300ms ease, transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
-  }
-
-  .glass-card:hover,
-  .group\/card:hover {
-    border-color: rgba(224, 122, 56, 0.28);
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.26), 0 0 30px rgba(224, 122, 56, 0.045);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-  .reveal-init { opacity: 1; transform: none; }
+  /* Release the compositor layer once revealed — a lingering will-change
+     rasterises text at fractional offsets and makes it look soft. */
+  will-change: auto;
 }
 
 /* Custom Executive Range Sliders */
@@ -368,6 +292,75 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
   animation: shimmerGlow 6s linear infinite;
 }
 
+/* ——— Editorial Type Treatments ——— */
+
+/* Soft amber halo for italic accent words (text-shadow, not a filter, so no
+   compositing box is painted behind the glyphs) */
+.text-glow-amber {
+  text-shadow: 0 0 18px rgba(224, 122, 56, 0.22);
+}
+
+/* Warm ivory→amber gradient fill for hero accent lines */
+.text-gradient-warm {
+  background: linear-gradient(100deg, #FFFFFF 0%, #FAF3E8 38%, #FFD2A1 72%, #F5A25E 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Hero back-text: bright at the cap line, dissolving into the stage floor so
+   it never competes with the headline sitting over its lower half */
+.hero-backtext {
+  background: linear-gradient(to bottom, rgba(255, 186, 120, 0.92) 0%, rgba(240, 142, 92, 0.62) 38%, rgba(196, 91, 43, 0.18) 78%, rgba(196, 91, 43, 0) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ——— Film Grain ——— */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Gradient hairline used between hero stage and telemetry */
+.hairline-fade {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(224, 122, 56, 0.35) 50%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+}
+
+/* Scroll cue — a light bead travelling down a hairline */
+@keyframes scrollCue {
+  0% { transform: translateY(-100%); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(220%); opacity: 0; }
+}
+.animate-scroll-cue {
+  animation: scrollCue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* ——— Accessibility ——— */
+:focus-visible {
+  outline: 2px solid rgba(224, 122, 56, 0.85);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Print styles for Executive Dossier */
 @media print {
   body {
@@ -377,4 +370,17 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
   header, footer, nav, button {
     display: none !important;
   }
+}
+
+
+/* Section break: a warm hairline that fades out toward the edges */
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.07) 18%, rgba(224, 122, 56, 0.28) 50%, rgba(255, 255, 255, 0.07) 82%, transparent 100%);
 }

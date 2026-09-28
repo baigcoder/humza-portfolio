@@ -1,0 +1,14 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sunGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E07A38" />
+      <stop offset="100%" stop-color="#C45B2B" />
+    </linearGradient>
+  </defs>
+  <!-- Outer radiating ticks -->
+  <circle cx="12" cy="12" r="10" stroke="url(#sunGrad)" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.85" />
+  <!-- Inner core -->
+  <circle cx="12" cy="12" r="5.5" fill="url(#sunGrad)" />
+  <!-- Aperture center hole -->
+  <circle cx="12" cy="12" r="2.2" fill="#0D0D0D" />
+</svg>

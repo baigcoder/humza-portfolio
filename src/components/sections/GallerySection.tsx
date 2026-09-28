@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TiltCard from "@/components/effects/TiltCard";
 import Magnetic from "@/components/effects/Magnetic";
+import SectionLabel from "@/components/layout/SectionLabel";
 
 export interface Dignitary {
   name: string;
@@ -124,7 +125,7 @@ export default function GallerySection() {
   return (
     <section
       id="engagements"
-      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06] overflow-hidden"
+      className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-[#E07A38]/[0.05] blur-3xl pointer-events-none" />
@@ -132,24 +133,18 @@ export default function GallerySection() {
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            06 · Leadership & High-Level Engagements
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="08" label="Leadership & High-Level Engagements" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-3xl">
               Dialogue at the{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 Apex
               </span>{" "}
               of Fiscal Policy.
             </h2>
-            <p className="text-xs text-white/50 max-w-xl font-light leading-relaxed mt-2">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-xl mt-4">
               Documenting strategic ministerial consultations, policymaker delegations, and institutional summits shaping Pakistan&apos;s economic architecture.
             </p>
           </div>

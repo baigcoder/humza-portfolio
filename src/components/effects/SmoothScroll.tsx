@@ -67,8 +67,19 @@ export default function SmoothScroll() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-            revealObserver.unobserve(entry.target);
+            const el = entry.target as HTMLElement;
+            // Stagger siblings that enter together (e.g. a row of grid cards)
+            const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
+            const index = siblings.filter((s) => s.classList.contains("reveal-init")).indexOf(el);
+            const delay = Math.min(Math.max(index, 0), 5) * 80;
+            el.style.transitionDelay = `${delay}ms`;
+            el.classList.add("reveal-visible");
+            revealObserver.unobserve(el);
+            // Hand the element back to its own transitions/transforms (hover lifts etc.)
+            window.setTimeout(() => {
+              el.classList.remove("reveal-init", "reveal-visible");
+              el.style.transitionDelay = "";
+            }, 900 + delay);
           }
         });
       },
@@ -118,7 +129,7 @@ export default function SmoothScroll() {
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className={`fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-[#0E0E0E]/90 backdrop-blur-xl border border-white/[0.14] hover:border-[#E07A38] text-white hover:text-[#E07A38] shadow-[0_8px_30px_rgba(0,0,0,0.85)] hover:shadow-[0_0_24px_rgba(224,122,56,0.4)] flex items-center justify-center transition-all duration-400 cursor-pointer group ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0E0E0E]/90 backdrop-blur-xl border border-white/[0.14] hover:border-[#E07A38] text-white hover:text-[#E07A38] shadow-[0_8px_30px_rgba(0,0,0,0.85)] hover:shadow-[0_0_24px_rgba(224,122,56,0.4)] flex items-center justify-center transition-all duration-400 cursor-pointer group ${
           showBackToTop
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"

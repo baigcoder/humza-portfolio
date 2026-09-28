@@ -2,29 +2,25 @@
 
 import React from "react";
 import TiltCard from "@/components/effects/TiltCard";
+import SectionLabel from "@/components/layout/SectionLabel";
+import { ChartColumn, ShieldCheck, Landmark, TrendingUp } from "lucide-react";
 
 export default function CredentialsSection() {
   return (
-    <section id="credentials" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] border-t border-white/[0.06]">
+    <section id="credentials" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider">
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            04 · Professional Credentials & Standards
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="05" label="Professional Credentials & Standards" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
             Certified authority.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
               Uncompromising
             </span>{" "}
             standards.
           </h2>
-          <p className="text-xs text-white/50 max-w-sm font-light leading-relaxed">
+          <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
             Globally recognized accreditations underpinning every deliverable.
           </p>
         </div>
@@ -49,8 +45,15 @@ export default function CredentialsSection() {
                   {/* Badge row */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-lg bg-[#E07A38]/15 border border-[#E07A38]/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                        <span className="text-lg font-bold text-[#E07A38]">A</span>
+                      {/* Stopgap ACCA wordmark — replace with the official logo file when available */}
+                      <div
+                        role="img"
+                        aria-label="ACCA"
+                        className="h-11 px-3 rounded-lg bg-white flex items-center justify-center shadow-[0_6px_18px_rgba(0,0,0,0.45)] ring-1 ring-white/20 group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <span aria-hidden className="font-sans text-[17px] font-extrabold tracking-[-0.02em] leading-none text-[#D6001C]">
+                          ACCA
+                        </span>
                       </div>
                       <div>
                         <span className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-bold block">ACCA-UK</span>
@@ -82,18 +85,18 @@ export default function CredentialsSection() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-[10px] font-mono text-white/40">
-                    <span className="flex items-center gap-1">
+                <div className="pt-3 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <div className="flex items-center gap-x-4 gap-y-1 flex-wrap text-[10px] font-mono text-white/40">
+                    <span className="flex items-center gap-1 whitespace-nowrap">
                       <svg className="w-3 h-3 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       CPD Compliant
                     </span>
                     <span>·</span>
-                    <span>Global Code of Ethics</span>
+                    <span className="whitespace-nowrap">Global Code of Ethics</span>
                   </div>
-                  <span className="text-[9px] font-mono text-[#E07A38]/75 font-semibold">ACTIVE & IN GOOD STANDING</span>
+                  <span className="text-[9px] font-mono text-[#E07A38]/75 font-semibold whitespace-nowrap">ACTIVE & IN GOOD STANDING</span>
                 </div>
               </div>
             </div>
@@ -166,17 +169,17 @@ export default function CredentialsSection() {
         {/* ── Secondary Competency Grid ──────────────────────────── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
           {[
-            { code: "IFRS", title: "IFRS / IAS Standards", body: "IFRS 9, 15, 16 & statutory disclosure frameworks", authority: "IASB", icon: "📊" },
-            { code: "ISA", title: "Auditing Standards", body: "Risk-based audit, COSO controls & fraud detection", authority: "IAASB", icon: "🛡" },
-            { code: "TAX-PK", title: "Pakistan Tax Law", body: "ITO 2001, FBR e-filing, PRA/SRB provincial sales tax", authority: "FBR", icon: "🏛" },
-            { code: "FM-VAL", title: "Financial Modelling", body: "3-statement models, DCF, WACC & transaction support", authority: "Corp. Finance", icon: "📈" },
+            { code: "IFRS", title: "IFRS / IAS Standards", body: "IFRS 9, 15, 16 & statutory disclosure frameworks", authority: "IASB", icon: ChartColumn },
+            { code: "ISA", title: "Auditing Standards", body: "Risk-based audit, COSO controls & fraud detection", authority: "IAASB", icon: ShieldCheck },
+            { code: "TAX-PK", title: "Pakistan Tax Law", body: "ITO 2001, FBR e-filing, PRA/SRB provincial sales tax", authority: "FBR", icon: Landmark },
+            { code: "FM-VAL", title: "Financial Modelling", body: "3-statement models, DCF, WACC & transaction support", authority: "Corp. Finance", icon: TrendingUp },
           ].map((c) => (
             <div
               key={c.code}
               className="group rounded-xl border border-white/[0.06] bg-[#0C0C0C] p-4 hover:border-white/[0.12] hover:bg-[#0E0E0E] transition-all duration-300"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="text-base">{c.icon}</span>
+                <c.icon className="w-4 h-4 text-[#E07A38]" strokeWidth={1.75} aria-hidden />
                 <span className="text-[9px] font-mono tracking-[0.15em] text-[#E07A38] uppercase font-bold">{c.code}</span>
               </div>
               <h4 className="text-sm font-bold text-white mb-1 leading-snug">{c.title}</h4>

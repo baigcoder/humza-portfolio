@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
 import { playTactileSound } from "@/components/effects/SoundEffects";
+import SectionLabel from "@/components/layout/SectionLabel";
+import { Zap, Landmark, ChartColumn } from "lucide-react";
 
 type ToolTab = "working-capital" | "super-tax" | "ifrs-16";
 
@@ -94,70 +96,64 @@ export const MetricsBentoSection: React.FC = () => {
   return (
     <section
       id="simulator"
-      className="relative w-full py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] border-t border-white/[0.06] overflow-hidden"
+      className="relative w-full py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider overflow-hidden"
     >
       {/* Background ambient warm illumination */}
       <div className="absolute top-1/2 left-1/3 w-[550px] h-[550px] rounded-full bg-[#E07A38]/[0.04] blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-[0.25em] text-[#E07A38] uppercase font-semibold">
-            03 · Capital Engineering & Advisory Toolkit
-          </span>
-          <span className="h-[1px] w-12 bg-gradient-to-r from-[#E07A38]/60 to-transparent" />
-        </div>
+        <SectionLabel index="03" label="Capital Engineering & Advisory Toolkit" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
               Tangible liquidity.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
                 Engineered
               </span>{" "}
               capital impact.
             </h2>
-            <p className="text-xs text-white/50 max-w-lg font-light leading-relaxed mt-1">
+            <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-lg mt-4">
               Select an institutional calculation engine below to model working capital liquidity, Pakistan Section 4C Super Tax liabilities, or IFRS 16 balance sheet capitalization.
             </p>
           </div>
 
           {/* Master Tool Switcher Tabs */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-[#0E0E0E] border border-white/[0.08] overflow-x-auto max-w-full">
+          <div className="grid grid-cols-3 sm:flex sm:items-center gap-1.5 p-1.5 rounded-xl bg-[#0E0E0E] border border-white/[0.08] w-full sm:w-auto">
             <button
               onClick={() => handleTabChange("working-capital")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "working-capital"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>⚡</span>
+              <Zap className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>Working Capital DSO</span>
             </button>
 
             <button
               onClick={() => handleTabChange("super-tax")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "super-tax"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>🏛</span>
+              <Landmark className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>Super Tax 4C (FBR)</span>
             </button>
 
             <button
               onClick={() => handleTabChange("ifrs-16")}
-              className={`px-3.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "ifrs-16"
                   ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
-              <span>📊</span>
+              <ChartColumn className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
               <span>IFRS 16 Lease Engine</span>
             </button>
           </div>
@@ -184,7 +180,7 @@ export const MetricsBentoSection: React.FC = () => {
                   <div className="flex items-center gap-1 p-1 rounded-full bg-[#121212] border border-white/[0.06]">
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("PKR"); setRevenue(3.5); }}
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
                         currency === "PKR" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >
@@ -192,7 +188,7 @@ export const MetricsBentoSection: React.FC = () => {
                     </button>
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("USD"); setRevenue(12); }}
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
                         currency === "USD" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >
@@ -307,7 +303,7 @@ export const MetricsBentoSection: React.FC = () => {
                     <span className="text-xs text-white/50 block mb-1">
                       Non-Dilutive Free Cash Injected to Treasury:
                     </span>
-                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 text-glow-amber">
                       {formattedCash}
                     </div>
                     <p className="text-[11px] text-white/60 leading-relaxed font-light mb-6">
@@ -481,7 +477,7 @@ export const MetricsBentoSection: React.FC = () => {
                     <span className="text-xs text-white/50 block mb-1">
                       Estimated Combined Annual Tax Due to FBR:
                     </span>
-                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 text-glow-amber">
                       ₨ {totalTaxPKR.toFixed(1)}M
                     </div>
                     <p className="text-[11px] text-white/60 leading-relaxed font-light mb-6">
@@ -649,7 +645,7 @@ export const MetricsBentoSection: React.FC = () => {
                     <span className="text-xs text-white/50 block mb-1">
                       Recognized Right-of-Use (ROU) Asset on Balance Sheet:
                     </span>
-                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 drop-shadow-[0_0_24px_rgba(224,122,56,0.35)]">
+                    <div className="text-4xl sm:text-5xl font-bold font-sans text-white tracking-tight mb-2 text-glow-amber">
                       ₨ {capitalizedROU}M
                     </div>
                     <p className="text-[11px] text-white/60 leading-relaxed font-light mb-6">

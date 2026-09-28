@@ -170,6 +170,7 @@ export default function RootLayout({
       </head>
       <body className="bg-[#050505] text-[#FAF8F3] font-sans antialiased min-h-screen">
         {children}
+        <div aria-hidden className="grain fixed inset-0 z-[80] pointer-events-none opacity-[0.045]" />
       </body>
     </html>
   );
