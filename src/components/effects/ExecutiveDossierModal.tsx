@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { WHATSAPP_DISPLAY_NUMBER, WHATSAPP_LINK } from "@/lib/contact";
 
 export default function ExecutiveDossierModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,8 @@ export default function ExecutiveDossierModal() {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[1200] flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/85 backdrop-blur-xl animate-fade-in select-none"
+      aria-labelledby="dossier-title"
+      className="dossier-print-root fixed inset-0 z-[1200] flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/85 backdrop-blur-xl animate-fade-in select-none"
       onClick={() => setIsOpen(false)}
     >
       {toastMsg && (
@@ -54,20 +56,20 @@ export default function ExecutiveDossierModal() {
       )}
 
       <div
-        className="relative max-w-4xl w-full max-h-[92vh] rounded-2xl bg-[#0C0C0C] border border-white/[0.14] shadow-[0_24px_80px_rgba(0,0,0,0.95),0_0_50px_rgba(198,149,108,0.15)] overflow-hidden flex flex-col select-text"
+        className="dossier-print-sheet relative max-w-4xl w-full max-h-[92vh] rounded-2xl bg-[#0C0C0C] border border-white/[0.14] shadow-[0_24px_80px_rgba(0,0,0,0.95),0_0_50px_rgba(198,149,108,0.15)] overflow-hidden flex flex-col select-text"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Dossier Top Bar */}
-        <div className="px-6 py-4 border-b border-white/[0.08] bg-[#111111] flex items-center justify-between gap-4">
+        <div className="dossier-print-toolbar px-4 sm:px-6 py-3 sm:py-4 border-b border-white/[0.08] bg-[#111111] flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 relative flex-shrink-0">
               <Image src="/images/sun-emblem.svg" alt="Emblem" width={32} height={32} />
             </div>
             <div>
-              <span className="text-[10px] font-mono tracking-[0.25em] text-[#C6956C] uppercase font-bold block">
-                EXECUTIVE CURRICULUM VITAE
+              <span id="dossier-title" className="text-[9px] sm:text-[10px] font-mono tracking-[0.16em] sm:tracking-[0.25em] text-[#C6956C] uppercase font-bold block">
+                PROFESSIONAL CV
               </span>
-              <span className="text-xs text-white/60 font-mono">
+              <span className="hidden sm:block text-xs text-white/60 font-mono">
                 Professional profile · Lahore, Pakistan
               </span>
             </div>
@@ -76,17 +78,18 @@ export default function ExecutiveDossierModal() {
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="px-3.5 py-1.5 rounded-full text-[11px] font-mono font-semibold text-white bg-white/[0.08] hover:bg-[#C6956C] hover:text-[#0A0A0A] border border-white/[0.1] hover:border-[#C6956C] transition-all flex items-center gap-1.5 cursor-pointer"
+              title="Print or save as PDF"
+              className="min-h-10 px-3 sm:px-3.5 py-2 rounded-full text-[10px] sm:text-[11px] font-mono font-semibold text-white bg-white/[0.08] hover:bg-[#C6956C] hover:text-[#0A0A0A] border border-white/[0.1] hover:border-[#C6956C] transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
             >
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
               </svg>
-              <span>Print / Save PDF</span>
+              <span>Save PDF</span>
             </button>
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close"
-              className="w-8 h-8 rounded-full border border-white/[0.1] text-white/50 hover:text-white hover:border-white/30 flex items-center justify-center transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-full border border-white/[0.1] text-white/60 hover:text-white hover:border-white/30 flex items-center justify-center transition-colors cursor-pointer"
             >
               ✕
             </button>
@@ -94,7 +97,7 @@ export default function ExecutiveDossierModal() {
         </div>
 
         {/* Dossier Body — Scrollable */}
-        <div className="p-6 sm:p-8 md:p-10 overflow-y-auto space-y-8 font-sans">
+        <div className="dossier-print-content p-5 sm:p-8 md:p-10 overflow-y-auto space-y-8 font-sans">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-6 border-b border-white/[0.08]">
             <div>
@@ -130,6 +133,17 @@ export default function ExecutiveDossierModal() {
                 >
                   humza.acca@advisory.pk
                 </button>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-white/40">WhatsApp:</span>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#25D366] hover:underline"
+                >
+                  {WHATSAPP_DISPLAY_NUMBER}
+                </a>
               </div>
             </div>
           </div>
@@ -207,7 +221,7 @@ export default function ExecutiveDossierModal() {
                   <span className="text-xs font-bold text-white">Corporate Tax Restructuring & FBR Strategy</span>
                   <span className="text-[11px] font-mono text-white/40">Multi-Entity FMCG & Consumer Goods Holding</span>
                 </div>
-                <span className="text-xs font-mono text-[#C6956C] font-semibold">₨15M+ Tax Liability Recovered</span>
+                <span className="text-xs font-mono text-[#C6956C] font-semibold">₨15M+ Annual Tax Saved</span>
               </div>
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
@@ -222,7 +236,7 @@ export default function ExecutiveDossierModal() {
           {/* Footer Note */}
           <div className="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-white/40">
             <span>Upholding the International ACCA Code of Ethics and Conduct.</span>
-            <span className="text-[#C6956C]">Verified Practitioner Status</span>
+            <span className="text-[#C6956C]">Professional Profile · Lahore, Pakistan</span>
           </div>
         </div>
       </div>
