@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Credentials", href: "#credentials" },
-  { label: "Journal", href: "#journal" },
+  { label: "Resources", href: "#resources" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -28,13 +28,10 @@ export default function SiteHeader() {
     const sectionIds = [
       "about",
       "services",
-      "simulator",
       "work",
       "credentials",
-      "journal",
       "endorsements",
-      "engagements",
-      "faq",
+      "resources",
       "contact",
     ];
     const handleSectionScroll = () => {

@@ -2,10 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Counter from "@/components/effects/Counter";
-import TiltCard from "@/components/effects/TiltCard";
 import CaseStudyDrawer from "@/components/sections/CaseStudyDrawer";
-import { playTactileSound } from "@/components/effects/SoundEffects";
 import SectionLabel from "@/components/layout/SectionLabel";
 
 const caseStudies = [
@@ -73,6 +70,7 @@ const caseStudies = [
 
 export default function WorkSection() {
   const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null);
+  const openCase = (id: string) => setSelectedCaseId(id);
 
   return (
     <section id="work" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider">
@@ -93,28 +91,34 @@ export default function WorkSection() {
           </p>
         </div>
 
-        {/* ── Compact Case Grid with 3D Tilt & Animated Metric Tickers ─ */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Clear, stable case summaries; each card opens the full engagement dossier. */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
           {caseStudies.map((cs) => (
-            <TiltCard key={cs.id} maxTilt={3.5} scale={1.01} className="h-full">
-              <div
-                onClick={() => {
-                  playTactileSound("modal");
-                  setSelectedCaseId(cs.id);
+              <article
+                key={cs.id}
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                onClick={() => openCase(cs.id)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openCase(cs.id);
+                  }
                 }}
-                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#C6956C]/50 hover:shadow-[0_16px_44px_rgba(198,149,108,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+                className="group relative h-full rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#11100F] to-[#090909] hover:border-[#C6956C]/35 hover:shadow-[0_18px_48px_rgba(0,0,0,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6956C]/70 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 {/* Corner Architectural Crosshairs (+) */}
 
                 {/* Hover glow */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#C6956C]/[0.08] rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <div className="relative p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                <div className="relative p-6 sm:p-7 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Top row: Category + Year + Case ID */}
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
-                        <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-semibold px-2 py-0.5 rounded bg-[#C6956C]/[0.08] border border-[#C6956C]/20">
+                        <span className="text-[10px] font-mono tracking-[0.16em] text-[#D4A47C] uppercase font-semibold px-2.5 py-1 rounded-md bg-[#C6956C]/[0.08] border border-[#C6956C]/20">
                           {cs.category}
                         </span>
                         <span className="text-[10px] font-mono text-white/40">{cs.year}</span>
@@ -123,24 +127,24 @@ export default function WorkSection() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#FAF8F3] transition-colors leading-snug mb-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-[#FAF8F3] transition-colors leading-snug mb-1.5">
                       {cs.title}
                     </h3>
 
                     {/* Client */}
-                    <p className="text-[10px] font-mono text-white/45 mb-4">
+                    <p className="text-xs font-mono text-white/50 mb-5">
                       {cs.client}
                     </p>
 
                     {/* Challenge → Solution — single compact row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                      <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
-                        <span className="text-[8px] font-mono tracking-[0.15em] text-[#C6956C]/70 uppercase block mb-1">Challenge</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.challenge}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                      <div className="rounded-xl bg-black/20 border border-white/[0.06] p-4 group-hover:border-white/[0.1] transition-colors">
+                        <span className="text-[9px] font-mono tracking-[0.15em] text-[#D1A27B] uppercase block mb-1.5">Challenge</span>
+                        <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed font-light sm:line-clamp-3">{cs.challenge}</p>
                       </div>
-                      <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
-                        <span className="text-[8px] font-mono tracking-[0.15em] text-[#10B981]/70 uppercase block mb-1">Intervention</span>
-                        <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.solution}</p>
+                      <div className="rounded-xl bg-black/20 border border-white/[0.06] p-4 group-hover:border-white/[0.1] transition-colors">
+                        <span className="text-[9px] font-mono tracking-[0.15em] text-[#D1A27B] uppercase block mb-1.5">Approach</span>
+                        <p className="text-xs sm:text-[13px] text-white/70 leading-relaxed font-light sm:line-clamp-3">{cs.solution}</p>
                       </div>
                     </div>
                   </div>
@@ -149,15 +153,10 @@ export default function WorkSection() {
                   <div className="flex items-center justify-between gap-3 pt-3 border-t border-white/[0.06]">
                     {/* Animated Metric Ticker */}
                     <div className="flex items-center gap-3">
-                      <span className="text-xl sm:text-2xl font-bold font-sans text-[#C6956C] leading-none drop-shadow-[0_0_12px_rgba(198,149,108,0.25)]">
-                        <Counter
-                          value={cs.metricValue}
-                          prefix={cs.metricPrefix}
-                          suffix={cs.metricSuffix}
-                          decimals={cs.metricDecimals}
-                        />
+                      <span className="text-xl sm:text-2xl font-semibold font-sans text-[#D8AD8B] leading-none">
+                        {cs.metricPrefix}{cs.metricValue.toLocaleString("en", { minimumFractionDigits: cs.metricDecimals, maximumFractionDigits: cs.metricDecimals })}{cs.metricSuffix}
                       </span>
-                      <span className="text-[9px] font-mono text-white/45 uppercase tracking-wider leading-tight max-w-[120px]">
+                      <span className="text-[10px] font-mono text-white/55 uppercase tracking-wider leading-tight max-w-[130px]">
                         {cs.metricLabel}
                       </span>
                     </div>
@@ -175,15 +174,14 @@ export default function WorkSection() {
                         ))}
                       </div>
 
-                      <span className="text-[10px] font-mono text-[#C6956C] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold whitespace-nowrap">
-                        <span>Dossier</span>
+                      <span className="text-[11px] font-medium text-white/65 group-hover:text-[#D8AD8B] group-hover:translate-x-0.5 transition-all inline-flex items-center gap-2 whitespace-nowrap">
+                        <span>View case</span>
                         <span>→</span>
                       </span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </TiltCard>
+              </article>
           ))}
         </div>
 
