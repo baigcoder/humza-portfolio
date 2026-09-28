@@ -64,6 +64,16 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = `Advisory inquiry: ${formData.scope}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Organization: ${formData.organization}`,
+      `Email: ${formData.email}`,
+      `Engagement focus: ${formData.scope}`,
+      "",
+      formData.message,
+    ].join("\n");
+    window.location.href = `mailto:humza.acca@advisory.pk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setFormSubmitted(true);
   };
 
@@ -71,44 +81,39 @@ export default function ContactSection() {
     <section id="contact" className="relative py-28 md:py-36 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden">
       {/* Toast Alert */}
       {toastMsg && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#E07A38]/50 shadow-[0_8px_30px_rgba(224,122,56,0.3)] animate-fade-in flex items-center gap-2">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#C6956C]/50 shadow-[0_8px_30px_rgba(198,149,108,0.3)] animate-fade-in flex items-center gap-2">
           <span>{toastMsg}</span>
         </div>
       )}
 
       {/* Background radial glow */}
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[500px] rounded-full bg-[#E07A38]/[0.05] blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[500px] rounded-full bg-[#C6956C]/[0.05] blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
-        <SectionLabel index="10" label="Strategic Engagement" />
+        <SectionLabel index="10" label="Contact" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Column: Direct Contact & Advisory Information */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight mb-4">
-                Initiate a dialogue.{" "}
-                <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                  Engineer
+              <h2 className="section-title text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight mb-4">
+                Let’s talk about{" "}
+                <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                  what’s next.
                 </span>{" "}
-                value.
               </h2>
               <p className="text-sm text-white/60 leading-relaxed font-light">
-                Available for selective retained advisory mandates, corporate audit committees, and high-impact transaction consulting.
+                Share the decision or challenge you’re working through. We’ll discuss whether the scope is a fit.
               </p>
             </div>
 
             {/* Live Telemetry Card */}
-            <div className="group relative p-6 rounded-2xl bg-[#0E0E0E] border border-white/[0.08] hover:border-[#E07A38]/40 transition-all duration-300 space-y-4 shadow-xl">
+            <div className="group relative p-6 rounded-2xl bg-[#0E0E0E] border border-white/[0.08] hover:border-[#C6956C]/40 transition-all duration-300 space-y-4 shadow-xl">
               {/* Corner Architectural Crosshairs (+) */}
-              <span className="absolute top-2.5 left-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute top-2.5 right-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-2.5 left-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-2.5 right-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E07A38] font-semibold">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#C6956C] font-semibold">
                   Practicing Headquarters
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full text-[9px] font-mono text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 flex items-center gap-1.5 shadow-[0_0_12px_rgba(16,185,129,0.15)]">
@@ -130,9 +135,9 @@ export default function ContactSection() {
 
             {/* Direct Channels */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-[#E07A38]/40 hover:bg-[#120E0B] transition-all group">
+              <div className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-[#C6956C]/40 hover:bg-[#120E0B] transition-all group">
                 <a href="mailto:humza.acca@advisory.pk" className="flex-1">
-                  <div className="text-[10px] font-mono text-[#E07A38] uppercase font-semibold">Direct Email</div>
+                  <div className="text-[10px] font-mono text-[#C6956C] uppercase font-semibold">Email</div>
                   <div className="text-sm font-medium text-white group-hover:text-[#FAF8F5] transition-colors">
                     humza.acca@advisory.pk
                   </div>
@@ -147,7 +152,7 @@ export default function ContactSection() {
                   </button>
                   <a
                     href="mailto:humza.acca@advisory.pk"
-                    className="w-7 h-7 rounded-full bg-white/[0.04] group-hover:bg-[#E07A38] group-hover:text-[#050505] flex items-center justify-center text-xs text-white/40 transition-all duration-300 group-hover:translate-x-0.5"
+                    className="w-7 h-7 rounded-full bg-white/[0.04] group-hover:bg-[#C6956C] group-hover:text-[#050505] flex items-center justify-center text-xs text-white/40 transition-all duration-300 group-hover:translate-x-0.5"
                     aria-label="Send Email"
                   >
                     ↗
@@ -155,22 +160,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-[#E07A38]/40 hover:bg-[#120E0B] transition-all group"
-              >
-                <div>
-                  <div className="text-[10px] font-mono text-[#E07A38] uppercase font-semibold">Professional Network</div>
-                  <div className="text-sm font-medium text-white group-hover:text-[#FAF8F5] transition-colors">
-                    LinkedIn Verified Profile
-                  </div>
-                </div>
-                <span className="w-7 h-7 rounded-full bg-white/[0.04] group-hover:bg-[#E07A38] group-hover:text-[#050505] flex items-center justify-center text-xs text-white/40 transition-all duration-300 group-hover:translate-x-0.5">
-                  ↗
-                </span>
-              </a>
             </div>
           </div>
 
@@ -178,24 +167,21 @@ export default function ContactSection() {
           <div className="lg:col-span-7">
             <div className="group relative p-8 sm:p-10 rounded-2xl md:rounded-3xl bg-[#0E0E0E] border border-white/[0.08] shadow-2xl hover:border-white/[0.16] transition-all duration-300">
               {/* Corner Architectural Crosshairs (+) */}
-              <span className="absolute top-3 left-3 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute top-3 right-3 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-3 left-3 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-3 right-3 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
-              <h3 className="text-xl font-bold text-white mb-2">Confidential Advisory Brief</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Advisory inquiry</h3>
               <p className="text-xs text-white/50 mb-6 font-light">
-                Submit details regarding your organization's financial architecture or advisory scope.
+                Add a little context and we’ll prepare an email draft for you to review and send.
               </p>
 
               {formSubmitted ? (
-                <div className="p-8 rounded-xl bg-[#141414] border border-[#E07A38]/40 text-center space-y-3 shadow-[0_0_30px_rgba(224,122,56,0.1)]">
-                  <div className="w-12 h-12 rounded-full bg-[#E07A38]/20 border border-[#E07A38] text-[#E07A38] flex items-center justify-center mx-auto text-xl shadow-[0_0_20px_rgba(224,122,56,0.3)]">
+                <div className="p-8 rounded-xl bg-[#141414] border border-[#C6956C]/40 text-center space-y-3 shadow-[0_0_30px_rgba(198,149,108,0.1)]">
+                  <div className="w-12 h-12 rounded-full bg-[#C6956C]/20 border border-[#C6956C] text-[#C6956C] flex items-center justify-center mx-auto text-xl shadow-[0_0_20px_rgba(198,149,108,0.3)]">
                     ✓
                   </div>
-                  <div className="text-base font-bold text-white">Brief Received Successfully</div>
+                  <div className="text-base font-bold text-white">Your email draft is ready</div>
                   <p className="text-xs text-white/60 max-w-sm mx-auto">
-                    Thank you. Your advisory brief has been logged. Humza will review your requirements and respond within 24 business hours.
+                    Review and send the message from your email app. If it did not open, write directly to{" "}
+                    <a className="text-[#C6956C] underline underline-offset-2" href="mailto:humza.acca@advisory.pk">humza.acca@advisory.pk</a>.
                   </p>
                 </div>
               ) : (
@@ -211,7 +197,7 @@ export default function ContactSection() {
                         placeholder="e.g. Tariq Malik, Managing Director"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#E07A38] focus:ring-2 focus:ring-[#E07A38]/30 transition-all placeholder:text-white/30"
+                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#C6956C] focus:ring-2 focus:ring-[#C6956C]/30 transition-all placeholder:text-white/30"
                       />
                     </div>
 
@@ -225,7 +211,7 @@ export default function ContactSection() {
                         placeholder="tariq@enterprise.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#E07A38] focus:ring-2 focus:ring-[#E07A38]/30 transition-all placeholder:text-white/30"
+                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#C6956C] focus:ring-2 focus:ring-[#C6956C]/30 transition-all placeholder:text-white/30"
                       />
                     </div>
                   </div>
@@ -241,7 +227,7 @@ export default function ContactSection() {
                         placeholder="e.g. Apex Industrial Holdings"
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#E07A38] focus:ring-2 focus:ring-[#E07A38]/30 transition-all placeholder:text-white/30"
+                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#C6956C] focus:ring-2 focus:ring-[#C6956C]/30 transition-all placeholder:text-white/30"
                       />
                     </div>
 
@@ -252,7 +238,7 @@ export default function ContactSection() {
                       <select
                         value={formData.scope}
                         onChange={(e) => setFormData({ ...formData, scope: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#E07A38] focus:ring-2 focus:ring-[#E07A38]/30 transition-all cursor-pointer"
+                        className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#C6956C] focus:ring-2 focus:ring-[#C6956C]/30 transition-all cursor-pointer"
                       >
                         <option value="IFRS Financial Reporting">IFRS Financial Reporting (Standards 9, 15, 16)</option>
                         <option value="FBR Tax Strategy & Compliance">FBR Tax Strategy & Compliance (ITO 2001)</option>
@@ -277,17 +263,17 @@ export default function ContactSection() {
                       placeholder="Outline your timeline, organizational complexity, and core deliverables required..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#E07A38] focus:ring-2 focus:ring-[#E07A38]/30 transition-all resize-none placeholder:text-white/30"
+                      className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.09] text-white text-sm focus:outline-none focus:border-[#C6956C] focus:ring-2 focus:ring-[#C6956C]/30 transition-all resize-none placeholder:text-white/30"
                     />
                   </div>
 
                   <Magnetic strength={0.2} className="w-full">
                     <button
                       type="submit"
-                      className="w-full py-4 px-8 rounded-full bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs sm:text-[13px] tracking-wide shadow-[0_0_24px_rgba(255,255,255,0.35),0_8px_20px_rgba(0,0,0,0.7)] hover:shadow-[0_0_36px_rgba(224,122,56,0.45)] transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer group/btn"
+                      className="w-full py-4 px-8 rounded-full bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs sm:text-[13px] tracking-wide shadow-[0_0_24px_rgba(255,255,255,0.35),0_8px_20px_rgba(0,0,0,0.7)] hover:shadow-[0_0_36px_rgba(198,149,108,0.45)] transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer group/btn"
                     >
-                      <span>Submit Advisory Brief</span>
-                      <span className="text-[#E07A38] transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+                      <span>Prepare email draft</span>
+                      <span className="text-[#C6956C] transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
                     </button>
                   </Magnetic>
                 </form>

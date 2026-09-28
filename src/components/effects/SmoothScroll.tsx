@@ -113,7 +113,7 @@ export default function SmoothScroll() {
     <>
       {/* ── Precision Scroll Progress Hairline ── */}
       <div
-        className="fixed top-0 left-0 h-[2.5px] z-[999] pointer-events-none bg-gradient-to-r from-[#E07A38] via-[#FF8A3D] to-[#E07A38] shadow-[0_0_12px_rgba(224,122,56,0.7)] transition-all duration-75 ease-out"
+        className="fixed top-0 left-0 h-[2.5px] z-[999] pointer-events-none bg-gradient-to-r from-[#C6956C] via-[#D9A578] to-[#C6956C] shadow-[0_0_12px_rgba(198,149,108,0.7)] transition-all duration-75 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -121,7 +121,7 @@ export default function SmoothScroll() {
       <div
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-700 hidden lg:block"
         style={{
-          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(224, 122, 56, 0.032), transparent 75%)`,
+          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(198,149,108, 0.032), transparent 75%)`,
         }}
       />
 
@@ -129,7 +129,7 @@ export default function SmoothScroll() {
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0E0E0E]/90 backdrop-blur-xl border border-white/[0.14] hover:border-[#E07A38] text-white hover:text-[#E07A38] shadow-[0_8px_30px_rgba(0,0,0,0.85)] hover:shadow-[0_0_24px_rgba(224,122,56,0.4)] flex items-center justify-center transition-all duration-400 cursor-pointer group ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0E0E0E]/90 backdrop-blur-xl border border-white/[0.14] hover:border-[#C6956C] text-white hover:text-[#C6956C] shadow-[0_8px_30px_rgba(0,0,0,0.85)] hover:shadow-[0_0_24px_rgba(198,149,108,0.4)] flex items-center justify-center transition-all duration-400 cursor-pointer group ${
           showBackToTop
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"

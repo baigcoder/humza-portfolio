@@ -95,24 +95,24 @@ export default function FaqSection() {
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-              Engagement terms.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                Institutional
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+              Clear terms.{" "}
+              <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                Thoughtful
               </span>{" "}
-              clarity.
+              advice.
             </h2>
             <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
-              Standard commercial frameworks, Big-4 audit coordination, FBR tax defense, and bilateral confidentiality protocols.
+              How engagements are scoped, delivered, and kept confidential.
             </p>
           </div>
 
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] font-mono tracking-wide text-white/70 border border-white/[0.1] hover:border-[#E07A38]/50 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] font-mono tracking-wide text-white/70 border border-white/[0.1] hover:border-[#C6956C]/50 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] transition-all"
           >
             <span>Have a Specific Mandate Question?</span>
-            <span className="text-[#E07A38]">→</span>
+            <span className="text-[#C6956C]">→</span>
           </Link>
         </div>
 
@@ -125,7 +125,7 @@ export default function FaqSection() {
                 key={faq.id}
                 className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-[#0A0A0A] border-[#E07A38]/40 shadow-[0_8px_30px_rgba(224,122,56,0.08)]"
+                    ? "bg-[#0A0A0A] border-[#C6956C]/40 shadow-[0_8px_30px_rgba(198,149,108,0.08)]"
                     : "bg-[#080808] border-white/[0.06] hover:border-white/[0.12]"
                 }`}
               >
@@ -136,7 +136,7 @@ export default function FaqSection() {
                 >
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-[9px] font-mono font-bold tracking-widest text-[#E07A38] uppercase">
+                      <span className="text-[9px] font-mono font-bold tracking-widest text-[#C6956C] uppercase">
                         {faq.category}
                       </span>
                       <span className="text-[9px] font-mono text-white/30">| REF {faq.id}</span>
@@ -149,7 +149,7 @@ export default function FaqSection() {
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center border text-xs font-mono transition-transform duration-300 flex-shrink-0 mt-1 ${
                       isOpen
-                        ? "bg-[#E07A38] text-[#0A0A0A] border-[#E07A38] rotate-45"
+                        ? "bg-[#C6956C] text-[#0A0A0A] border-[#C6956C] rotate-45"
                         : "bg-white/[0.03] text-white/50 border-white/[0.1]"
                     }`}
                   >

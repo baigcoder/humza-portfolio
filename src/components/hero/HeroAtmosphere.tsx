@@ -7,7 +7,7 @@ export const HeroAtmosphere: React.FC = () => {
       <div 
         className="absolute top-[8%] left-1/2 -translate-x-[45%] w-[850px] h-[680px] rounded-full blur-[90px] opacity-90"
         style={{
-          background: "radial-gradient(ellipse at center, rgba(224, 122, 56, 0.92) 0%, rgba(217, 119, 54, 0.82) 28%, rgba(196, 91, 43, 0.6) 48%, rgba(74, 23, 24, 0.75) 68%, transparent 82%)",
+          background: "radial-gradient(ellipse at center, rgba(198,149,108, 0.92) 0%, rgba(217, 119, 54, 0.82) 28%, rgba(196, 91, 43, 0.6) 48%, rgba(74, 23, 24, 0.75) 68%, transparent 82%)",
         }}
       />
 

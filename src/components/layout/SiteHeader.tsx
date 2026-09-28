@@ -3,18 +3,15 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { isSoundEnabled, setSoundEnabled, playTactileSound } from "@/components/effects/SoundEffects";
-import { VolumeX, Search } from "lucide-react";
+import { playTactileSound } from "@/components/effects/SoundEffects";
+import { Search } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Engine", href: "#simulator" },
-  { label: "Cases", href: "#work" },
+  { label: "Work", href: "#work" },
   { label: "Credentials", href: "#credentials" },
   { label: "Journal", href: "#journal" },
-  { label: "Endorsements", href: "#endorsements" },
-  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -22,17 +19,8 @@ export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [soundOn, setSoundOn] = useState(false);
 
   useEffect(() => {
-    setSoundOn(isSoundEnabled());
-
-    const handleSoundState = (e: Event) => {
-      const custom = e as CustomEvent<boolean>;
-      setSoundOn(custom.detail);
-    };
-    window.addEventListener("humza-sound-state-change", handleSoundState);
-
     const onScroll = () => setScrolled(window.scrollY > 25);
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -71,7 +59,6 @@ export default function SiteHeader() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", handleSectionScroll);
-      window.removeEventListener("humza-sound-state-change", handleSoundState);
     };
   }, []);
 
@@ -120,7 +107,7 @@ export default function SiteHeader() {
             <span className="text-[13.5px] font-bold tracking-tight text-white group-hover:text-[#FAF8F3] transition-colors leading-none font-sans">
               HUMZA
             </span>
-            <span className="text-[9px] font-mono tracking-[0.22em] text-[#E07A38] uppercase font-medium mt-1 leading-none">
+            <span className="text-[9px] font-mono tracking-[0.22em] text-[#C6956C] uppercase font-medium mt-1 leading-none">
               ACCA · FINANCE
             </span>
           </div>
@@ -148,34 +135,6 @@ export default function SiteHeader() {
 
         {/* Right Area: Controls & Mobile Hamburger */}
         <div className="flex items-center gap-2 sm:gap-2.5">
-          {/* Tactile Audio Sound Toggle Pill */}
-          <button
-            onClick={() => {
-              const next = !soundOn;
-              setSoundOn(next);
-              setSoundEnabled(next);
-            }}
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border text-[10px] font-mono transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.5)] ${
-              soundOn
-                ? "bg-[#10B981]/10 border-[#10B981]/30 text-[#10B981]"
-                : "bg-white/[0.04] border-white/[0.08] text-white/50 hover:text-white"
-            }`}
-            title={soundOn ? "Mute Tactile Haptic Audio" : "Enable Tactile Haptic Audio"}
-          >
-            {soundOn ? (
-              <span className="flex items-center gap-0.5">
-                <span className="w-1 h-2 bg-[#10B981] rounded-full animate-pulse" />
-                <span className="w-1 h-3 bg-[#10B981] rounded-full animate-pulse delay-75" />
-                <span className="w-1 h-1.5 bg-[#10B981] rounded-full animate-pulse delay-150" />
-              </span>
-            ) : (
-              <VolumeX className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
-            )}
-            <span className="hidden sm:inline font-bold">
-              {soundOn ? "AUDIO ON" : "AUDIO"}
-            </span>
-          </button>
-
           <button
             type="button"
             onClick={() => {
@@ -184,7 +143,7 @@ export default function SiteHeader() {
             }}
             aria-label="Open quick search"
             title="Quick search · Ctrl K"
-            className="hidden 2xl:inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.035] text-white/60 transition-colors hover:border-[#E07A38]/45 hover:text-white"
+            className="hidden 2xl:inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.035] text-white/60 transition-colors hover:border-[#C6956C]/45 hover:text-white"
           >
             <Search className="h-3.5 w-3.5" aria-hidden />
           </button>
@@ -195,19 +154,19 @@ export default function SiteHeader() {
               playTactileSound("modal");
               window.dispatchEvent(new CustomEvent("open-dossier"));
             }}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-[#E07A38]/15 border border-white/[0.08] hover:border-[#E07A38]/40 text-[11px] font-mono text-white/80 hover:text-white transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-[#C6956C]/15 border border-white/[0.08] hover:border-[#C6956C]/40 text-[11px] font-mono text-white/80 hover:text-white transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]" />
             <span>Dossier</span>
           </button>
 
           {/* Primary call to action */}
           <Link
             href="#contact"
-            className="group hidden xl:inline-flex items-center gap-1.5 pl-4 pr-3.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[12.5px] font-semibold tracking-wide shadow-[0_0_18px_rgba(255,255,255,0.18)] hover:shadow-[0_0_24px_rgba(224,122,56,0.45)] transition-shadow duration-300"
+            className="group hidden xl:inline-flex items-center gap-1.5 pl-4 pr-3.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[12.5px] font-semibold tracking-wide shadow-[0_0_18px_rgba(255,255,255,0.18)] hover:shadow-[0_0_24px_rgba(198,149,108,0.45)] transition-shadow duration-300"
           >
             <span>Let&apos;s Talk</span>
-            <span className="text-[#E07A38] transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+            <span className="text-[#C6956C] transition-transform duration-300 group-hover:translate-x-0.5">→</span>
           </Link>
 
           {/* Mobile/Tablet Hamburger */}
@@ -238,7 +197,7 @@ export default function SiteHeader() {
           <div
             aria-hidden
             onClick={() => setMenuOpen(false)}
-            className="absolute inset-0 bg-[#050505] bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(224,122,56,0.12),transparent_70%)]"
+            className="absolute inset-0 bg-[#050505] bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(198,149,108,0.12),transparent_70%)]"
           />
           <nav
             id="mobile-menu"
@@ -257,13 +216,13 @@ export default function SiteHeader() {
                       className="group flex items-center gap-4 py-3.5 sm:py-4 anim-fade-up anim-initial"
                       style={{ animationDelay: `${40 + i * 35}ms` }}
                     >
-                      <span className={`w-6 text-[10px] font-mono tabular-nums ${isActive ? "text-[#E07A38]" : "text-white/30"}`}>
+                      <span className={`w-6 text-[10px] font-mono tabular-nums ${isActive ? "text-[#C6956C]" : "text-white/30"}`}>
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className={`flex-1 text-[22px] sm:text-2xl font-semibold tracking-[-0.02em] transition-colors ${isActive ? "text-white" : "text-white/75 group-hover:text-white"}`}>
                         {l.label}
                       </span>
-                      <span className={`text-sm transition-transform duration-300 group-hover:translate-x-1 ${isActive ? "text-[#E07A38]" : "text-white/25"}`}>
+                      <span className={`text-sm transition-transform duration-300 group-hover:translate-x-1 ${isActive ? "text-[#C6956C]" : "text-white/25"}`}>
                         →
                       </span>
                     </Link>
@@ -278,9 +237,9 @@ export default function SiteHeader() {
                 setMenuOpen(false);
                 window.dispatchEvent(new CustomEvent("open-command-palette"));
               }}
-              className="mt-5 flex w-full items-center justify-between rounded-2xl border border-white/[0.1] bg-white/[0.035] px-5 py-4 text-white/80 transition-colors hover:border-[#E07A38]/40 hover:text-white"
+              className="mt-5 flex w-full items-center justify-between rounded-2xl border border-white/[0.1] bg-white/[0.035] px-5 py-4 text-white/80 transition-colors hover:border-[#C6956C]/40 hover:text-white"
             >
-              <span className="flex items-center gap-3 text-sm font-medium"><Search className="h-4 w-4 text-[#E07A38]" aria-hidden />Quick search & navigation</span>
+              <span className="flex items-center gap-3 text-sm font-medium"><Search className="h-4 w-4 text-[#C6956C]" aria-hidden />Quick search & navigation</span>
               <span className="font-mono text-[10px] text-white/35">Ctrl K</span>
             </button>
 
@@ -292,7 +251,7 @@ export default function SiteHeader() {
               className="mt-6 w-full flex items-center justify-between px-5 py-4 rounded-2xl text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] transition-colors cursor-pointer shadow-[0_0_24px_rgba(255,255,255,0.18)]"
             >
               <span className="text-sm font-semibold">View Executive Dossier / CV</span>
-              <span className="text-[#E07A38]">↗</span>
+              <span className="text-[#C6956C]">↗</span>
             </button>
 
             <div className="mt-auto pt-8 flex items-center justify-between text-[10px] font-mono tracking-[0.18em] text-white/35 uppercase">

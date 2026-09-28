@@ -13,12 +13,12 @@ export const InsightsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#E07A38]" />
-              <span className="text-xs font-mono tracking-[0.24em] text-[#C45B2B] uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#C6956C]" />
+              <span className="text-xs font-mono tracking-[0.24em] text-[#8D684A] uppercase">
                 05 / PERSPECTIVES & JOURNAL
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#FAF8F3]">
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#FAF8F3]">
               Financial Insights
             </h2>
           </div>
@@ -33,23 +33,23 @@ export const InsightsSection: React.FC = () => {
             <article
               key={article.slug}
               onClick={() => setSelectedArticle(selectedArticle?.slug === article.slug ? null : article)}
-              className="p-8 rounded-2xl bg-[#111111] border border-white/[0.08] hover:border-[#E07A38]/40 transition-all duration-300 cursor-pointer group shadow-lg"
+              className="p-8 rounded-2xl bg-[#111111] border border-white/[0.08] hover:border-[#C6956C]/40 transition-all duration-300 cursor-pointer group shadow-lg"
             >
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-4">
                 <div className="flex items-center gap-4">
-                  <span className="text-xs font-mono text-[#E07A38] uppercase">
+                  <span className="text-xs font-mono text-[#C6956C] uppercase">
                     {article.category}
                   </span>
                   <span className="text-xs text-[#7B776F] font-mono">
                     {article.date} · {article.readTime}
                   </span>
                 </div>
-                <span className="text-xs text-white/50 group-hover:text-[#E07A38] font-mono transition-colors">
+                <span className="text-xs text-white/50 group-hover:text-[#C6956C] font-mono transition-colors">
                   {selectedArticle?.slug === article.slug ? "COLLAPSE ARTICLE ↑" : "READ COMPLETE ARTICLE →"}
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#FAF8F3] group-hover:text-[#E07A38] transition-colors mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-[#FAF8F3] group-hover:text-[#C6956C] transition-colors mb-4">
                 {article.title}
               </h3>
 
@@ -66,7 +66,7 @@ export const InsightsSection: React.FC = () => {
                     </p>
                   ))}
                   <div className="pt-4 flex items-center gap-3">
-                    <span className="text-xs font-mono text-[#E07A38]">Author:</span>
+                    <span className="text-xs font-mono text-[#C6956C]">Author:</span>
                     <span className="text-xs font-medium text-white">Humza, ACCA</span>
                   </div>
                 </div>

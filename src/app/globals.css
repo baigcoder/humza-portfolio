@@ -11,9 +11,9 @@
     --c-gray: #7B776F;
     --c-muted: #4A4640;
     --c-border: rgba(255, 255, 255, 0.08);
-    --c-amber: #E07A38;
-    --c-amber-hot: #FF8A3D;
-    --c-rust: #C45B2B;
+    --c-amber: #C6956C;
+    --c-amber-hot: #D9A578;
+    --c-rust: #8D684A;
     --c-burgundy: #4A1718;
   }
 
@@ -28,6 +28,7 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
   }
 
   ::selection {
@@ -79,7 +80,7 @@
 }
 
 .text-stroke-amber {
-  -webkit-text-stroke: 1px rgba(224, 122, 56, 0.22);
+  -webkit-text-stroke: 1px rgba(198,149,108, 0.22);
   color: transparent;
 }
 
@@ -87,7 +88,7 @@
 .hero-glow {
   background: radial-gradient(
     ellipse 65% 55% at 55% 42%,
-    rgba(224, 122, 56, 0.18) 0%,
+    rgba(198,149,108, 0.18) 0%,
     rgba(180, 90, 40, 0.10) 25%,
     rgba(120, 60, 30, 0.06) 42%,
     rgba(40, 15, 10, 0.15) 62%,
@@ -218,7 +219,7 @@
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #050505; }
 ::-webkit-scrollbar-thumb { background: #222; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: #E07A38; }
+::-webkit-scrollbar-thumb:hover { background: #C6956C; }
 
 /* Scroll-triggered smooth reveal animations */
 .reveal-init {
@@ -254,26 +255,26 @@ input[type="range"].slider-amber::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #E07A38;
+  background: #C6956C;
   border: 2.5px solid #FAF8F3;
   cursor: pointer;
-  box-shadow: 0 0 14px rgba(224, 122, 56, 0.85), 0 2px 6px rgba(0,0,0,0.6);
+  box-shadow: 0 0 14px rgba(198,149,108, 0.85), 0 2px 6px rgba(0,0,0,0.6);
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 input[type="range"].slider-amber::-webkit-slider-thumb:hover {
   transform: scale(1.2);
-  background: #FF8A3D;
+  background: #D9A578;
 }
 
 input[type="range"].slider-amber::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #E07A38;
+  background: #C6956C;
   border: 2.5px solid #FAF8F3;
   cursor: pointer;
-  box-shadow: 0 0 14px rgba(224, 122, 56, 0.85);
+  box-shadow: 0 0 14px rgba(198,149,108, 0.85);
   transition: transform 0.15s ease;
 }
 
@@ -288,7 +289,7 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, #FAF8F3 0%, #FFB970 40%, #FAF8F3 70%, #E07A38 100%);
+  background: linear-gradient(90deg, #FAF8F3 0%, #E0BD99 40%, #FAF8F3 70%, #C6956C 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -301,7 +302,7 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
 /* Soft amber halo for italic accent words (text-shadow, not a filter, so no
    compositing box is painted behind the glyphs) */
 .text-glow-amber {
-  text-shadow: 0 0 18px rgba(224, 122, 56, 0.22);
+  text-shadow: 0 0 18px rgba(198,149,108, 0.22);
 }
 
 /* Warm ivory→amber gradient fill for hero accent lines */
@@ -328,7 +329,7 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
 
 /* Gradient hairline used between hero stage and telemetry */
 .hairline-fade {
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(224, 122, 56, 0.35) 50%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 20%, rgba(198,149,108, 0.35) 50%, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
 }
 
 /* Scroll cue — a light bead travelling down a hairline */
@@ -343,7 +344,7 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
 
 /* ——— Accessibility ——— */
 :focus-visible {
-  outline: 2px solid rgba(224, 122, 56, 0.85);
+  outline: 2px solid rgba(198,149,108, 0.85);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -416,5 +417,41 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
   right: 0;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.07) 18%, rgba(224, 122, 56, 0.28) 50%, rgba(255, 255, 255, 0.07) 82%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.07) 18%, rgba(198,149,108, 0.28) 50%, rgba(255, 255, 255, 0.07) 82%, transparent 100%);
+}
+
+/* Shared editorial hierarchy across the long-form advisory sections. */
+.section-title {
+  font-size: clamp(2rem, 4.1vw, 3.4rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em !important;
+  text-wrap: balance;
+}
+
+/* Keep fine print legible on narrow screens and reduce cramped tap targets. */
+@media (max-width: 639px) {
+  section[id] [class~="text-[8px]"] {
+    font-size: 10px !important;
+  }
+
+  section[id] [class~="text-[9px]"] {
+    font-size: 10px !important;
+  }
+
+  section[id] [class~="text-white/30"] {
+    color: rgba(250, 248, 243, 0.48) !important;
+  }
+
+  section[id] [class~="text-white/40"] {
+    color: rgba(250, 248, 243, 0.58) !important;
+  }
+
+  section[id] [class~="text-white/45"],
+  section[id] [class~="text-white/50"] {
+    color: rgba(250, 248, 243, 0.66) !important;
+  }
+
+  section[id] [class~="text-white/60"] {
+    color: rgba(250, 248, 243, 0.74) !important;
+  }
 }

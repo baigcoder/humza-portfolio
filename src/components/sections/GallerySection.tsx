@@ -31,14 +31,14 @@ export interface GalleryEngagement {
 const engagements: GalleryEngagement[] = [
   {
     id: "01",
-    title: "High-Level Ministerial Consultation on Macro-Fiscal Governance",
-    headline: "Consultation alongside Federal Minister for Finance & Revenue H.E. Muhammad Aurangzeb",
+    title: "Policy meeting with Pakistan’s Federal Minister for Finance & Revenue",
+    headline: "Meeting with Federal Minister for Finance & Revenue H.E. Muhammad Aurangzeb",
     date: "2024",
     location: "Islamabad, Pakistan",
     category: "Ministerial Delegation · Fiscal Architecture",
     image: "/images/gallery/finance-minister-dialogue.webp",
     description:
-      "High-level strategic engagement and policy discussion with H.E. Muhammad Aurangzeb, Federal Minister for Finance and Revenue, Government of Pakistan. The consultation addressed macro-economic stabilization, modernization of corporate taxation under the Income Tax Ordinance 2001, and strengthening institutional financial reporting frameworks across national enterprises.",
+      "A policy meeting in Islamabad with H.E. Muhammad Aurangzeb, Pakistan’s Federal Minister for Finance and Revenue, in 2024.",
     dignitaries: [
       {
         name: "H.E. Muhammad Aurangzeb",
@@ -50,30 +50,25 @@ const engagements: GalleryEngagement[] = [
         role: "Corporate Financial Strategist & Advisory Practitioner",
         badge: "Practitioner",
       },
-      {
-        name: "Strategic Corporate Dignitary",
-        role: "Institutional Banking & Capital Leadership",
-        badge: "Institutional",
-      },
     ],
     deliberations: [
       {
         index: "01",
-        title: "Macro-Fiscal Stabilization & Tax Net Expansion",
+        title: "Public finance and tax policy",
         detail:
-          "Advancing statutory documentation, minimizing withholding distortions, and structuring efficient corporate compliance under FBR statutes.",
+          "Policy context relevant to corporate tax compliance and financial planning.",
       },
       {
         index: "02",
-        title: "IFRS 9, 15 & 16 Corporate Adoption",
+        title: "Financial reporting standards",
         detail:
-          "Technical alignment of public and private sector balance sheets with international financial reporting standards for global capital credibility.",
+          "International reporting standards and their role in transparent financial statements.",
       },
       {
         index: "03",
-        title: "Capital Formation & Governance Architecture",
+        title: "Governance and capital formation",
         detail:
-          "Institutionalizing transparent internal controls and board governance to stimulate FDI and enterprise transaction velocity.",
+          "The relationship between sound governance, investor confidence, and sustainable growth.",
       },
     ],
     tags: ["Federal Finance Ministry", "Macro-Fiscal Policy", "FBR Tax Reform", "IFRS Governance"],
@@ -82,25 +77,6 @@ const engagements: GalleryEngagement[] = [
 ];
 
 // Additional slots for user to expand over time
-const upcomingSlots = [
-  {
-    id: "02",
-    title: "Corporate Governance & Audit Committee Roundtable",
-    venue: "Lahore / Karachi, Pakistan",
-    date: "Scheduled 2024",
-    category: "Audit & Assurance Conclave",
-    tags: ["SECP Code", "COSO Assurance", "Board Advisory"],
-  },
-  {
-    id: "03",
-    title: "GCC Cross-Border Tax & Trade Delegation",
-    venue: "Dubai, United Arab Emirates",
-    date: "Scheduled 2024/2025",
-    category: "Cross-Border Capital Summit",
-    tags: ["UAE Corporate Tax", "Transfer Pricing", "Regional Growth"],
-  },
-];
-
 export default function GallerySection() {
   const [activeItem, setActiveItem] = useState<GalleryEngagement>(engagements[0]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -128,31 +104,30 @@ export default function GallerySection() {
       className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#0A0A0A] section-divider overflow-hidden"
     >
       {/* Ambient background glow */}
-      <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-[#E07A38]/[0.05] blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-80 h-80 rounded-full bg-[#E07A38]/[0.04] blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-[#C6956C]/[0.05] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-80 h-80 rounded-full bg-[#C6956C]/[0.04] blur-3xl pointer-events-none" />
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
-        <SectionLabel index="08" label="Leadership & High-Level Engagements" />
+        <SectionLabel index="08" label="Institutional Engagement" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-3xl">
-              Dialogue at the{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                Apex
-              </span>{" "}
-              of Fiscal Policy.
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-3xl">
+              Engagement beyond{" "}
+              <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                the numbers.
+              </span>
             </h2>
             <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-xl mt-4">
-              Documenting strategic ministerial consultations, policymaker delegations, and institutional summits shaping Pakistan&apos;s economic architecture.
+              A documented policy consultation reflecting the wider context of financial and regulatory work.
             </p>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-wider text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 flex items-center gap-1.5 shadow-[0_0_12px_rgba(16,185,129,0.15)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-              OFFICIAL DELEGATION ARCHIVE
+            <span className="px-3 py-1 rounded-full text-[10px] font-mono font-medium tracking-wider text-[#C6956C] bg-[#C6956C]/10 border border-[#C6956C]/25 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]" />
+              POLICY CONSULTATION · 2024
             </span>
           </div>
         </div>
@@ -164,15 +139,11 @@ export default function GallerySection() {
             {/* Left Col: High-Res Image with 3D Tilt & Zoom Action (5 cols) */}
             <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-center bg-[#070707] border-b lg:border-b-0 lg:border-r border-white/[0.08] relative">
               {/* Corner Crosshairs */}
-              <span className="absolute top-3 left-3 z-10 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute top-3 right-3 z-10 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute bottom-3 left-3 z-10 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute bottom-3 right-3 z-10 text-[8px] font-mono text-white/20 select-none">+</span>
 
               <TiltCard maxTilt={4} scale={1.015} className="w-full">
                 <div
                   onClick={() => setLightboxOpen(true)}
-                  className="group/img relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/[0.12] bg-[#050505] shadow-2xl cursor-pointer hover:border-[#E07A38]/60 transition-all duration-500"
+                  className="group/img relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/[0.12] bg-[#050505] shadow-2xl cursor-pointer hover:border-[#C6956C]/60 transition-all duration-500"
                 >
                   <Image
                     src={activeItem.image}
@@ -188,7 +159,7 @@ export default function GallerySection() {
 
                   {/* Top Badge: Category */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-2.5 py-1 rounded-md text-[9px] font-mono font-bold tracking-wider text-[#E07A38] bg-[#0A0A0A]/90 backdrop-blur-md border border-[#E07A38]/30">
+                    <span className="px-2.5 py-1 rounded-md text-[9px] font-mono font-bold tracking-wider text-[#C6956C] bg-[#0A0A0A]/90 backdrop-blur-md border border-[#C6956C]/30">
                       MINISTERIAL SESSION
                     </span>
                     <span className="px-2 py-0.5 rounded text-[9px] font-mono text-white/70 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/[0.1]">
@@ -197,14 +168,14 @@ export default function GallerySection() {
                   </div>
 
                   {/* Bottom Hover Trigger: Click to Expand */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between p-2.5 rounded-lg bg-[#0C0C0C]/90 backdrop-blur-xl border border-white/[0.12] group-hover/img:border-[#E07A38]/40 transition-colors shadow-lg">
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between p-2.5 rounded-lg bg-[#0C0C0C]/90 backdrop-blur-xl border border-white/[0.12] group-hover/img:border-[#C6956C]/40 transition-colors shadow-lg">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
+                      <span className="w-2 h-2 rounded-full bg-[#C6956C] animate-pulse" />
                       <span className="text-[10px] font-mono text-white/80 font-medium">
                         {activeItem.location}
                       </span>
                     </div>
-                    <span className="inline-flex items-center gap-1 text-[10px] font-mono text-[#E07A38] group-hover/img:translate-x-0.5 transition-transform">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-mono text-[#C6956C] group-hover/img:translate-x-0.5 transition-transform">
                       <span>Expand Photo</span>
                       <span>⤢</span>
                     </span>
@@ -215,7 +186,7 @@ export default function GallerySection() {
               {/* Dignitaries Identification Caption below photo */}
               <div className="mt-4 pt-3 border-t border-white/[0.06] text-center">
                 <span className="text-[10px] font-mono text-white/40 block">
-                  L to R: H.E. Muhammad Aurangzeb · Humza (ACCA) · Senior Dignitary
+                  Policy meeting · Islamabad · 2024
                 </span>
               </div>
             </div>
@@ -226,7 +197,7 @@ export default function GallerySection() {
                 {/* Meta tags top bar */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider text-[#E07A38] bg-[#E07A38]/10 border border-[#E07A38]/20 font-semibold">
+                    <span className="px-2.5 py-0.5 rounded text-[9px] font-mono uppercase tracking-wider text-[#C6956C] bg-[#C6956C]/10 border border-[#C6956C]/20 font-semibold">
                       {activeItem.category}
                     </span>
                     <span className="text-[11px] font-mono text-white/40">
@@ -234,7 +205,7 @@ export default function GallerySection() {
                     </span>
                   </div>
                   <span className="text-[10px] font-mono text-white/30">
-                    ARCHIVE RECORD № 2024-FBR-01
+                    {activeItem.date}
                   </span>
                 </div>
 
@@ -250,20 +221,19 @@ export default function GallerySection() {
 
                 {/* Dignitaries Bento Grid */}
                 <div className="mb-6">
-                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#E07A38] font-bold block mb-2.5">
-                    Participating Leadership & Dignitaries
+                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#C6956C] font-bold block mb-2.5">
+                    Meeting participants
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {activeItem.dignitaries.map((d) => (
                       <div
                         key={d.name}
-                        className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-[#E07A38]/30 transition-colors"
+                        className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-[#C6956C]/30 transition-colors"
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-[8px] font-mono uppercase tracking-wider text-[#E07A38]/80 font-semibold">
+                          <span className="text-[8px] font-mono uppercase tracking-wider text-[#C6956C]/80 font-semibold">
                             {d.badge}
                           </span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                         </div>
                         <div className="text-[12px] font-bold text-white leading-tight mb-1">
                           {d.name}
@@ -278,8 +248,8 @@ export default function GallerySection() {
 
                 {/* Deliberations & Advisory Focus Pillars */}
                 <div className="mb-6">
-                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#E07A38] font-bold block mb-2.5">
-                    Key Deliberation Pillars & Strategic Scope
+                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#C6956C] font-bold block mb-2.5">
+                    Related advisory topics
                   </span>
                   <div className="space-y-2">
                     {activeItem.deliberations.map((item) => (
@@ -287,7 +257,7 @@ export default function GallerySection() {
                         key={item.index}
                         className="p-3 rounded-xl bg-[#090909] border border-white/[0.05] hover:border-white/[0.1] transition-colors flex items-start gap-3"
                       >
-                        <span className="text-[11px] font-mono text-[#E07A38] font-bold mt-0.5 select-none">
+                        <span className="text-[11px] font-mono text-[#C6956C] font-bold mt-0.5 select-none">
                           {item.index}
                         </span>
                         <div>
@@ -327,76 +297,15 @@ export default function GallerySection() {
                   <Magnetic strength={0.2}>
                     <Link
                       href="#contact"
-                      className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] font-mono font-medium text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_28px_rgba(224,122,56,0.35)] transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] font-mono font-medium text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_28px_rgba(198,149,108,0.35)] transition-all"
                     >
                       <span>Inquire Mandate</span>
-                      <span className="text-[#E07A38]">→</span>
+                      <span className="text-[#C6956C]">→</span>
                     </Link>
                   </Magnetic>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── Secondary Archive Slots (Built for Easy Future Expansion) ── */}
-        <div className="mt-8">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40 font-semibold">
-              Institutional Engagements & Summit Pipeline
-            </span>
-            <span className="text-[10px] font-mono text-[#E07A38]">
-              Archive Active · 1 of 3 Documented
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-            {/* Slot 1: Active Feature */}
-            <div className="p-4 rounded-xl bg-[#0E0E0E] border border-[#E07A38]/30 relative overflow-hidden">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[9px] font-mono text-[#E07A38] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#E07A38]/10 border border-[#E07A38]/20">
-                  Featured Archive
-                </span>
-                <span className="text-[10px] font-mono text-white/30">2024</span>
-              </div>
-              <h4 className="text-xs font-bold text-white mb-1 leading-snug">
-                Ministerial Policy Consultation · Federal Finance Ministry
-              </h4>
-              <p className="text-[10px] text-white/45 leading-relaxed font-light line-clamp-2">
-                Bilateral consultation alongside H.E. Muhammad Aurangzeb on macro-fiscal governance and tax reforms.
-              </p>
-            </div>
-
-            {/* Slot 2: Upcoming Conclave */}
-            {upcomingSlots.map((slot) => (
-              <div
-                key={slot.id}
-                className="p-4 rounded-xl bg-[#080808] border border-white/[0.06] hover:border-white/[0.12] transition-colors relative"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[9px] font-mono text-white/40 uppercase tracking-wider px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
-                    {slot.category}
-                  </span>
-                  <span className="text-[10px] font-mono text-white/30">{slot.date}</span>
-                </div>
-                <h4 className="text-xs font-bold text-white/80 mb-1 leading-snug">
-                  {slot.title}
-                </h4>
-                <p className="text-[10px] font-mono text-white/40 leading-relaxed">
-                  Venue: {slot.venue}
-                </p>
-                <div className="mt-2.5 pt-2 border-t border-white/[0.04] flex items-center gap-1.5">
-                  {slot.tags.map((tg) => (
-                    <span
-                      key={tg}
-                      className="text-[8px] font-mono text-white/30 px-1.5 py-0.2 rounded bg-white/[0.02]"
-                    >
-                      {tg}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -441,10 +350,10 @@ export default function GallerySection() {
                   {activeItem.headline}
                 </div>
                 <div className="text-[10px] font-mono text-white/50 mt-0.5">
-                  {activeItem.location} · {activeItem.date} · Official Ministerial Archive
+                  {activeItem.location} · {activeItem.date} · Portfolio archive
                 </div>
               </div>
-              <span className="text-[10px] font-mono text-[#E07A38] uppercase tracking-wider font-semibold">
+              <span className="text-[10px] font-mono text-[#C6956C] uppercase tracking-wider font-semibold">
                 HUMZA · ACCA
               </span>
             </div>

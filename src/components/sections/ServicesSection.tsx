@@ -219,8 +219,8 @@ export default function ServicesSection() {
     >
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_top_right,rgba(224,122,56,0.06),transparent_70%)]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(224,122,56,0.04),transparent_70%)]" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_top_right,rgba(198,149,108,0.06),transparent_70%)]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(198,149,108,0.04),transparent_70%)]" />
       </div>
 
       <div className="max-w-[1420px] mx-auto relative z-10">
@@ -228,15 +228,15 @@ export default function ServicesSection() {
         <SectionLabel index="02" label="Core Advisory Capabilities" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight max-w-2xl">
-            Precision services for{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-              demanding
+          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-[1.08] tracking-tight max-w-2xl">
+            Advice for{" "}
+            <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+              complex
             </span>{" "}
-            capital.
+            finance decisions.
           </h2>
           <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md">
-            Every engagement is executed with the discipline, technical depth, and global ethical rigor demanded by the ACCA charter.
+            Practical technical support for the reporting, compliance, and investment decisions that shape a business.
           </p>
         </div>
 
@@ -253,7 +253,7 @@ export default function ServicesSection() {
                   className={`
                     relative px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 flex items-center gap-2 cursor-pointer
                     ${isActive
-                      ? "bg-gradient-to-r from-[#E07A38] to-[#FF8A3D] text-[#050505] shadow-[0_0_24px_rgba(224,122,56,0.45)] scale-[1.02]"
+                      ? "bg-gradient-to-r from-[#C6956C] to-[#D9A578] text-[#050505] shadow-[0_0_24px_rgba(198,149,108,0.45)] scale-[1.02]"
                       : "text-white/60 hover:text-white hover:bg-white/[0.05]"
                     }
                   `}
@@ -284,7 +284,7 @@ export default function ServicesSection() {
                 onClick={() => setActiveId(isActive ? "" : s.id)}
                 className={`group rounded-2xl border transition-all duration-400 cursor-pointer overflow-hidden ${
                   isActive
-                    ? "bg-gradient-to-br from-[#111111] via-[#0F0F0F] to-[#0E0E0E] border-[#E07A38]/40 shadow-[0_12px_48px_rgba(224,122,56,0.1),0_0_0_1px_rgba(224,122,56,0.08)]"
+                    ? "bg-gradient-to-br from-[#111111] via-[#0F0F0F] to-[#0E0E0E] border-[#C6956C]/40 shadow-[0_12px_48px_rgba(198,149,108,0.1),0_0_0_1px_rgba(198,149,108,0.08)]"
                     : "bg-[#0D0D0D] border-white/[0.06] hover:border-white/[0.14] hover:bg-[#101010]"
                 }`}
               >
@@ -294,16 +294,16 @@ export default function ServicesSection() {
                     {/* Icon */}
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl transition-all duration-300 flex-shrink-0 ${
                       isActive
-                        ? "bg-[#E07A38]/15 shadow-[0_0_24px_rgba(224,122,56,0.15)]"
+                        ? "bg-[#C6956C]/15 shadow-[0_0_24px_rgba(198,149,108,0.15)]"
                         : "bg-white/[0.03] group-hover:bg-white/[0.05]"
                     }`}>
-                      <s.icon className={`w-5 h-5 ${isActive ? "text-[#E07A38]" : "text-white/70"}`} strokeWidth={1.6} aria-hidden />
+                      <s.icon className={`w-5 h-5 ${isActive ? "text-[#C6956C]" : "text-white/70"}`} strokeWidth={1.6} aria-hidden />
                     </div>
 
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className={`font-mono text-[11px] font-bold transition-colors px-2 py-0.5 rounded ${
-                          isActive ? "text-[#E07A38] bg-[#E07A38]/10" : "text-white/25 group-hover:text-white/50"
+                          isActive ? "text-[#C6956C] bg-[#C6956C]/10" : "text-white/25 group-hover:text-white/50"
                         }`}>
                           {s.id}
                         </span>
@@ -325,7 +325,7 @@ export default function ServicesSection() {
                           key={t}
                           className={`px-2.5 py-1 rounded-md text-[10px] font-mono transition-all duration-300 ${
                             isActive
-                              ? "text-[#E07A38]/80 bg-[#E07A38]/[0.08] border border-[#E07A38]/20"
+                              ? "text-[#C6956C]/80 bg-[#C6956C]/[0.08] border border-[#C6956C]/20"
                               : "text-white/35 bg-white/[0.02] border border-white/[0.04]"
                           }`}
                         >
@@ -336,7 +336,7 @@ export default function ServicesSection() {
 
                     <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
                       isActive
-                        ? "border-[#E07A38] bg-[#E07A38]/10 text-[#E07A38] rotate-45"
+                        ? "border-[#C6956C] bg-[#C6956C]/10 text-[#C6956C] rotate-45"
                         : "border-white/[0.1] text-white/40 group-hover:border-white/30 group-hover:text-white"
                     }`}>
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -354,8 +354,8 @@ export default function ServicesSection() {
                       <div className="lg:col-span-7 space-y-6">
                         {/* Scope */}
                         <div>
-                          <p className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase mb-2.5 font-semibold flex items-center gap-2">
-                            <span className="w-3 h-[1px] bg-[#E07A38]" />
+                          <p className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase mb-2.5 font-semibold flex items-center gap-2">
+                            <span className="w-3 h-[1px] bg-[#C6956C]" />
                             Scope & Methodology
                           </p>
                           <p className="text-sm text-white/65 leading-[1.7] font-light">
@@ -372,7 +372,7 @@ export default function ServicesSection() {
                           <div className="space-y-2.5">
                             {s.useCases.map((uc, i) => (
                               <div key={i} className="flex gap-3 items-start group/uc">
-                                <span className="mt-1.5 w-5 h-5 rounded-md bg-[#E07A38]/10 flex items-center justify-center text-[10px] text-[#E07A38] font-mono font-bold flex-shrink-0">
+                                <span className="mt-1.5 w-5 h-5 rounded-md bg-[#C6956C]/10 flex items-center justify-center text-[10px] text-[#C6956C] font-mono font-bold flex-shrink-0">
                                   {String(i + 1).padStart(2, "0")}
                                 </span>
                                 <p className="text-xs text-white/55 leading-relaxed font-light group-hover/uc:text-white/70 transition-colors">
@@ -387,11 +387,11 @@ export default function ServicesSection() {
                       {/* Right — Deliverables + Metric */}
                       <div className="lg:col-span-5 space-y-6">
                         {/* Key Metric */}
-                        <div className="rounded-xl bg-gradient-to-br from-[#E07A38]/[0.08] to-[#E07A38]/[0.02] border border-[#E07A38]/15 p-5">
-                          <p className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38]/60 uppercase mb-1 font-semibold">
+                        <div className="rounded-xl bg-gradient-to-br from-[#C6956C]/[0.08] to-[#C6956C]/[0.02] border border-[#C6956C]/15 p-5">
+                          <p className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C]/60 uppercase mb-1 font-semibold">
                             Track Record
                           </p>
-                          <p className="text-2xl sm:text-3xl font-bold text-[#E07A38]">
+                          <p className="text-2xl sm:text-3xl font-bold text-[#C6956C]">
                             <MetricCounter value={s.metric.value} />
                           </p>
                           <p className="text-xs text-white/45 mt-0.5 font-light">
@@ -408,7 +408,7 @@ export default function ServicesSection() {
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {s.deliverables.map((item) => (
                               <div key={item} className="flex items-center gap-2.5 text-xs text-white/70 py-1.5 px-3 rounded-lg bg-white/[0.02] border border-white/[0.04] hover:border-white/[0.08] transition-colors">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] flex-shrink-0" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C] flex-shrink-0" />
                                 <span>{item}</span>
                               </div>
                             ))}
@@ -423,10 +423,10 @@ export default function ServicesSection() {
                                 window.dispatchEvent(new CustomEvent("set-advisory-scope", { detail: s.title }));
                                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                               }}
-                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold text-[#0A0A0A] bg-[#FAF8F5] hover:bg-[#E07A38] hover:text-[#0A0A0A] hover:scale-[1.02] transition-all shadow-[0_4px_20px_rgba(255,255,255,0.2)] cursor-pointer"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-semibold text-[#0A0A0A] bg-[#FAF8F5] hover:bg-[#C6956C] hover:text-[#0A0A0A] hover:scale-[1.02] transition-all shadow-[0_4px_20px_rgba(255,255,255,0.2)] cursor-pointer"
                             >
                               <span>Inquire for {s.title.split("&")[0].trim()}</span>
-                              <span className="text-[#E07A38]">→</span>
+                              <span className="text-[#C6956C]">→</span>
                             </button>
                             <span className="text-[10px] font-mono text-white/35 hidden sm:inline">
                               Retained & Advisory Mandate
@@ -445,11 +445,11 @@ export default function ServicesSection() {
         {/* ── Bottom CTA Bar ────────────────────────────────────── */}
         <div className="mt-14 p-7 sm:p-8 rounded-2xl bg-gradient-to-r from-[#111111] via-[#0E0E0E] to-[#111111] border border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative overflow-hidden">
           {/* Subtle glow */}
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[120px] bg-[radial-gradient(ellipse,rgba(224,122,56,0.08),transparent_70%)] pointer-events-none" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[120px] bg-[radial-gradient(ellipse,rgba(198,149,108,0.08),transparent_70%)] pointer-events-none" />
 
           <div className="relative z-10">
             <h4 className="text-base sm:text-lg font-bold text-white mb-1.5 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#E07A38] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#C6956C] animate-pulse" />
               Require a tailored engagement or custom scope?
             </h4>
             <p className="text-xs sm:text-sm text-white/50 font-light">
@@ -461,7 +461,7 @@ export default function ServicesSection() {
             className="relative z-10 inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-xs font-semibold tracking-wide text-[#050505] bg-white hover:bg-[#FAF8F3] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_24px_rgba(255,255,255,0.1)] flex-shrink-0"
           >
             <span>Initiate Confidential Brief</span>
-            <span className="text-[#E07A38] text-sm">→</span>
+            <span className="text-[#C6956C] text-sm">→</span>
           </a>
         </div>
       </div>

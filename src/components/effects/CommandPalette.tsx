@@ -207,7 +207,7 @@ export default function CommandPalette() {
     <>
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#E07A38]/50 shadow-[0_8px_30px_rgba(224,122,56,0.3)] animate-fade-in flex items-center gap-2">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#C6956C]/50 shadow-[0_8px_30px_rgba(198,149,108,0.3)] animate-fade-in flex items-center gap-2">
           <span>{toastMessage}</span>
         </div>
       )}
@@ -221,12 +221,12 @@ export default function CommandPalette() {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="w-full max-w-xl rounded-2xl bg-[#0D0D0D] border border-white/[0.14] shadow-[0_24px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(224,122,56,0.15)] overflow-hidden transition-all transform scale-100"
+            className="w-full max-w-xl rounded-2xl bg-[#0D0D0D] border border-white/[0.14] shadow-[0_24px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(198,149,108,0.15)] overflow-hidden transition-all transform scale-100"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Search Input Bar */}
             <div className="relative flex items-center px-4 py-3.5 border-b border-white/[0.08] bg-[#111111]">
-              <span className="text-[#E07A38] text-base mr-3 select-none">✦</span>
+              <span className="text-[#C6956C] text-base mr-3 select-none">✦</span>
               <input
                 ref={inputRef}
                 type="text"
@@ -267,14 +267,14 @@ export default function CommandPalette() {
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0"><cmd.icon className="w-4 h-4 text-[#E07A38]" strokeWidth={1.75} aria-hidden /></span>
+                        <span className="w-8 h-8 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center flex-shrink-0"><cmd.icon className="w-4 h-4 text-[#C6956C]" strokeWidth={1.75} aria-hidden /></span>
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="text-[13px] font-medium text-white">
                               {cmd.title}
                             </span>
                             {cmd.badge && (
-                              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#E07A38]/10 text-[#E07A38] border border-[#E07A38]/20 font-semibold">
+                              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#C6956C]/10 text-[#C6956C] border border-[#C6956C]/20 font-semibold">
                                 {cmd.badge}
                               </span>
                             )}
@@ -290,7 +290,7 @@ export default function CommandPalette() {
                           {cmd.category}
                         </span>
                         {isSelected && (
-                          <span className="text-[#E07A38] text-xs font-mono select-none">
+                          <span className="text-[#C6956C] text-xs font-mono select-none">
                             ↵
                           </span>
                         )}
@@ -314,7 +314,7 @@ export default function CommandPalette() {
                   <span>to select</span>
                 </span>
               </div>
-              <span className="text-[#E07A38] font-semibold">HUMZA · ACCA</span>
+              <span className="text-[#C6956C] font-semibold">HUMZA · ACCA</span>
             </div>
           </div>
         </div>

@@ -9,12 +9,12 @@ export const PortfolioSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#E07A38]" />
-              <span className="text-xs font-mono tracking-[0.24em] text-[#C45B2B] uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#C6956C]" />
+              <span className="text-xs font-mono tracking-[0.24em] text-[#8D684A] uppercase">
                 03 / SELECTED ENGAGEMENTS & WORK
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#FAF8F3]">
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#FAF8F3]">
               Financial Case Studies
             </h2>
           </div>
@@ -28,12 +28,12 @@ export const PortfolioSection: React.FC = () => {
           {projectsContent.map((project) => (
             <article
               key={project.id}
-              className="relative p-8 rounded-2xl bg-[#111111] border border-white/[0.08] flex flex-col justify-between hover:border-[#E07A38]/30 transition-all duration-300 group shadow-xl"
+              className="relative p-8 rounded-2xl bg-[#111111] border border-white/[0.08] flex flex-col justify-between hover:border-[#C6956C]/30 transition-all duration-300 group shadow-xl"
             >
               {/* Header Info */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-semibold text-[#E07A38]">
+                  <span className="font-mono text-xs font-semibold text-[#C6956C]">
                     CASE {project.number}
                   </span>
                   <span className="text-[11px] font-mono tracking-widest text-[#7B776F] uppercase">
@@ -41,7 +41,7 @@ export const PortfolioSection: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-serif text-[#FAF8F3] mb-4 group-hover:text-[#E07A38] transition-colors">
+                <h3 className="text-xl sm:text-2xl font-serif text-[#FAF8F3] mb-4 group-hover:text-[#C6956C] transition-colors">
                   {project.title}
                 </h3>
 

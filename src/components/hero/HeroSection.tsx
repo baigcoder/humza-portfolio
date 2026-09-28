@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Download } from "lucide-react";
 import Magnetic from "@/components/effects/Magnetic";
 
 // Parallax depth multipliers, applied to the --mx / --my pointer offsets
@@ -200,17 +201,17 @@ export default function HeroSection() {
             </h1>
 
             <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/80 leading-relaxed mb-6 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] xl:max-w-[430px] xl:text-left xl:mb-6">
-              ACCA certified finance expert based in Pakistan — driving sustainable growth, compliance, and strategic financial impact.
+              ACCA-qualified financial advice for complex reporting, tax, governance, and growth decisions across Pakistan and the GCC.
             </p>
 
             <div className="anim-fade-up anim-initial delay-300 flex flex-wrap items-center justify-center gap-3 xl:justify-start">
               <Magnetic strength={0.28}>
                 <Link
                   href="#contact"
-                  className="group/btn relative inline-flex items-center justify-center px-7 sm:px-8 py-3 text-[13px] sm:text-[13.5px] font-semibold tracking-wide text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] rounded-full shadow-[0_0_24px_rgba(255,255,255,0.35),0_12px_28px_rgba(0,0,0,0.85)] hover:shadow-[0_0_36px_rgba(224,122,56,0.5)] transition-all duration-300 hover:scale-[1.04] active:scale-[0.98]"
+                  className="group/btn relative inline-flex items-center justify-center px-7 sm:px-8 py-3 text-[13px] sm:text-[13.5px] font-semibold tracking-wide text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] rounded-full shadow-[0_0_24px_rgba(255,255,255,0.35),0_12px_28px_rgba(0,0,0,0.85)] hover:shadow-[0_0_36px_rgba(198,149,108,0.5)] transition-all duration-300 hover:scale-[1.04] active:scale-[0.98]"
                 >
                   <span>Collaborate With Me</span>
-                  <span className="ml-2 text-[#E07A38] transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+                  <span className="ml-2 text-[#C6956C] transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
                 </Link>
               </Magnetic>
               <Link
@@ -221,6 +222,15 @@ export default function HeroSection() {
                 <span className="ml-2 text-white/60 transition-transform duration-300 group-hover/ghost:translate-x-0.5 group-hover/ghost:-translate-y-0.5">↗</span>
               </Link>
             </div>
+
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
+              className="anim-fade-up anim-initial delay-400 mt-4 inline-flex items-center gap-2 text-[11px] font-medium tracking-wide text-white/65 transition-colors hover:text-[#C6956C] xl:justify-start"
+            >
+              <Download className="h-3.5 w-3.5" aria-hidden />
+              <span>Review CV · Save PDF</span>
+            </button>
           </div>
         </div>
       </div>
@@ -235,7 +245,7 @@ export default function HeroSection() {
             className="group mx-auto lg:mx-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 inline-flex items-center gap-3 text-white/55 hover:text-white transition-colors"
           >
             <span className="relative h-7 w-px overflow-hidden bg-white/[0.12]">
-              <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-transparent to-[#E07A38] animate-scroll-cue" />
+              <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-transparent to-[#C6956C] animate-scroll-cue" />
             </span>
             <span>Scroll to explore</span>
           </Link>

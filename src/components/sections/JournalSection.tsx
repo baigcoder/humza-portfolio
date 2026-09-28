@@ -190,7 +190,7 @@ export default function JournalSection() {
     >
       {/* Toast Alert */}
       {toastMsg && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#E07A38]/50 shadow-[0_8px_30px_rgba(224,122,56,0.3)] animate-fade-in flex items-center gap-2">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-2.5 rounded-full bg-[#181512] text-[#FAF8F5] text-xs font-mono font-medium border border-[#C6956C]/50 shadow-[0_8px_30px_rgba(198,149,108,0.3)] animate-fade-in flex items-center gap-2">
           <span>{toastMsg}</span>
         </div>
       )}
@@ -201,20 +201,20 @@ export default function JournalSection() {
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-              Technical clarity.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                Published
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+              Ideas for better{" "}
+              <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                financial
               </span>{" "}
-              thinking.
+              decisions.
             </h2>
             <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
-              Analytical perspectives on IFRS, governance, and statutory compliance. Click any brief to read the full analysis.
+              Notes on reporting, governance, tax, and financial planning.
             </p>
           </div>
 
           <span className="text-[10px] font-mono text-white/40 tracking-wider">
-            4 EXECUTIVE BRIEFS PUBLISHED
+            4 TECHNICAL NOTES
           </span>
         </div>
 
@@ -224,16 +224,16 @@ export default function JournalSection() {
             <article
               key={item.id}
               onClick={() => setSelectedArticle(item)}
-              className="group relative rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] overflow-hidden transition-all duration-300 hover:border-[#E07A38]/45 hover:shadow-[0_16px_40px_rgba(224,122,56,0.1)] hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between"
+              className="group relative rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] overflow-hidden transition-all duration-300 hover:border-[#C6956C]/45 hover:shadow-[0_16px_40px_rgba(198,149,108,0.1)] hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between"
             >
               {/* Top accent bar */}
-              <div className="h-[2px] w-full bg-gradient-to-r from-[#E07A38]/40 via-[#E07A38]/20 to-transparent group-hover:from-[#E07A38] group-hover:via-[#FF8A3D] group-hover:to-[#E07A38]/40 transition-all duration-500" />
+              <div className="h-[2px] w-full bg-gradient-to-r from-[#C6956C]/40 via-[#C6956C]/20 to-transparent group-hover:from-[#C6956C] group-hover:via-[#D9A578] group-hover:to-[#C6956C]/40 transition-all duration-500" />
 
               <div className="p-6 flex flex-col h-full justify-between">
                 <div>
                   {/* Meta */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[9px] font-mono tracking-[0.15em] text-[#E07A38] uppercase font-bold px-2 py-0.5 rounded bg-[#E07A38]/[0.08] border border-[#E07A38]/20">
+                    <span className="text-[9px] font-mono tracking-[0.15em] text-[#C6956C] uppercase font-bold px-2 py-0.5 rounded bg-[#C6956C]/[0.08] border border-[#C6956C]/20">
                       {item.category}
                     </span>
                     <span className="text-[9px] font-mono text-white/30">{item.id}</span>
@@ -257,7 +257,7 @@ export default function JournalSection() {
                     <span className="text-white/20">·</span>
                     <span>{item.readTime}</span>
                   </div>
-                  <div className="w-8 h-8 rounded-full border border-white/[0.1] flex items-center justify-center group-hover:border-[#E07A38] group-hover:bg-[#E07A38] transition-all duration-300">
+                  <div className="w-8 h-8 rounded-full border border-white/[0.1] flex items-center justify-center group-hover:border-[#C6956C] group-hover:bg-[#C6956C] transition-all duration-300">
                     <span className="text-[10px] text-white/40 group-hover:text-[#050505] font-bold transition-all duration-300 group-hover:translate-x-0.5">
                       →
                     </span>
@@ -278,14 +278,14 @@ export default function JournalSection() {
           onClick={() => setSelectedArticle(null)}
         >
           <div
-            className="relative max-w-3xl w-full max-h-[88vh] rounded-2xl bg-[#0D0D0D] border border-white/[0.15] shadow-[0_24px_80px_rgba(0,0,0,0.95),0_0_40px_rgba(224,122,56,0.12)] overflow-hidden flex flex-col"
+            className="relative max-w-3xl w-full max-h-[88vh] rounded-2xl bg-[#0D0D0D] border border-white/[0.15] shadow-[0_24px_80px_rgba(0,0,0,0.95),0_0_40px_rgba(198,149,108,0.12)] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="p-6 border-b border-white/[0.08] bg-[#111111] flex items-start justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2.5 mb-2">
-                  <span className="text-[9px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-bold px-2 py-0.5 rounded bg-[#E07A38]/10 border border-[#E07A38]/20">
+                  <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold px-2 py-0.5 rounded bg-[#C6956C]/10 border border-[#C6956C]/20">
                     {selectedArticle.category}
                   </span>
                   <span className="text-[10px] font-mono text-white/40">
@@ -313,7 +313,7 @@ export default function JournalSection() {
             <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-white/80 font-light text-sm leading-relaxed">
               {/* Executive Overview */}
               <div>
-                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E07A38] font-semibold mb-2">
+                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C6956C] font-semibold mb-2">
                   Executive Briefing Overview
                 </h4>
                 <p className="text-white/70 leading-relaxed font-light">
@@ -323,7 +323,7 @@ export default function JournalSection() {
 
               {/* Key Technical Analysis Points */}
               <div className="space-y-3">
-                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E07A38] font-semibold">
+                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C6956C] font-semibold">
                   Technical Architecture & Deliberation
                 </h4>
                 <div className="space-y-3">
@@ -333,7 +333,7 @@ export default function JournalSection() {
                       className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]"
                     >
                       <div className="flex items-center gap-2 text-xs font-semibold text-white mb-1">
-                        <span className="text-[#E07A38] font-mono">0{idx + 1}.</span>
+                        <span className="text-[#C6956C] font-mono">0{idx + 1}.</span>
                         <span>{kp.title}</span>
                       </div>
                       <p className="text-xs text-white/60 leading-relaxed font-light">
@@ -345,8 +345,8 @@ export default function JournalSection() {
               </div>
 
               {/* Statutory & Regulatory Basis */}
-              <div className="p-4 rounded-xl bg-[#14120F] border border-[#E07A38]/20">
-                <span className="text-[9px] font-mono uppercase tracking-wider text-[#E07A38] font-bold block mb-1">
+              <div className="p-4 rounded-xl bg-[#14120F] border border-[#C6956C]/20">
+                <span className="text-[9px] font-mono uppercase tracking-wider text-[#C6956C] font-bold block mb-1">
                   Statutory & Compliance Authority
                 </span>
                 <p className="text-xs font-mono text-white/70">
@@ -356,7 +356,7 @@ export default function JournalSection() {
 
               {/* Executive Takeaways */}
               <div>
-                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E07A38] font-semibold mb-2">
+                <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C6956C] font-semibold mb-2">
                   Actionable Takeaways for Corporate Leadership
                 </h4>
                 <ul className="space-y-2">
@@ -394,7 +394,7 @@ export default function JournalSection() {
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-mono font-medium text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] shadow-lg transition-all"
                   >
                     <span>Consult on this Topic</span>
-                    <span className="text-[#E07A38]">→</span>
+                    <span className="text-[#C6956C]">→</span>
                   </Link>
                 </Magnetic>
               </div>
