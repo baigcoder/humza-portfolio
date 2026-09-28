@@ -149,7 +149,7 @@ export default function GallerySection() {
                     src={activeItem.image}
                     alt={activeItem.headline}
                     fill
-                    priority
+                  loading="eager"
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.03]"
                   />
@@ -337,7 +337,7 @@ export default function GallerySection() {
                 src={activeItem.image}
                 alt={activeItem.headline}
                 fill
-                priority
+                loading="eager"
                 sizes="(max-width: 1200px) 100vw, 1000px"
                 className="object-contain"
               />

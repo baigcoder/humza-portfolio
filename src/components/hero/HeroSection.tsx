@@ -70,9 +70,9 @@ export default function HeroSection() {
               src="/images/humza-hero-master-4k.jpg"
               alt="Humza – ACCA Professional"
               fill
-              priority
-              quality={100}
-              unoptimized
+              loading="lazy"
+              quality={85}
+              sizes="(max-width: 639px) calc(100vw - 2rem), 100vw"
               className="object-cover object-[58%_32%] sm:object-center transition-transform duration-700 ease-out"
               style={{ transform: stageTransform }}
             />
@@ -130,9 +130,9 @@ export default function HeroSection() {
               src="/images/humza-master-4k-cutout.png"
               alt=""
               fill
-              priority
-              quality={100}
-              unoptimized
+              loading="lazy"
+              quality={85}
+              sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 767px) calc(100vw - 4rem), (max-width: 1536px) calc(100vw - 7rem), 1308px"
               className="object-cover object-center transition-transform duration-700 ease-out"
               style={{ transform: stageTransform }}
             />

@@ -97,7 +97,6 @@ export default function SiteHeader() {
               width={32}
               height={32}
               className="w-full h-full"
-              priority
             />
           </div>
           <div className="flex flex-col">

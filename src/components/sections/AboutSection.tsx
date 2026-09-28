@@ -97,11 +97,9 @@ export default function AboutSection() {
                   src="/images/humza-about-executive.webp"
                   alt="Humza – ACCA Qualified Finance Expert"
                   fill
-                  priority
-                  quality={100}
-                  unoptimized
+                  quality={85}
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 420px"
+                  sizes="(max-width: 460px) calc(100vw - 2rem), 420px"
                 />
                 
                 {/* Subtle Vignette Gradient at bottom for text contrast */}

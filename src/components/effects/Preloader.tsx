@@ -66,7 +66,6 @@ export default function Preloader() {
             alt="Humza Logo"
             width={64}
             height={64}
-            priority
             className="w-full h-full relative z-10 animate-[spin_14s_linear_infinite]"
           />
         </div>
