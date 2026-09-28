@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Counter from "@/components/effects/Counter";
 import TiltCard from "@/components/effects/TiltCard";
 import SectionLabel from "@/components/layout/SectionLabel";
 
@@ -29,10 +28,10 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-sm sm:text-base text-white/75 leading-relaxed font-light max-w-xl">
               <p>
-                Humza is an ACCA-qualified finance professional based in Lahore, advising organizations on financial reporting, governance, and strategic growth.
+                I advise organizations on financial reporting, governance, and strategic growth, helping teams turn technical finance questions into clear decisions.
               </p>
               <p className="text-white/50 text-sm">
-                His work includes IFRS implementation, COSO-aligned internal audit, corporate tax, and valuation support for fundraising and transactions.
+                Based in Lahore, my work spans IFRS implementation, COSO-aligned internal audit, corporate tax, and valuation support for fundraising and transactions across Pakistan and the GCC.
               </p>
             </div>
 
@@ -54,7 +53,7 @@ export default function AboutSection() {
 
               <div className="group relative p-4 rounded-xl bg-[#0C0C0C] border border-white/[0.08] hover:border-[#C6956C]/50 hover:bg-[#110E0B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(198,149,108,0.12)] cursor-default">
                 <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 group-hover:text-[#FAF8F5] transition-colors">
-                  <Counter value={2.1} decimals={1} prefix="₨ " suffix="B+" />
+                  ₨2.1B+
                 </div>
                 <div className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-medium">Audit Scope</div>
                 <p className="text-[10px] text-white/40 mt-1">Big 4 Sign-offs</p>
@@ -63,7 +62,7 @@ export default function AboutSection() {
 
               <div className="group relative p-4 rounded-xl bg-[#0C0C0C] border border-white/[0.08] hover:border-[#C6956C]/50 hover:bg-[#110E0B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(198,149,108,0.12)] cursor-default">
                 <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 group-hover:text-[#FAF8F5] transition-colors">
-                  <Counter value={5} prefix="" suffix="+ Years" />
+                  5+ Years
                 </div>
                 <div className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-medium">Advisory</div>
                 <p className="text-[10px] text-white/40 mt-1">Strategic Impact</p>
@@ -78,7 +77,7 @@ export default function AboutSection() {
                 onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
                 className="group inline-flex items-center gap-2.5 text-xs font-mono tracking-widest text-white hover:text-[#C6956C] uppercase transition-colors cursor-pointer"
               >
-                <span>Request Comprehensive Dossier</span>
+                <span>View Professional CV</span>
                 <span className="w-6 h-6 rounded-full bg-white/[0.06] group-hover:bg-[#C6956C] group-hover:text-[#050505] flex items-center justify-center transition-all duration-300 text-[#C6956C] group-hover:translate-x-1">
                   →
                 </span>
@@ -98,11 +97,9 @@ export default function AboutSection() {
                   src="/images/humza-about-executive.webp"
                   alt="Humza – ACCA Qualified Finance Expert"
                   fill
-                  priority
-                  quality={100}
-                  unoptimized
+                  quality={85}
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 420px"
+                  sizes="(max-width: 460px) calc(100vw - 2rem), 420px"
                 />
                 
                 {/* Subtle Vignette Gradient at bottom for text contrast */}

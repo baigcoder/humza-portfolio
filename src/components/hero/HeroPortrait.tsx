@@ -26,7 +26,6 @@ export const HeroPortrait: React.FC = () => {
             alt="Humza - ACCA · Accounting · Finance Professional"
             width={580}
             height={900}
-            priority
             quality={95}
             className="h-full w-auto object-contain object-bottom drop-shadow-[0_15px_40px_rgba(0,0,0,0.85)] filter brightness-[1.02] contrast-[1.05]"
           />

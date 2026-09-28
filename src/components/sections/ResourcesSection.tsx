@@ -1,32 +1,28 @@
-import { ChevronDown } from "lucide-react";
 import SectionLabel from "@/components/layout/SectionLabel";
-import { MetricsBentoSection } from "@/components/sections/MetricsBentoSection";
-import JournalSection from "@/components/sections/JournalSection";
-import GallerySection from "@/components/sections/GallerySection";
-import FaqSection from "@/components/sections/FaqSection";
+import ResourceDisclosure from "@/components/sections/ResourceDisclosure";
 
 const resources = [
   {
     title: "Financial scenario tools",
     description: "Explore working capital, tax, and lease accounting scenarios.",
-    content: <MetricsBentoSection />,
+    resource: "tools",
   },
   {
     title: "Finance journal",
     description: "Notes on reporting, governance, tax, and financial planning.",
-    content: <JournalSection />,
+    resource: "journal",
   },
   {
     title: "Institutional engagement",
     description: "Background on policy dialogue and wider industry participation.",
-    content: <GallerySection />,
+    resource: "gallery",
   },
   {
     title: "Advisory questions",
     description: "Engagement models, process, and common client questions.",
-    content: <FaqSection />,
+    resource: "questions",
   },
-];
+] as const;
 
 export default function ResourcesSection() {
   return (
@@ -47,25 +43,7 @@ export default function ResourcesSection() {
 
         <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
           {resources.map((resource) => (
-            <details key={resource.title} className="group">
-              <summary className="flex cursor-pointer list-none items-center gap-5 py-5 sm:py-6 [&::-webkit-details-marker]:hidden">
-                <span className="min-w-0 flex-1">
-                  <span className="block text-base font-semibold text-white transition-colors group-open:text-[#E4B68F] sm:text-lg">
-                    {resource.title}
-                  </span>
-                  <span className="mt-1 block text-xs leading-relaxed text-white/50 sm:text-sm">
-                    {resource.description}
-                  </span>
-                </span>
-                <ChevronDown
-                  aria-hidden="true"
-                  className="h-5 w-5 shrink-0 text-[#C6956C] transition-transform duration-200 group-open:rotate-180"
-                />
-              </summary>
-              <div className="-mx-4 overflow-hidden rounded-xl border border-white/[0.08] bg-[#050505] sm:-mx-6">
-                {resource.content}
-              </div>
-            </details>
+            <ResourceDisclosure key={resource.title} {...resource} />
           ))}
         </div>
       </div>
