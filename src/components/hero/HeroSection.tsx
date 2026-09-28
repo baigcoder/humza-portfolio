@@ -9,6 +9,10 @@ export default function HeroSection() {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(pointer: fine)");
+    if (reduceMotion.matches || !finePointer.matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 16;
       const y = (e.clientY / window.innerHeight - 0.5) * 10;
@@ -42,7 +46,54 @@ export default function HeroSection() {
 
       {/* ── Main Hero Stage Frame ── */}
       <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-14">
-        <div className="relative w-full aspect-[16/9.4] min-h-[540px] max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A]">
+        <div className="hero-stage relative w-full aspect-[16/9.4] min-h-[540px] max-h-[780px] rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.1] shadow-[0_30px_100px_rgba(0,0,0,0.95)] bg-[#0A0A0A]">
+
+          {/* Editorial identity markers */}
+          <div className="absolute top-5 left-5 sm:top-7 sm:left-7 z-[12] flex items-center gap-2.5 rounded-full border border-white/15 bg-black/35 px-3.5 py-2 backdrop-blur-md animate-fade-in">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.18em] text-white/85">Independent advisory · Lahore</span>
+          </div>
+          <div className="absolute top-5 right-5 sm:top-7 sm:right-7 z-[12] hidden sm:flex flex-col items-end text-[9px] font-mono uppercase tracking-[0.2em] text-white/55 drop-shadow-lg">
+            <span>Finance / Strategy</span>
+            <span className="mt-1 text-white/35">PK · GCC</span>
+          </div>
+
+          {/* Desktop editorial statement: the portrait becomes the right-hand focal point. */}
+          <div className="absolute left-[7%] top-[23%] z-[10] hidden max-w-[47%] text-left lg:block xl:left-[8%] xl:top-[25%]">
+            <div className="hero-copy-enter mb-6 flex items-center gap-3 text-[10px] font-mono font-semibold uppercase tracking-[0.24em] text-[#F2A06A]">
+              <span className="h-px w-8 bg-[#E07A38]" />
+              Strategic finance · Corporate advisory
+            </div>
+            <h1 className="hero-copy-enter hero-copy-delay-1 max-w-[600px] text-[clamp(3.2rem,5.2vw,5rem)] font-semibold leading-[0.94] tracking-[-0.065em] text-white [text-wrap:balance]">
+              Where precision
+              <span className="mt-2 block font-serif font-normal italic tracking-[-0.055em] text-[#F0B17F]">meets capital.</span>
+            </h1>
+            <p className="hero-copy-enter hero-copy-delay-2 mt-6 max-w-[410px] text-sm leading-7 text-white/70 xl:text-base">
+              Clear financial thinking for complex decisions, ambitious businesses, and enduring growth.
+            </p>
+            <div className="hero-copy-enter hero-copy-delay-3 mt-8 flex flex-wrap items-center gap-3">
+              <Magnetic strength={0.18}>
+                <Link href="#contact" className="group inline-flex items-center gap-3 rounded-full bg-[#F3EFE7] px-6 py-3.5 text-xs font-semibold text-[#111] shadow-[0_8px_30px_rgba(0,0,0,0.32)] transition-all duration-300 hover:bg-white hover:shadow-[0_0_32px_rgba(224,122,56,0.28)]">
+                  Start a conversation
+                  <span className="text-[#C45B2B] transition-transform duration-300 group-hover:translate-x-1">↗</span>
+                </Link>
+              </Magnetic>
+              <Link href="#work" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/15 px-5 py-3.5 text-xs font-medium text-white/85 backdrop-blur-sm transition-colors hover:border-white/45 hover:text-white">
+                Explore selected work <span aria-hidden="true">↓</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="absolute bottom-7 left-7 z-[10] hidden items-center gap-3 text-[9px] font-mono uppercase tracking-[0.18em] text-white/55 lg:flex xl:left-9">
+            <span className="h-8 w-px bg-gradient-to-b from-[#E07A38] to-transparent" />
+            Reporting <span className="text-white/25">/</span> Governance <span className="text-white/25">/</span> Capital
+          </div>
+          <a href="#telemetry" aria-label="Scroll to explore" className="absolute bottom-7 right-8 z-[10] hidden items-center gap-3 text-[9px] font-mono uppercase tracking-[0.18em] text-white/55 transition-colors hover:text-white lg:flex">
+            Scroll to explore <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 text-xs">↓</span>
+          </a>
 
           {/* ── STAGE LAYER 1: Ultra HD 4K Master Cinematic Artwork ── */}
           <div className="absolute inset-0 z-[1] select-none pointer-events-none">
@@ -53,7 +104,7 @@ export default function HeroSection() {
               priority
               quality={100}
               unoptimized
-              className="object-cover object-center transition-transform duration-700 ease-out"
+              className="object-cover object-center transition-transform duration-1000 ease-out hero-master-image"
               style={{
                 transform: `translate3d(${mouseOffset.x * 0.16}px, ${mouseOffset.y * 0.16}px, 0) scale(1.02)`,
               }}
@@ -109,7 +160,7 @@ export default function HeroSection() {
               priority
               quality={100}
               unoptimized
-              className="object-cover object-center transition-transform duration-700 ease-out"
+              className="object-cover object-center transition-transform duration-1000 ease-out hero-master-image"
               style={{
                 transform: `translate3d(${mouseOffset.x * 0.16}px, ${mouseOffset.y * 0.16}px, 0) scale(1.02)`,
               }}
@@ -127,7 +178,7 @@ export default function HeroSection() {
           />
 
           {/* ── STAGE LAYER 4: Foreground Editorial Headline & Conversion Action ── */}
-          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-7 sm:pb-9 md:pb-12 px-6">
+          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-7 sm:pb-9 md:pb-12 px-6 lg:hidden">
             {/* Headline */}
             <h1 className="anim-fade-up leading-[1.04] mb-3 text-center">
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[60px] font-bold tracking-tight text-white font-sans drop-shadow-[0_4px_30px_rgba(0,0,0,0.95)]">

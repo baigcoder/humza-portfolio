@@ -30,6 +30,23 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: 0.14;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 0.45px, transparent 0.65px);
+    background-size: 5px 5px;
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--c-amber-hot);
+    outline-offset: 4px;
+  }
+
   ::selection {
     background: var(--c-amber);
     color: var(--c-ink);
@@ -229,6 +246,68 @@
   transform: translateY(0) !important;
 }
 
+/* Polished interaction states shared by editorial cards and imagery. */
+.hero-master-image {
+  filter: saturate(0.92) contrast(1.025);
+}
+
+.hero-copy-enter {
+  animation: heroCopyEnter 900ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.hero-copy-delay-1 { animation-delay: 100ms; }
+.hero-copy-delay-2 { animation-delay: 220ms; }
+.hero-copy-delay-3 { animation-delay: 340ms; }
+
+@keyframes heroCopyEnter {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (min-width: 1024px) {
+  .hero-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.73) 27%, rgba(5, 5, 5, 0.28) 48%, transparent 72%), linear-gradient(0deg, rgba(5, 5, 5, 0.4), transparent 23%);
+  }
+}
+
+section > div,
+article {
+  scroll-margin-top: 6rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-master-image {
+    will-change: transform;
+  }
+
+  .glass-card,
+  .group\/card {
+    transition: border-color 240ms ease, background-color 240ms ease, box-shadow 300ms ease, transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  .glass-card:hover,
+  .group\/card:hover {
+    border-color: rgba(224, 122, 56, 0.28);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.26), 0 0 30px rgba(224, 122, 56, 0.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-init { opacity: 1; transform: none; }
+}
+
 /* Custom Executive Range Sliders */
 input[type="range"].slider-amber {
   -webkit-appearance: none;
@@ -299,4 +378,3 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
     display: none !important;
   }
 }
-
