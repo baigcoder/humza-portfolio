@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { WHATSAPP_DISPLAY_NUMBER, WHATSAPP_LINK } from "@/lib/contact";
 
 export default function SiteFooter() {
   return (
@@ -95,6 +96,15 @@ export default function SiteFooter() {
                 className="block text-white/80 hover:text-[#C6956C] transition-colors font-mono"
               >
                 humza.acca@advisory.pk
+              </a>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/75 hover:text-[#25D366] transition-colors font-mono"
+                aria-label={`WhatsApp ${WHATSAPP_DISPLAY_NUMBER}`}
+              >
+                WhatsApp · {WHATSAPP_DISPLAY_NUMBER}
               </a>
               <p className="text-white/40">Lahore, Punjab, Pakistan</p>
               <div className="pt-2">
