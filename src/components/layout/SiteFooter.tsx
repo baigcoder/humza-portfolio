@@ -43,9 +43,6 @@ export default function SiteFooter() {
               <Link href="#services" className="block text-white/60 hover:text-white transition-colors">
                 Services
               </Link>
-              <Link href="#simulator" className="block text-white/60 hover:text-[#C6956C] transition-colors">
-                Scenario Tools
-              </Link>
               <Link href="#work" className="block text-white/60 hover:text-white transition-colors">
                 Case Studies
               </Link>
@@ -55,14 +52,11 @@ export default function SiteFooter() {
               <Link href="#endorsements" className="block text-white/60 hover:text-white transition-colors">
                 Client Feedback
               </Link>
-              <Link href="#journal" className="block text-white/60 hover:text-white transition-colors">
-                Strategic Journal
+              <Link href="#endorsements" className="block text-white/60 hover:text-white transition-colors">
+                Client Feedback
               </Link>
-              <Link href="#engagements" className="block text-white/60 hover:text-white transition-colors">
-                Institutional Engagement
-              </Link>
-              <Link href="#faq" className="block text-white/60 hover:text-white transition-colors">
-                Advisory Protocols & FAQ
+              <Link href="#resources" className="block text-white/60 hover:text-white transition-colors">
+                Resources
               </Link>
               <Link href="#contact" className="block text-white/60 hover:text-[#C6956C] transition-colors">
                 Submit Brief →
