@@ -420,11 +420,20 @@ input[type="range"].slider-amber::-moz-range-thumb:hover {
   background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.07) 18%, rgba(198,149,108, 0.28) 50%, rgba(255, 255, 255, 0.07) 82%, transparent 100%);
 }
 
+/* A quiet, shared light treatment gives the long portfolio sections a
+   consistent surface without flattening their alternating ink backgrounds. */
+.section-divider {
+  background-image:
+    radial-gradient(ellipse 72% 24rem at 100% 0%, rgba(198, 149, 108, 0.035), transparent 72%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.012), transparent 17rem);
+  background-repeat: no-repeat;
+}
+
 /* Shared editorial hierarchy across the long-form advisory sections. */
 .section-title {
-  font-size: clamp(2rem, 4.1vw, 3.4rem) !important;
-  line-height: 1.06 !important;
-  letter-spacing: -0.035em !important;
+  font-size: clamp(2rem, 3.9vw, 3.25rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.042em !important;
   text-wrap: balance;
 }
 

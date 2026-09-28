@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Magnetic from "@/components/effects/Magnetic";
 import SectionLabel from "@/components/layout/SectionLabel";
+import { WHATSAPP_DISPLAY_NUMBER, WHATSAPP_LINK } from "@/lib/contact";
 
 export default function ContactSection() {
   const [pktTime, setPktTime] = useState("");
@@ -159,6 +161,24 @@ export default function ContactSection() {
                   </a>
                 </div>
               </div>
+
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Chat on WhatsApp at ${WHATSAPP_DISPLAY_NUMBER}`}
+                className="flex items-center gap-3.5 p-4 rounded-xl bg-[#0B120E] border border-[#25D366]/20 hover:border-[#25D366]/50 hover:bg-[#0D1711] transition-all group"
+              >
+                <span className="w-10 h-10 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-[18px] h-[18px]" aria-hidden="true" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] font-mono text-[#25D366] uppercase font-semibold tracking-wider">WhatsApp</span>
+                  <span className="block text-sm font-medium text-white group-hover:text-[#E7F9ED] transition-colors">{WHATSAPP_DISPLAY_NUMBER}</span>
+                  <span className="block text-[11px] text-white/45 mt-0.5">Message directly about an advisory engagement</span>
+                </span>
+                <ArrowUpRight className="w-4 h-4 text-white/40 group-hover:text-[#25D366] transition-colors shrink-0" aria-hidden="true" />
+              </a>
 
             </div>
           </div>
