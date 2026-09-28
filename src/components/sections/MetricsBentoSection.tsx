@@ -202,27 +202,27 @@ export const MetricsBentoSection: React.FC = () => {
                   <span className="text-[9px] font-mono text-white/40 uppercase tracking-wider block mb-2">
                     Quick Benchmark Presets:
                   </span>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <button
                       onClick={() => applyPreset("PKR", 1.2, 14)}
-                      className="px-2.5 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
+                      className="px-3 py-2 sm:px-2.5 sm:py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
                     >
-                      <span className="block text-[10px] font-semibold text-white">Mid-Tier Industrial</span>
-                      <span className="block text-[8px] font-mono text-white/40">₨1.2B Rev · 14d</span>
+                      <span className="block text-[11px] sm:text-[10px] font-semibold text-white">Mid-Tier Industrial</span>
+                      <span className="block text-[9px] font-mono text-white/45">₨1.2B Rev · 14d</span>
                     </button>
                     <button
                       onClick={() => applyPreset("PKR", 4.5, 22)}
-                      className="px-2.5 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
+                      className="px-3 py-2 sm:px-2.5 sm:py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
                     >
-                      <span className="block text-[10px] font-semibold text-white">FMCG Distribution</span>
-                      <span className="block text-[8px] font-mono text-white/40">₨4.5B Rev · 22d</span>
+                      <span className="block text-[11px] sm:text-[10px] font-semibold text-white">FMCG Distribution</span>
+                      <span className="block text-[9px] font-mono text-white/45">₨4.5B Rev · 22d</span>
                     </button>
                     <button
                       onClick={() => applyPreset("USD", 18, 16)}
-                      className="px-2.5 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
+                      className="px-3 py-2 sm:px-2.5 sm:py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] text-left transition-all"
                     >
-                      <span className="block text-[10px] font-semibold text-white">Cross-Border Scaleup</span>
-                      <span className="block text-[8px] font-mono text-white/40">$18M Rev · 16d</span>
+                      <span className="block text-[11px] sm:text-[10px] font-semibold text-white">Cross-Border Scaleup</span>
+                      <span className="block text-[9px] font-mono text-white/45">$18M Rev · 16d</span>
                     </button>
                   </div>
                 </div>

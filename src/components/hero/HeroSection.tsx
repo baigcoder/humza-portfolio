@@ -157,7 +157,7 @@ export default function HeroSection() {
 
           {/* Floating credential chips over the backlight (desktop) */}
           <div
-            className="hidden lg:block absolute top-[34%] left-[7%] z-[8] transition-transform duration-700 ease-out"
+            className="hidden lg:block xl:hidden absolute top-[34%] left-[7%] z-[8] transition-transform duration-700 ease-out"
             style={{ transform: `translate3d(calc(var(--mx) * ${-CHIP_DEPTH}px), calc(var(--my) * ${-CHIP_DEPTH}px), 0)` }}
           >
             <div className="anim-fade-up delay-500 anim-initial flex items-center gap-3 pl-2 pr-4 py-2 rounded-2xl bg-black/30 backdrop-blur-xl border border-white/[0.16] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
@@ -183,27 +183,27 @@ export default function HeroSection() {
           </div>
 
           {/* ── LAYER 4: Headline & conversion actions ── */}
-          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-8 sm:pb-10 md:pb-12 px-5 sm:px-6">
-            <span className="anim-fade-up anim-initial mb-4 inline-flex items-center gap-2.5 text-[10px] sm:text-[11px] font-mono tracking-[0.26em] text-white/75 uppercase">
+          <div className="absolute inset-x-0 bottom-0 z-[10] flex flex-col items-center text-center pb-8 sm:pb-10 md:pb-12 px-5 sm:px-6 xl:inset-x-auto xl:left-[6%] xl:top-[30%] xl:bottom-auto xl:w-[44%] xl:max-w-[560px] xl:items-start xl:text-left xl:px-0 xl:pb-0 2xl:left-[7%] 2xl:top-[31%]">
+            <span className="anim-fade-up anim-initial mb-4 inline-flex items-center gap-2.5 text-[10px] sm:text-[11px] font-mono tracking-[0.26em] text-white/75 uppercase xl:justify-start">
               <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#FFB070]" />
               ACCA · Corporate Finance
               <span className="h-px w-6 bg-gradient-to-l from-transparent to-[#FFB070]" />
             </span>
 
-            <h1 className="anim-fade-up anim-initial delay-100 leading-[1.02] mb-4 text-center">
-              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[66px] font-bold tracking-[-0.035em] text-white font-sans drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+            <h1 className="anim-fade-up anim-initial delay-100 leading-[1.02] mb-4 text-center xl:text-left xl:mb-3">
+              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-bold tracking-[-0.035em] xl:tracking-[-0.055em] text-white font-sans drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
                 Where Precision
               </span>
-              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[66px] font-serif italic tracking-[-0.01em] mt-0.5 sm:mt-1 pb-1 text-gradient-warm">
+              <span className="block text-[2.1rem] sm:text-5xl md:text-[56px] lg:text-[60px] xl:text-[clamp(3rem,4vw,4.4rem)] font-serif italic tracking-[-0.01em] mt-0.5 sm:mt-1 pb-1 text-gradient-warm">
                 Meets Capital
               </span>
             </h1>
 
-            <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/80 leading-relaxed mb-6 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
+            <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/80 leading-relaxed mb-6 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] xl:max-w-[430px] xl:text-left xl:mb-6">
               ACCA certified finance expert based in Pakistan — driving sustainable growth, compliance, and strategic financial impact.
             </p>
 
-            <div className="anim-fade-up anim-initial delay-300 flex flex-wrap items-center justify-center gap-3">
+            <div className="anim-fade-up anim-initial delay-300 flex flex-wrap items-center justify-center gap-3 xl:justify-start">
               <Magnetic strength={0.28}>
                 <Link
                   href="#contact"

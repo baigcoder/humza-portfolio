@@ -19,15 +19,6 @@ export default function CommandPalette() {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [showTrigger, setShowTrigger] = useState(false);
-
-  // Keep the floating trigger out of the hero's first impression
-  useEffect(() => {
-    const onScroll = () => setShowTrigger(window.scrollY > 400);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const showToast = (msg: string) => {
@@ -170,6 +161,7 @@ export default function CommandPalette() {
 
   // Global key listener for ⌘K / Ctrl+K
   useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
@@ -180,8 +172,12 @@ export default function CommandPalette() {
       }
     };
 
+    window.addEventListener("open-command-palette", handleOpen);
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("open-command-palette", handleOpen);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [isOpen]);
 
   // Focus input when opened
@@ -215,21 +211,6 @@ export default function CommandPalette() {
           <span>{toastMessage}</span>
         </div>
       )}
-
-      {/* Floating Trigger Button (Bottom Left, Subtle Luxury Pill) */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className={`fixed bottom-5 left-5 z-40 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E0E0E]/80 hover:bg-[#161412] text-white/50 hover:text-white border border-white/[0.08] hover:border-[#E07A38]/40 shadow-lg backdrop-blur-xl transition-all duration-300 text-[11px] font-mono group cursor-pointer ${
-          showTrigger ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
-        }`}
-        aria-label="Open Command Menu"
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] group-hover:scale-125 transition-transform" />
-        <span className="tracking-wide">Quick Command</span>
-        <span className="px-1.5 py-0.5 rounded bg-white/[0.06] border border-white/[0.08] text-[9px] text-white/60">
-          ⌘K
-        </span>
-      </button>
 
       {/* Backdrop & Modal */}
       {isOpen && (
