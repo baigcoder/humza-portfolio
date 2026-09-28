@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { isSoundEnabled, setSoundEnabled, playTactileSound } from "@/components/effects/SoundEffects";
-import { VolumeX } from "lucide-react";
+import { VolumeX, Search } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -176,6 +176,19 @@ export default function SiteHeader() {
             </span>
           </button>
 
+          <button
+            type="button"
+            onClick={() => {
+              playTactileSound("click");
+              window.dispatchEvent(new CustomEvent("open-command-palette"));
+            }}
+            aria-label="Open quick search"
+            title="Quick search · Ctrl K"
+            className="hidden 2xl:inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.035] text-white/60 transition-colors hover:border-[#E07A38]/45 hover:text-white"
+          >
+            <Search className="h-3.5 w-3.5" aria-hidden />
+          </button>
+
           {/* Executive Dossier Button */}
           <button
             onClick={() => {
@@ -258,6 +271,18 @@ export default function SiteHeader() {
                 );
               })}
             </ul>
+
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                window.dispatchEvent(new CustomEvent("open-command-palette"));
+              }}
+              className="mt-5 flex w-full items-center justify-between rounded-2xl border border-white/[0.1] bg-white/[0.035] px-5 py-4 text-white/80 transition-colors hover:border-[#E07A38]/40 hover:text-white"
+            >
+              <span className="flex items-center gap-3 text-sm font-medium"><Search className="h-4 w-4 text-[#E07A38]" aria-hidden />Quick search & navigation</span>
+              <span className="font-mono text-[10px] text-white/35">Ctrl K</span>
+            </button>
 
             <button
               onClick={() => {
