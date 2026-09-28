@@ -62,12 +62,12 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop editorial statement: the portrait becomes the right-hand focal point. */}
-          <div className="absolute left-[7%] top-[23%] z-[10] hidden max-w-[47%] text-left lg:block xl:left-[8%] xl:top-[25%]">
+          <div className="absolute left-[6%] top-[30%] z-[10] hidden max-w-[42%] text-left lg:block xl:left-[7%] xl:top-[31%]">
             <div className="hero-copy-enter mb-6 flex items-center gap-3 text-[10px] font-mono font-semibold uppercase tracking-[0.24em] text-[#F2A06A]">
               <span className="h-px w-8 bg-[#E07A38]" />
               Strategic finance · Corporate advisory
             </div>
-            <h1 className="hero-copy-enter hero-copy-delay-1 max-w-[600px] text-[clamp(3.2rem,5.2vw,5rem)] font-semibold leading-[0.94] tracking-[-0.065em] text-white [text-wrap:balance]">
+            <h1 className="hero-copy-enter hero-copy-delay-1 max-w-[550px] text-[clamp(3rem,4.5vw,4.4rem)] font-semibold leading-[0.96] tracking-[-0.065em] text-white [text-wrap:balance]">
               Where precision
               <span className="mt-2 block font-serif font-normal italic tracking-[-0.055em] text-[#F0B17F]">meets capital.</span>
             </h1>
