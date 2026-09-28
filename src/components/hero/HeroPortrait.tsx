@@ -9,7 +9,7 @@ export const HeroPortrait: React.FC = () => {
         <div 
           className="absolute inset-0 pointer-events-none opacity-50 blur-xl"
           style={{
-            background: "radial-gradient(ellipse at 55% 35%, rgba(224, 122, 56, 0.4) 0%, transparent 65%)",
+            background: "radial-gradient(ellipse at 55% 35%, rgba(198,149,108, 0.4) 0%, transparent 65%)",
           }}
         />
 

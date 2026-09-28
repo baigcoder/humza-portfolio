@@ -13,15 +13,15 @@ export default function CredentialsSection() {
         <SectionLabel index="05" label="Professional Credentials & Standards" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-            Certified authority.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-              Uncompromising
+          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+              A commitment to{" "}
+            <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                professional
             </span>{" "}
-            standards.
+              standards.
           </h2>
           <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
-            Globally recognized accreditations underpinning every deliverable.
+            Professional credentials and technical standards relevant to advisory work.
           </p>
         </div>
 
@@ -30,15 +30,11 @@ export default function CredentialsSection() {
 
           {/* ACCA — Primary Card */}
           <TiltCard maxTilt={5} scale={1.015} className="h-full">
-            <div className="group relative h-full rounded-xl border border-[#E07A38]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] overflow-hidden transition-all duration-300 hover:border-[#E07A38]/60 hover:shadow-[0_16px_50px_rgba(224,122,56,0.15)] flex flex-col justify-between">
+            <div className="group relative h-full rounded-xl border border-[#C6956C]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] overflow-hidden transition-all duration-300 hover:border-[#C6956C]/60 hover:shadow-[0_16px_50px_rgba(198,149,108,0.15)] flex flex-col justify-between">
               {/* Corner Architectural Crosshairs (+) */}
-              <span className="absolute top-2.5 left-2.5 z-10 text-[8px] font-mono text-[#E07A38]/30 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute top-2.5 right-2.5 z-10 text-[8px] font-mono text-[#E07A38]/30 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-2.5 left-2.5 z-10 text-[8px] font-mono text-[#E07A38]/30 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-              <span className="absolute bottom-2.5 right-2.5 z-10 text-[8px] font-mono text-[#E07A38]/30 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
               {/* Ambient glow */}
-              <div className="absolute -top-16 -right-16 w-56 h-56 bg-[radial-gradient(ellipse,rgba(224,122,56,0.16),transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute -top-16 -right-16 w-56 h-56 bg-[radial-gradient(ellipse,rgba(198,149,108,0.16),transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-500" />
 
               <div className="relative p-6 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
@@ -56,7 +52,7 @@ export default function CredentialsSection() {
                         </span>
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-bold block">ACCA-UK</span>
+                        <span className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold block">ACCA-UK</span>
                         <span className="text-[9px] font-mono text-white/40">Charter № Active</span>
                       </div>
                     </div>
@@ -96,7 +92,7 @@ export default function CredentialsSection() {
                     <span>·</span>
                     <span className="whitespace-nowrap">Global Code of Ethics</span>
                   </div>
-                  <span className="text-[9px] font-mono text-[#E07A38]/75 font-semibold whitespace-nowrap">ACTIVE & IN GOOD STANDING</span>
+                  <span className="text-[9px] font-mono text-[#C6956C]/75 font-semibold whitespace-nowrap">ACTIVE & IN GOOD STANDING</span>
                 </div>
               </div>
             </div>
@@ -106,10 +102,6 @@ export default function CredentialsSection() {
           <TiltCard maxTilt={5} scale={1.015} className="h-full">
             <div className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] overflow-hidden transition-all duration-300 hover:border-[#3B82F6]/50 hover:shadow-[0_16px_50px_rgba(59,130,246,0.12)] flex flex-col justify-between">
               {/* Corner Architectural Crosshairs (+) */}
-              <span className="absolute top-2.5 left-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#3B82F6] transition-colors">+</span>
-              <span className="absolute top-2.5 right-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#3B82F6] transition-colors">+</span>
-              <span className="absolute bottom-2.5 left-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#3B82F6] transition-colors">+</span>
-              <span className="absolute bottom-2.5 right-2.5 z-10 text-[8px] font-mono text-white/20 select-none group-hover:text-[#3B82F6] transition-colors">+</span>
 
               {/* Ambient glow */}
               <div className="absolute -top-16 -right-16 w-56 h-56 bg-[radial-gradient(ellipse,rgba(59,130,246,0.12),transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-500" />
@@ -179,8 +171,8 @@ export default function CredentialsSection() {
               className="group rounded-xl border border-white/[0.06] bg-[#0C0C0C] p-4 hover:border-white/[0.12] hover:bg-[#0E0E0E] transition-all duration-300"
             >
               <div className="flex items-center gap-2.5 mb-2.5">
-                <c.icon className="w-4 h-4 text-[#E07A38]" strokeWidth={1.75} aria-hidden />
-                <span className="text-[9px] font-mono tracking-[0.15em] text-[#E07A38] uppercase font-bold">{c.code}</span>
+                <c.icon className="w-4 h-4 text-[#C6956C]" strokeWidth={1.75} aria-hidden />
+                <span className="text-[9px] font-mono tracking-[0.15em] text-[#C6956C] uppercase font-bold">{c.code}</span>
               </div>
               <h4 className="text-sm font-bold text-white mb-1 leading-snug">{c.title}</h4>
               <p className="text-[10px] text-white/45 leading-relaxed font-light line-clamp-2">{c.body}</p>

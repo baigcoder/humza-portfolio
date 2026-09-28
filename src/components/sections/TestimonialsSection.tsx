@@ -75,8 +75,8 @@ export default function TestimonialsSection() {
       className="relative py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#070707] section-divider overflow-hidden"
     >
       {/* Background ambient radial glow */}
-      <div className="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#E07A38]/[0.05] blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-[#E07A38]/[0.03] blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#C6956C]/[0.05] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-[#C6956C]/[0.03] blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1420px] mx-auto relative z-10">
         {/* Section Header */}
@@ -84,22 +84,22 @@ export default function TestimonialsSection() {
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-              C-Suite authority.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                Quantified
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+              Trusted advice.{" "}
+              <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                Lasting
               </span>{" "}
-              boardroom trust.
+              working relationships.
             </h2>
             <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-md mt-4">
-              Direct citations from corporate directors, audit committee chairs, and institutional investment partners.
+              Perspectives shared by clients and finance leaders across advisory engagements.
             </p>
           </div>
 
           <div className="flex items-center gap-2">
             <span className="px-3 py-1 rounded-full text-[10px] font-mono text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 flex items-center gap-1.5 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-              VERIFIED BOARD CITATIONS
+              CLIENT FEEDBACK
             </span>
           </div>
         </div>
@@ -110,23 +110,19 @@ export default function TestimonialsSection() {
             <TiltCard key={t.id} maxTilt={3.5} scale={1.01} className="h-full">
               <div
                 onClick={() => playTactileSound("tick")}
-                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#E07A38]/50 hover:shadow-[0_16px_44px_rgba(224,122,56,0.12)] transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between overflow-hidden cursor-default"
+                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#C6956C]/50 hover:shadow-[0_16px_44px_rgba(198,149,108,0.12)] transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between overflow-hidden cursor-default"
               >
                 {/* Architectural Crosshairs */}
-                <span className="absolute top-2.5 left-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute top-2.5 right-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute bottom-2.5 left-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute bottom-2.5 right-2.5 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
                 {/* Decorative Quotation Glyph in background */}
-                <span aria-hidden className="absolute top-12 right-5 text-[110px] leading-none font-serif text-white/[0.035] select-none pointer-events-none group-hover:text-[#E07A38]/[0.1] transition-colors">
+                <span aria-hidden className="absolute top-12 right-5 text-[110px] leading-none font-serif text-white/[0.035] select-none pointer-events-none group-hover:text-[#C6956C]/[0.1] transition-colors">
                   “
                 </span>
 
                 <div>
                   {/* Top Badge & Sector Tag */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-[#E07A38]/[0.08] text-[#E07A38] border border-[#E07A38]/20 tracking-wider uppercase">
+                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-[#C6956C]/[0.08] text-[#C6956C] border border-[#C6956C]/20 tracking-wider uppercase">
                       {t.tag}
                     </span>
                     <span className="text-[10px] font-mono text-white/40">{t.location}</span>
@@ -153,7 +149,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   <div className="text-right flex-shrink-0">
-                    <span className="text-lg sm:text-xl font-bold font-sans text-[#E07A38] leading-none block">
+                    <span className="text-lg sm:text-xl font-bold font-sans text-[#C6956C] leading-none block">
                       {t.impactMetric}
                     </span>
                     <span className="text-[9px] font-mono text-white/45 uppercase tracking-wider block mt-0.5">

@@ -7,17 +7,10 @@ import Link from "next/link";
 export default function SiteFooter() {
   return (
     <footer className="relative bg-[#050505] border-t border-white/[0.08] overflow-hidden">
-      {/* Infinite Subtle Architectural Marquee Ribbon */}
-      <div className="py-8 border-b border-white/[0.04] overflow-hidden select-none [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <div className="anim-marquee">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <span
-              key={i}
-              className="text-[64px] sm:text-[92px] md:text-[112px] leading-none tracking-[0.01em] text-stroke-subtle uppercase whitespace-nowrap mx-8 font-bebas hover:[-webkit-text-stroke-color:rgba(224,122,56,0.45)] transition-[-webkit-text-stroke-color] duration-500"
-            >
-              HUMZA · ACCA CERTIFIED · FINANCIAL ARCHITECTURE · LAHORE ·
-            </span>
-          ))}
+      <div className="border-b border-white/[0.06]">
+        <div className="max-w-[1532px] mx-auto px-4 sm:px-8 md:px-14 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em]">
+          <span className="text-white/80">Humza <span className="text-[#C6956C]">·</span> ACCA</span>
+          <span className="text-white/45">Financial reporting · Governance · Tax · Valuation</span>
         </div>
       </div>
 
@@ -29,48 +22,48 @@ export default function SiteFooter() {
               <Image src="/images/sun-emblem.svg" alt="" width={28} height={28} />
               <div className="flex flex-col">
                 <span className="text-sm font-bold tracking-widest text-white uppercase">HUMZA</span>
-                <span className="text-[9px] font-mono tracking-[0.2em] text-[#E07A38]">ACCA · FINANCE</span>
+                <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C]">ACCA · FINANCE</span>
               </div>
             </div>
             <p className="text-xs text-white/50 leading-relaxed max-w-sm font-light">
-              ACCA-qualified financial professional based in Lahore, Pakistan. Advising forward-thinking corporate groups on statutory IFRS reporting, risk-based internal audit assurance, corporate tax optimization, and DCF valuation.
+              ACCA-qualified finance professional in Lahore, Pakistan, advising on financial reporting, internal audit, corporate tax, and valuation.
             </p>
           </div>
 
           {/* Col 2: Navigation (2 cols) */}
           <div className="md:col-span-2 space-y-3">
-            <div className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-semibold">
+            <div className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-semibold">
               Navigation
             </div>
             <div className="space-y-2 text-xs font-light">
               <Link href="#about" className="block text-white/60 hover:text-white transition-colors">
-                About Dossier
+                About
               </Link>
               <Link href="#services" className="block text-white/60 hover:text-white transition-colors">
-                Advisory Scope
+                Services
               </Link>
-              <Link href="#simulator" className="block text-white/60 hover:text-[#E07A38] transition-colors">
-                Capital Simulator
+              <Link href="#simulator" className="block text-white/60 hover:text-[#C6956C] transition-colors">
+                Scenario Tools
               </Link>
               <Link href="#work" className="block text-white/60 hover:text-white transition-colors">
-                Case Engagements
+                Case Studies
               </Link>
               <Link href="#credentials" className="block text-white/60 hover:text-white transition-colors">
                 Credentials & Standards
               </Link>
               <Link href="#endorsements" className="block text-white/60 hover:text-white transition-colors">
-                Boardroom Endorsements
+                Client Feedback
               </Link>
               <Link href="#journal" className="block text-white/60 hover:text-white transition-colors">
                 Strategic Journal
               </Link>
               <Link href="#engagements" className="block text-white/60 hover:text-white transition-colors">
-                Ministerial Summit
+                Institutional Engagement
               </Link>
               <Link href="#faq" className="block text-white/60 hover:text-white transition-colors">
                 Advisory Protocols & FAQ
               </Link>
-              <Link href="#contact" className="block text-white/60 hover:text-[#E07A38] transition-colors">
+              <Link href="#contact" className="block text-white/60 hover:text-[#C6956C] transition-colors">
                 Submit Brief →
               </Link>
             </div>
@@ -78,7 +71,7 @@ export default function SiteFooter() {
 
           {/* Col 3: Practice Disciplines (3 cols) */}
           <div className="md:col-span-3 space-y-3">
-            <div className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-semibold">
+            <div className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-semibold">
               Practice Disciplines
             </div>
             <div className="space-y-1.5 text-xs text-white/60 font-light">
@@ -93,13 +86,13 @@ export default function SiteFooter() {
 
           {/* Col 4: Direct Inquiries (3 cols) */}
           <div className="md:col-span-3 space-y-3">
-            <div className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-semibold">
+            <div className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-semibold">
               Direct Inquiries
             </div>
             <div className="space-y-2 text-xs">
               <a
                 href="mailto:humza.acca@advisory.pk"
-                className="block text-white/80 hover:text-[#E07A38] transition-colors font-mono"
+                className="block text-white/80 hover:text-[#C6956C] transition-colors font-mono"
               >
                 humza.acca@advisory.pk
               </a>
@@ -108,9 +101,9 @@ export default function SiteFooter() {
                 <button
                   type="button"
                   onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
-                  className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#E07A38] hover:underline cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#C6956C] hover:underline cursor-pointer"
                 >
-                  <span>Download Professional Resume</span>
+                  <span>View profile · Save as PDF</span>
                   <span>↗</span>
                 </button>
               </div>
@@ -121,11 +114,11 @@ export default function SiteFooter() {
         {/* Bottom Metadata Hairline */}
         <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-white/30 uppercase tracking-wider">
           <div>
-            © {new Date().getFullYear()} HUMZA, ACCA. All Professional Rights Reserved.
+            © {new Date().getFullYear()} Humza, ACCA · Lahore, Pakistan
           </div>
           <div className="flex items-center gap-4">
             <span>Upholding the ACCA Code of Ethics</span>
-            <span className="text-[#E07A38]">●</span>
+            <span className="text-[#C6956C]">●</span>
             <span>Lahore, PK</span>
           </div>
         </div>

@@ -99,7 +99,7 @@ export const MetricsBentoSection: React.FC = () => {
       className="relative w-full py-20 md:py-28 px-4 sm:px-8 md:px-14 bg-[#050505] section-divider overflow-hidden"
     >
       {/* Background ambient warm illumination */}
-      <div className="absolute top-1/2 left-1/3 w-[550px] h-[550px] rounded-full bg-[#E07A38]/[0.04] blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 w-[550px] h-[550px] rounded-full bg-[#C6956C]/[0.04] blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1420px] mx-auto">
         {/* Section Header */}
@@ -107,15 +107,15 @@ export const MetricsBentoSection: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-              Tangible liquidity.{" "}
-              <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-                Engineered
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+              Explore the impact of{" "}
+              <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+                key financial
               </span>{" "}
-              capital impact.
+              decisions.
             </h2>
             <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-lg mt-4">
-              Select an institutional calculation engine below to model working capital liquidity, Pakistan Section 4C Super Tax liabilities, or IFRS 16 balance sheet capitalization.
+              Use these sample tools to explore working capital, tax, and lease accounting scenarios. Figures are estimates and are not tax, accounting, or investment advice.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export const MetricsBentoSection: React.FC = () => {
               onClick={() => handleTabChange("working-capital")}
               className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "working-capital"
-                  ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
+                  ? "bg-[#C6956C] text-[#0A0A0A] shadow-[0_0_14px_rgba(198,149,108,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
@@ -137,7 +137,7 @@ export const MetricsBentoSection: React.FC = () => {
               onClick={() => handleTabChange("super-tax")}
               className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "super-tax"
-                  ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
+                  ? "bg-[#C6956C] text-[#0A0A0A] shadow-[0_0_14px_rgba(198,149,108,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
@@ -149,7 +149,7 @@ export const MetricsBentoSection: React.FC = () => {
               onClick={() => handleTabChange("ifrs-16")}
               className={`px-2 sm:px-3.5 py-2 sm:py-1.5 rounded-lg text-[10px] sm:text-[11px] leading-tight font-mono font-bold transition-all text-center sm:whitespace-nowrap cursor-pointer flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 ${
                 activeTab === "ifrs-16"
-                  ? "bg-[#E07A38] text-[#0A0A0A] shadow-[0_0_14px_rgba(224,122,56,0.35)]"
+                  ? "bg-[#C6956C] text-[#0A0A0A] shadow-[0_0_14px_rgba(198,149,108,0.35)]"
                   : "text-white/50 hover:text-white"
               }`}
             >
@@ -166,13 +166,11 @@ export const MetricsBentoSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 animate-fade-in">
             {/* Left Control Panel */}
             <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-              <span className="absolute top-3 left-3 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute top-3 right-3 text-[8px] font-mono text-white/20 select-none">+</span>
 
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono tracking-widest text-[#E07A38] uppercase font-bold">
+                    <span className="text-[10px] font-mono tracking-widest text-[#C6956C] uppercase font-bold">
                       ENGINE 01 · DSO WORKING CAPITAL
                     </span>
                   </div>
@@ -181,7 +179,7 @@ export const MetricsBentoSection: React.FC = () => {
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("PKR"); setRevenue(3.5); }}
                       className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
-                        currency === "PKR" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
+                        currency === "PKR" ? "bg-[#C6956C] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >
                       PKR (₨)
@@ -189,7 +187,7 @@ export const MetricsBentoSection: React.FC = () => {
                     <button
                       onClick={() => { playTactileSound("click"); setCurrency("USD"); setRevenue(12); }}
                       className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold whitespace-nowrap ${
-                        currency === "USD" ? "bg-[#E07A38] text-[#0A0A0A]" : "text-white/40 hover:text-white"
+                        currency === "USD" ? "bg-[#C6956C] text-[#0A0A0A]" : "text-white/40 hover:text-white"
                       }`}
                     >
                       USD ($)
@@ -245,7 +243,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setRevenue(parseFloat(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>{currency === "PKR" ? "₨0.5B" : "$2M"}</span>
@@ -257,7 +255,7 @@ export const MetricsBentoSection: React.FC = () => {
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-white/70">DSO Optimization (Receivables Days Accelerated)</span>
-                    <span className="text-sm font-mono font-bold text-[#E07A38]">
+                    <span className="text-sm font-mono font-bold text-[#C6956C]">
                       {dsoReduction} Days Saved
                     </span>
                   </div>
@@ -271,7 +269,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setDsoReduction(parseInt(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>3 Days (Tactical)</span>
@@ -289,12 +287,12 @@ export const MetricsBentoSection: React.FC = () => {
             {/* Right Output Bento Card */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               <TiltCard maxTilt={4} scale={1.01} className="h-full">
-                <div className="h-full rounded-2xl border border-[#E07A38]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(224,122,56,0.12)]">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#E07A38]/[0.12] rounded-full blur-3xl pointer-events-none" />
+                <div className="h-full rounded-2xl border border-[#C6956C]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(198,149,108,0.12)]">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#C6956C]/[0.12] rounded-full blur-3xl pointer-events-none" />
 
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[9px] font-mono tracking-widest text-[#E07A38] uppercase font-bold px-2 py-0.5 rounded bg-[#E07A38]/10 border border-[#E07A38]/20">
+                      <span className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-bold px-2 py-0.5 rounded bg-[#C6956C]/10 border border-[#C6956C]/20">
                         Liberated Capital Yield
                       </span>
                       <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
@@ -328,10 +326,10 @@ export const MetricsBentoSection: React.FC = () => {
 
                   <button
                     onClick={() => handleInquire("FP&A & Working Capital Optimization")}
-                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(224,122,56,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(198,149,108,0.4)] flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Execute Working Capital Retainer</span>
-                    <span className="text-[#E07A38]">→</span>
+                    <span className="text-[#C6956C]">→</span>
                   </button>
                 </div>
               </TiltCard>
@@ -346,13 +344,11 @@ export const MetricsBentoSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 animate-fade-in">
             {/* Left Control Panel */}
             <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-              <span className="absolute top-3 left-3 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute top-3 right-3 text-[8px] font-mono text-white/20 select-none">+</span>
 
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono tracking-widest text-[#E07A38] uppercase font-bold">
+                    <span className="text-[10px] font-mono tracking-widest text-[#C6956C] uppercase font-bold">
                       ENGINE 02 · FBR SECTION 4C SUPER TAX
                     </span>
                   </div>
@@ -371,7 +367,7 @@ export const MetricsBentoSection: React.FC = () => {
                       onClick={() => { playTactileSound("click"); setSector("general"); }}
                       className={`px-2.5 py-2 rounded-lg border text-left transition-all ${
                         sector === "general"
-                          ? "bg-[#E07A38]/10 border-[#E07A38]/50 text-white"
+                          ? "bg-[#C6956C]/10 border-[#C6956C]/50 text-white"
                           : "bg-white/[0.02] border-white/[0.06] text-white/50 hover:text-white"
                       }`}
                     >
@@ -382,7 +378,7 @@ export const MetricsBentoSection: React.FC = () => {
                       onClick={() => { playTactileSound("click"); setSector("export"); }}
                       className={`px-2.5 py-2 rounded-lg border text-left transition-all ${
                         sector === "export"
-                          ? "bg-[#E07A38]/10 border-[#E07A38]/50 text-white"
+                          ? "bg-[#C6956C]/10 border-[#C6956C]/50 text-white"
                           : "bg-white/[0.02] border-white/[0.06] text-white/50 hover:text-white"
                       }`}
                     >
@@ -393,7 +389,7 @@ export const MetricsBentoSection: React.FC = () => {
                       onClick={() => { playTactileSound("click"); setSector("heavy"); }}
                       className={`px-2.5 py-2 rounded-lg border text-left transition-all ${
                         sector === "heavy"
-                          ? "bg-[#E07A38]/10 border-[#E07A38]/50 text-white"
+                          ? "bg-[#C6956C]/10 border-[#C6956C]/50 text-white"
                           : "bg-white/[0.02] border-white/[0.06] text-white/50 hover:text-white"
                       }`}
                     >
@@ -407,7 +403,7 @@ export const MetricsBentoSection: React.FC = () => {
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-white/70">Annual Taxable Income (Profit Before Tax)</span>
-                    <span className="text-base font-mono font-bold text-[#E07A38]">
+                    <span className="text-base font-mono font-bold text-[#C6956C]">
                       ₨ {taxableIncomePKR} Million
                     </span>
                   </div>
@@ -421,7 +417,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setTaxableIncomePKR(parseInt(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>₨100M (Below 4C)</span>
@@ -441,7 +437,7 @@ export const MetricsBentoSection: React.FC = () => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-white/60">Super Tax on High Earning (Sec 4C):</span>
-                    <span className="font-mono text-[#E07A38] font-bold">+{superTaxRate}.0%</span>
+                    <span className="font-mono text-[#C6956C] font-bold">+{superTaxRate}.0%</span>
                   </div>
                   <div className="flex justify-between items-center pt-2 border-t border-white/[0.06]">
                     <span className="text-white font-semibold">Combined Statutory Tax Rate:</span>
@@ -454,22 +450,22 @@ export const MetricsBentoSection: React.FC = () => {
 
               <div className="pt-4 border-t border-white/[0.06] text-[10px] font-mono text-white/40 flex items-center justify-between">
                 <span>Statutory Authority: FBR IRIS e-filing · Section 4C First Schedule</span>
-                <span className="text-[#E07A38]">Tax Restructuring Recommended</span>
+                <span className="text-[#C6956C]">Tax Restructuring Recommended</span>
               </div>
             </div>
 
             {/* Right Output Bento Card */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               <TiltCard maxTilt={4} scale={1.01} className="h-full">
-                <div className="h-full rounded-2xl border border-[#E07A38]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(224,122,56,0.12)]">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#E07A38]/[0.12] rounded-full blur-3xl pointer-events-none" />
+                <div className="h-full rounded-2xl border border-[#C6956C]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(198,149,108,0.12)]">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#C6956C]/[0.12] rounded-full blur-3xl pointer-events-none" />
 
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[9px] font-mono tracking-widest text-[#E07A38] uppercase font-bold px-2 py-0.5 rounded bg-[#E07A38]/10 border border-[#E07A38]/20">
+                      <span className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-bold px-2 py-0.5 rounded bg-[#C6956C]/10 border border-[#C6956C]/20">
                         Total Corporate Tax Bill
                       </span>
-                      <span className="text-[10px] font-mono text-[#E07A38] font-bold">
+                      <span className="text-[10px] font-mono text-[#C6956C] font-bold">
                         RATE: {effectiveTaxRate.toFixed(1)}%
                       </span>
                     </div>
@@ -486,7 +482,7 @@ export const MetricsBentoSection: React.FC = () => {
 
                     {/* Actionable Structuring Levers */}
                     <div className="space-y-2 pt-4 border-t border-white/[0.08]">
-                      <span className="text-[9px] font-mono uppercase tracking-wider text-[#E07A38] block">
+                      <span className="text-[9px] font-mono uppercase tracking-wider text-[#C6956C] block">
                         Advisory Structuring Levers Available:
                       </span>
                       <div className="text-[11px] text-white/70 space-y-1.5 font-light">
@@ -508,10 +504,10 @@ export const MetricsBentoSection: React.FC = () => {
 
                   <button
                     onClick={() => handleInquire("FBR Corporate Tax Strategy & Section 4C Restructuring")}
-                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(224,122,56,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(198,149,108,0.4)] flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Request Corporate Tax Advisory</span>
-                    <span className="text-[#E07A38]">→</span>
+                    <span className="text-[#C6956C]">→</span>
                   </button>
                 </div>
               </TiltCard>
@@ -526,13 +522,11 @@ export const MetricsBentoSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 animate-fade-in">
             {/* Left Control Panel */}
             <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-              <span className="absolute top-3 left-3 text-[8px] font-mono text-white/20 select-none">+</span>
-              <span className="absolute top-3 right-3 text-[8px] font-mono text-white/20 select-none">+</span>
 
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono tracking-widest text-[#E07A38] uppercase font-bold">
+                    <span className="text-[10px] font-mono tracking-widest text-[#C6956C] uppercase font-bold">
                       ENGINE 03 · IFRS 16 LEASE BALANCE SHEET FORECASTER
                     </span>
                   </div>
@@ -559,7 +553,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setAnnualLeasePKR(parseInt(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>₨10M / yr</span>
@@ -571,7 +565,7 @@ export const MetricsBentoSection: React.FC = () => {
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-white/70">Weighted Average Lease Duration</span>
-                    <span className="text-sm font-mono font-bold text-[#E07A38]">
+                    <span className="text-sm font-mono font-bold text-[#C6956C]">
                       {leaseTermYears} Years
                     </span>
                   </div>
@@ -585,7 +579,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setLeaseTermYears(parseInt(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>3 Years</span>
@@ -611,7 +605,7 @@ export const MetricsBentoSection: React.FC = () => {
                       playTactileSound("slider");
                       setIbrPercent(parseFloat(e.target.value));
                     }}
-                    className="w-full accent-[#E07A38] bg-white/10 rounded-lg h-1.5 cursor-pointer"
+                    className="w-full accent-[#C6956C] bg-white/10 rounded-lg h-1.5 cursor-pointer"
                   />
                   <div className="flex justify-between text-[9px] font-mono text-white/30 mt-1">
                     <span>12.0%</span>
@@ -629,12 +623,12 @@ export const MetricsBentoSection: React.FC = () => {
             {/* Right Output Bento Card */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               <TiltCard maxTilt={4} scale={1.01} className="h-full">
-                <div className="h-full rounded-2xl border border-[#E07A38]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(224,122,56,0.12)]">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#E07A38]/[0.12] rounded-full blur-3xl pointer-events-none" />
+                <div className="h-full rounded-2xl border border-[#C6956C]/30 bg-gradient-to-br from-[#120E0A] via-[#0C0B0A] to-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_16px_40px_rgba(198,149,108,0.12)]">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#C6956C]/[0.12] rounded-full blur-3xl pointer-events-none" />
 
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[9px] font-mono tracking-widest text-[#E07A38] uppercase font-bold px-2 py-0.5 rounded bg-[#E07A38]/10 border border-[#E07A38]/20">
+                      <span className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-bold px-2 py-0.5 rounded bg-[#C6956C]/10 border border-[#C6956C]/20">
                         Capitalized Balance Sheet
                       </span>
                       <span className="text-[10px] font-mono text-[#10B981] font-bold">
@@ -663,7 +657,7 @@ export const MetricsBentoSection: React.FC = () => {
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-white/40">Year 1 Financing Cost (P&L):</span>
-                        <span className="font-mono text-[#E07A38] font-semibold">₨ {year1FinanceCost}M</span>
+                        <span className="font-mono text-[#C6956C] font-semibold">₨ {year1FinanceCost}M</span>
                       </div>
                       <div className="flex items-center justify-between pt-1">
                         <span className="text-white/40">Bank Covenant Review:</span>
@@ -674,10 +668,10 @@ export const MetricsBentoSection: React.FC = () => {
 
                   <button
                     onClick={() => handleInquire("IFRS 16 Balance Sheet Technical Transition")}
-                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(224,122,56,0.4)] flex items-center justify-center gap-2 cursor-pointer"
+                    className="mt-6 w-full py-3 rounded-xl bg-white hover:bg-[#FAF8F5] text-[#0A0A0A] font-semibold text-xs transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(198,149,108,0.4)] flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Retain for IFRS 16 Transition</span>
-                    <span className="text-[#E07A38]">→</span>
+                    <span className="text-[#C6956C]">→</span>
                   </button>
                 </div>
               </TiltCard>

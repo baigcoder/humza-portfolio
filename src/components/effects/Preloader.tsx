@@ -46,7 +46,7 @@ export default function Preloader() {
       }`}
     >
       {/* Background ambient warm halo */}
-      <div className="absolute w-[480px] h-[480px] rounded-full bg-[#E07A38]/[0.08] blur-[140px] pointer-events-none animate-ambient-pulse" />
+      <div className="absolute w-[480px] h-[480px] rounded-full bg-[#C6956C]/[0.08] blur-[140px] pointer-events-none animate-ambient-pulse" />
 
       {/* Outer grid hairlines & architectural crosshairs matching website theme */}
       <div className="absolute inset-8 sm:inset-14 border border-white/[0.05] pointer-events-none">
@@ -60,7 +60,7 @@ export default function Preloader() {
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Sun Emblem with elegant pulsing glow & slow rotation */}
         <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-6">
-          <div className="absolute inset-0 rounded-full bg-[#E07A38]/25 blur-xl animate-pulse" />
+          <div className="absolute inset-0 rounded-full bg-[#C6956C]/25 blur-xl animate-pulse" />
           <Image
             src="/images/sun-emblem.svg"
             alt="Humza Logo"
@@ -76,7 +76,7 @@ export default function Preloader() {
           <span className="text-2xl sm:text-3xl font-bold tracking-[0.22em] text-white font-sans drop-shadow-[0_0_24px_rgba(255,255,255,0.2)]">
             HUMZA
           </span>
-          <span className="text-[11px] sm:text-xs font-mono tracking-[0.32em] text-[#E07A38] uppercase font-semibold drop-shadow-[0_0_12px_rgba(224,122,56,0.3)]">
+          <span className="text-[11px] sm:text-xs font-mono tracking-[0.32em] text-[#C6956C] uppercase font-semibold drop-shadow-[0_0_12px_rgba(198,149,108,0.3)]">
             ACCA · FINANCE
           </span>
         </div>
@@ -85,14 +85,14 @@ export default function Preloader() {
         <div className="w-52 sm:w-60 space-y-2.5">
           <div className="h-[2px] w-full bg-white/[0.08] rounded-full overflow-hidden relative">
             <div
-              className="h-full bg-gradient-to-r from-[#E07A38] via-[#FF8A3D] to-[#E07A38] shadow-[0_0_12px_rgba(224,122,56,0.9)] transition-all duration-100 ease-out"
+              className="h-full bg-gradient-to-r from-[#C6956C] via-[#D9A578] to-[#C6956C] shadow-[0_0_12px_rgba(198,149,108,0.9)] transition-all duration-100 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
 
           <div className="flex items-center justify-between text-[10px] font-mono text-white/40 tracking-widest pt-0.5">
             <span>PREPARING ADVISORY</span>
-            <span className="text-[#E07A38] font-bold font-mono">{progress}%</span>
+            <span className="text-[#C6956C] font-bold font-mono">{progress}%</span>
           </div>
         </div>
       </div>

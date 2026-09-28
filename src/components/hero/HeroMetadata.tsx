@@ -6,7 +6,7 @@ export const HeroMetadata: React.FC = () => {
       <div className="max-w-[1440px] mx-auto flex items-center justify-between text-[10px] md:text-[11px] font-mono tracking-widest text-[#7B776F] uppercase">
         {/* Left: Location */}
         <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38]/70 inline-block animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]/70 inline-block animate-pulse" />
           <span>LAHORE, PAKISTAN</span>
         </div>
 

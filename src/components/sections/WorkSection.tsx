@@ -81,15 +81,15 @@ export default function WorkSection() {
         <SectionLabel index="04" label="Selected Case Engagements" />
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
-            Demonstrated results.{" "}
-            <span className="text-[#E07A38] italic font-serif font-normal text-glow-amber">
-              Quantified
+          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.04] tracking-[-0.025em] max-w-2xl">
+            Complex finance.{" "}
+            <span className="text-[#C6956C] italic font-serif font-normal text-glow-amber">
+              Clear
             </span>{" "}
-            impact.
+            outcomes.
           </h2>
           <p className="text-sm md:text-[15px] text-white/60 leading-relaxed max-w-sm">
-            Resolving intricate accounting complexities and delivering stakeholder assurance.
+            Selected engagements across reporting, risk, tax, and corporate finance.
           </p>
         </div>
 
@@ -102,23 +102,19 @@ export default function WorkSection() {
                   playTactileSound("modal");
                   setSelectedCaseId(cs.id);
                 }}
-                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#E07A38]/50 hover:shadow-[0_16px_44px_rgba(224,122,56,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+                className="group relative h-full rounded-xl border border-white/[0.08] bg-[#0A0A0A] hover:bg-[#0E0C0A] hover:border-[#C6956C]/50 hover:shadow-[0_16px_44px_rgba(198,149,108,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 {/* Corner Architectural Crosshairs (+) */}
-                <span className="absolute top-2.5 left-2.5 z-10 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute top-2.5 right-2.5 z-10 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute bottom-2.5 left-2.5 z-10 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
-                <span className="absolute bottom-2.5 right-2.5 z-10 text-[8px] font-mono text-white/25 select-none group-hover:text-[#E07A38] transition-colors">+</span>
 
                 {/* Hover glow */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#E07A38]/[0.08] rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-48 h-48 bg-[#C6956C]/[0.08] rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <div className="relative p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
                     {/* Top row: Category + Year + Case ID */}
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2">
-                        <span className="text-[9px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-semibold px-2 py-0.5 rounded bg-[#E07A38]/[0.08] border border-[#E07A38]/20">
+                        <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-semibold px-2 py-0.5 rounded bg-[#C6956C]/[0.08] border border-[#C6956C]/20">
                           {cs.category}
                         </span>
                         <span className="text-[10px] font-mono text-white/40">{cs.year}</span>
@@ -139,7 +135,7 @@ export default function WorkSection() {
                     {/* Challenge → Solution — single compact row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
-                        <span className="text-[8px] font-mono tracking-[0.15em] text-[#E07A38]/70 uppercase block mb-1">Challenge</span>
+                        <span className="text-[8px] font-mono tracking-[0.15em] text-[#C6956C]/70 uppercase block mb-1">Challenge</span>
                         <p className="text-[11px] text-white/65 leading-relaxed font-light sm:line-clamp-3">{cs.challenge}</p>
                       </div>
                       <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 group-hover:border-white/[0.08] transition-colors">
@@ -153,7 +149,7 @@ export default function WorkSection() {
                   <div className="flex items-center justify-between gap-3 pt-3 border-t border-white/[0.06]">
                     {/* Animated Metric Ticker */}
                     <div className="flex items-center gap-3">
-                      <span className="text-xl sm:text-2xl font-bold font-sans text-[#E07A38] leading-none drop-shadow-[0_0_12px_rgba(224,122,56,0.25)]">
+                      <span className="text-xl sm:text-2xl font-bold font-sans text-[#C6956C] leading-none drop-shadow-[0_0_12px_rgba(198,149,108,0.25)]">
                         <Counter
                           value={cs.metricValue}
                           prefix={cs.metricPrefix}
@@ -179,7 +175,7 @@ export default function WorkSection() {
                         ))}
                       </div>
 
-                      <span className="text-[10px] font-mono text-[#E07A38] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold whitespace-nowrap">
+                      <span className="text-[10px] font-mono text-[#C6956C] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold whitespace-nowrap">
                         <span>Dossier</span>
                         <span>→</span>
                       </span>
@@ -195,11 +191,11 @@ export default function WorkSection() {
         <div className="mt-8 flex items-center justify-center">
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-mono tracking-wide text-white/60 border border-white/[0.08] hover:border-[#E07A38]/40 hover:text-white bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-mono tracking-wide text-white/60 border border-white/[0.08] hover:border-[#C6956C]/40 hover:text-white bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]" />
             <span>Discuss a Similar Engagement</span>
-            <span className="text-[#E07A38]">→</span>
+            <span className="text-[#C6956C]">→</span>
           </Link>
         </div>
       </div>

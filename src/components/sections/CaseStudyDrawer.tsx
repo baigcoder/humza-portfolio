@@ -421,15 +421,13 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
       <div className="relative w-full max-w-3xl h-full bg-[#0A0A0A] border-l border-white/[0.1] shadow-[-20px_0_60px_rgba(0,0,0,0.9)] flex flex-col z-10 overflow-hidden animate-slide-left">
         
         {/* Architectural Crosshairs */}
-        <span className="absolute top-3 left-4 text-[9px] font-mono text-white/20 select-none pointer-events-none">+</span>
-        <span className="absolute top-3 right-4 text-[9px] font-mono text-white/20 select-none pointer-events-none">+</span>
 
         {/* Drawer Header */}
         <div className="p-6 sm:p-8 border-b border-white/[0.08] bg-[#0E0E0E]/90 backdrop-blur-md flex items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38] animate-pulse" />
-              <span className="text-[10px] font-mono tracking-[0.2em] text-[#E07A38] uppercase font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C] animate-pulse" />
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold">
                 CONFIDENTIAL ENGAGEMENT DOSSIER · CASE {caseData.number}
               </span>
               <span className="text-[10px] font-mono text-white/30">| {caseData.year}</span>
@@ -437,7 +435,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
             <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight mb-1">
               {caseData.title}
             </h2>
-            <p className="text-xs font-mono text-[#E07A38]/90">
+            <p className="text-xs font-mono text-[#C6956C]/90">
               {caseData.client}
             </p>
           </div>
@@ -457,7 +455,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
           
           {/* Executive Overview & Diagnostic */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#E07A38] font-bold">
+            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#C6956C] font-bold">
               01 · Problem Diagnostic & Root Cause
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -470,7 +468,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
                 </p>
               </div>
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-[9px] font-mono tracking-widest text-[#E07A38]/80 uppercase block mb-1">
+                <span className="text-[9px] font-mono tracking-widest text-[#C6956C]/80 uppercase block mb-1">
                   Root Cause Uncovered
                 </span>
                 <p className="text-white/80 leading-relaxed font-light">
@@ -482,16 +480,16 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
 
           {/* Boardroom Impact Key Metrics */}
           <div className="space-y-3">
-            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#E07A38] font-bold">
+            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#C6956C] font-bold">
               02 · Quantified Boardroom Outcomes
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {caseData.boardroomImpact.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl bg-gradient-to-b from-[#141210] to-[#0A0A0A] border border-[#E07A38]/20"
+                  className="p-4 rounded-xl bg-gradient-to-b from-[#141210] to-[#0A0A0A] border border-[#C6956C]/20"
                 >
-                  <div className="text-2xl font-bold font-sans text-[#E07A38] mb-1">
+                  <div className="text-2xl font-bold font-sans text-[#C6956C] mb-1">
                     {item.metric}
                   </div>
                   <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider mb-2">
@@ -507,7 +505,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
 
           {/* 12-Week Execution Roadmap */}
           <div className="space-y-4">
-            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#E07A38] font-bold">
+            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#C6956C] font-bold">
               03 · 12-Week Execution Methodology
             </h3>
             <div className="space-y-3">
@@ -518,7 +516,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
                 >
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#E07A38]/10 text-[#E07A38] border border-[#E07A38]/20">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#C6956C]/10 text-[#C6956C] border border-[#C6956C]/20">
                         {phase.phase}
                       </span>
                       <span className="text-[12px] font-bold text-white">
@@ -532,7 +530,7 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
                   <ul className="space-y-1.5 pl-2 mt-2">
                     {phase.tasks.map((task, tIdx) => (
                       <li key={tIdx} className="flex items-start gap-2 text-white/65 text-[11.5px] font-light">
-                        <span className="text-[#E07A38] mt-0.5">•</span>
+                        <span className="text-[#C6956C] mt-0.5">•</span>
                         <span>{task}</span>
                       </li>
                     ))}
@@ -561,13 +559,13 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
 
             {/* Deliverables */}
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-              <span className="text-[10px] font-mono tracking-widest text-[#E07A38] uppercase font-bold block mb-2">
+              <span className="text-[10px] font-mono tracking-widest text-[#C6956C] uppercase font-bold block mb-2">
                 Tangible Institutional Deliverables
               </span>
               <ul className="space-y-1.5 text-[11px] text-white/70 font-mono">
                 {caseData.deliverables.map((del, dIdx) => (
                   <li key={dIdx} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E07A38]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]" />
                     <span>{del}</span>
                   </li>
                 ))}
@@ -586,10 +584,10 @@ export default function CaseStudyDrawer({ caseId, onClose }: CaseStudyDrawerProp
 
           <button
             onClick={handleRetainClick}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-full text-xs font-semibold text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(224,122,56,0.45)] transition-all duration-300 hover:scale-[1.03] flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full text-xs font-semibold text-[#0A0A0A] bg-white hover:bg-[#FAF8F5] shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(198,149,108,0.45)] transition-all duration-300 hover:scale-[1.03] flex items-center justify-center gap-2"
           >
             <span>Retain for Similar Engagement</span>
-            <span className="text-[#E07A38]">→</span>
+            <span className="text-[#C6956C]">→</span>
           </button>
         </div>
 

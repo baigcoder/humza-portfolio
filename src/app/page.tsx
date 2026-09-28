@@ -13,14 +13,12 @@ import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SiteFooter from "@/components/layout/SiteFooter";
 import SmoothScroll from "@/components/effects/SmoothScroll";
-import Preloader from "@/components/effects/Preloader";
 import CommandPalette from "@/components/effects/CommandPalette";
 import ExecutiveDossierModal from "@/components/effects/ExecutiveDossierModal";
 
 export default function Home() {
   return (
     <>
-      <Preloader />
       <SmoothScroll />
       <CommandPalette />
       <ExecutiveDossierModal />
