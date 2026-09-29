@@ -23,7 +23,7 @@ export const HeroPortrait: React.FC = () => {
         >
           <Image
             src="/images/humza-hero.webp"
-            alt="Humza - ACCA · Accounting · Finance Professional"
+            alt="Humza - Finance Professional"
             width={580}
             height={900}
             quality={95}

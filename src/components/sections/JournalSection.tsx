@@ -161,7 +161,7 @@ export default function JournalSection() {
   };
 
   const copyBriefing = (art: Article) => {
-    const text = `${art.title}\n\nOverview:\n${art.overview}\n\nStatutory Basis: ${art.statutoryBasis}\n\nAuthor: Humza, ACCA (humza.acca@advisory.pk)`;
+    const text = `${art.title}\n\nOverview:\n${art.overview}\n\nStatutory Basis: ${art.statutoryBasis}\n\nAuthor: Humza (humza.acca@advisory.pk)`;
     navigator.clipboard.writeText(text);
     showToast("✓ Briefing summary copied to clipboard!");
   };
@@ -296,7 +296,7 @@ export default function JournalSection() {
                   {selectedArticle.title}
                 </h3>
                 <p className="text-[11px] font-mono text-white/45 mt-1">
-                  Authored by Humza, ACCA · Corporate Advisory Practice
+                  Authored by Humza · Corporate Advisory Practice
                 </p>
               </div>
 

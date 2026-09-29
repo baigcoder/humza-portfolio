@@ -104,7 +104,7 @@ export default function SiteHeader() {
               HUMZA
             </span>
             <span className="text-[9px] font-mono tracking-[0.22em] text-[#C6956C] uppercase font-medium mt-1 leading-none">
-              ACCA · FINANCE
+              FINANCE ADVISORY
             </span>
           </div>
         </Link>

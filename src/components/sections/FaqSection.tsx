@@ -67,10 +67,10 @@ const faqs: FaqItem[] = [
     category: "Governance & Ethics",
     question: "What Non-Disclosure Agreement (NDA) and confidentiality protocols are observed?",
     answer:
-      "Confidentiality is an absolute cornerstone of the advisory relationship. Prior to reviewing general ledgers, executive payroll, or corporate trial balances, we execute comprehensive bilateral Non-Disclosure Agreements (NDAs). Furthermore, Humza is bound by the rigorous International Code of Ethics and Conduct established by the Association of Chartered Certified Accountants (ACCA UK).",
+      "Confidentiality is a cornerstone of the advisory relationship. Before reviewing sensitive financial information, confidentiality terms can be agreed in writing for each engagement.",
     takeaways: [
       "Bilateral institutional NDAs executed prior to any data exchange.",
-      "Adherence to strict ACCA UK ethical and professional independence codes.",
+      "A commitment to clear communication, confidentiality, and professional conduct.",
       "Encrypted secure data rooms utilized for sensitive board workpapers.",
     ],
   },

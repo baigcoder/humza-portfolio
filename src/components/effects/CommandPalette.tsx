@@ -84,8 +84,8 @@ export default function CommandPalette() {
     {
       id: "credentials",
       category: "Navigation",
-      title: "Chartered Credentials & Standards",
-      subtitle: "ACCA UK Charter, CFA Candidate, IASB & FBR standing",
+      title: "Professional Education & Standards",
+      subtitle: "ACCA examinations completed at SKANS",
       icon: Award,
       action: () => navigateTo("#credentials"),
     },
@@ -314,7 +314,7 @@ export default function CommandPalette() {
                   <span>to select</span>
                 </span>
               </div>
-              <span className="text-[#C6956C] font-semibold">HUMZA · ACCA</span>
+              <span className="text-[#C6956C] font-semibold">HUMZA · FINANCE</span>
             </div>
           </div>
         </div>

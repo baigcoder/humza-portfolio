@@ -52,22 +52,22 @@ export default function CredentialsSection() {
                         </span>
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold block">ACCA-UK</span>
-                        <span className="text-[9px] font-mono text-white/40">Charter № Active</span>
+                        <span className="text-[10px] font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold block">ACCA EXAMS</span>
+                        <span className="text-[9px] font-mono text-white/40">SKANS · Lahore</span>
                       </div>
                     </div>
                     <span className="px-3 py-1 rounded-full text-[9px] font-mono font-bold tracking-wider text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/25 flex items-center gap-1.5 shadow-[0_0_12px_rgba(16,185,129,0.15)]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                      CHARTERED
+                      EXAMS PASSED
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 leading-tight group-hover:text-[#FAF8F5] transition-colors">
-                    ACCA Chartered Certified Accountant
+                    ACCA examinations completed
                   </h3>
                   <p className="text-[11px] font-mono text-white/45 mb-4">
-                    Association of Chartered Certified Accountants · London, UK
+                    Studied at SKANS School of Accountancy
                   </p>
 
                   {/* Competency pills */}
@@ -87,12 +87,10 @@ export default function CredentialsSection() {
                       <svg className="w-3 h-3 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      CPD Compliant
+                      All ACCA examinations passed
                     </span>
-                    <span>·</span>
-                    <span className="whitespace-nowrap">Global Code of Ethics</span>
                   </div>
-                  <span className="text-[9px] font-mono text-[#C6956C]/75 font-semibold whitespace-nowrap">ACTIVE & IN GOOD STANDING</span>
+                  <span className="text-[9px] font-mono text-[#C6956C]/75 font-semibold whitespace-nowrap">EXAM COMPLETION</span>
                 </div>
               </div>
             </div>
@@ -127,7 +125,7 @@ export default function CredentialsSection() {
 
                   {/* Title */}
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 leading-tight group-hover:text-[#FAF8F5] transition-colors">
-                    CFA Charterholder Candidate
+                    CFA Program Candidate
                   </h3>
                   <p className="text-[11px] font-mono text-white/45 mb-4">
                     Chartered Financial Analyst · CFA Institute, Charlottesville, VA
@@ -190,9 +188,9 @@ export default function CredentialsSection() {
         <div className="rounded-xl bg-white/[0.02] border border-white/[0.05] px-5 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[10px] font-mono text-white/40">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
-            <span>ACCA Global Code of Ethics · CPD Compliant · Regulated under IFAC Member Body</span>
+            <span>ACCA examinations completed · Studied at SKANS</span>
           </div>
-          <span className="text-white/25 uppercase tracking-widest">Statutory Standing: Active</span>
+          <span className="text-white/25 uppercase tracking-widest">Lahore, Pakistan</span>
         </div>
       </div>
     </section>

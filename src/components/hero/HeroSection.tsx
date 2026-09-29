@@ -68,7 +68,7 @@ export default function HeroSection() {
           <div className="absolute inset-x-0 top-0 h-[48%] sm:inset-0 sm:hidden z-[1] pointer-events-none anim-scale-in">
             <Image
               src="/images/humza-hero-master-4k.jpg"
-              alt="Humza – ACCA Professional"
+              alt="Humza – Finance Professional"
               fill
               loading="lazy"
               quality={85}
@@ -183,8 +183,8 @@ export default function HeroSection() {
             <div className="anim-fade-up delay-500 anim-initial flex items-center gap-3 pl-2 pr-4 py-2 rounded-2xl bg-black/30 backdrop-blur-xl border border-white/[0.16] shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
               <span className="w-9 h-9 rounded-xl bg-white/[0.1] border border-white/[0.14] flex items-center justify-center font-bebas text-lg text-white tracking-wide">A</span>
               <span>
-                <span className="block text-[13px] font-semibold text-white leading-tight">ACCA Qualified</span>
-                <span className="block text-[10px] font-mono tracking-[0.12em] text-white/60 uppercase mt-0.5">Chartered Certified</span>
+                <span className="block text-[13px] font-semibold text-white leading-tight">ACCA exams completed</span>
+                <span className="block text-[10px] font-mono tracking-[0.12em] text-white/60 uppercase mt-0.5">Studied at SKANS</span>
               </span>
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="anim-fade-up anim-initial delay-200 max-w-[480px] text-center text-[13px] md:text-[14.5px] text-white/90 leading-relaxed mb-4 sm:mb-7 drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] xl:max-w-[430px] xl:text-left xl:mb-6">
-              ACCA-qualified financial advice for complex reporting, tax, governance, and growth decisions across Pakistan and the GCC.
+              Finance advice for complex reporting, tax, governance, and growth decisions across Pakistan and the GCC. All ACCA examinations completed at SKANS.
             </p>
 
             <div className="anim-fade-up anim-initial delay-300 flex flex-wrap items-center justify-center gap-3 xl:justify-start">

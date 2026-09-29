@@ -13,9 +13,9 @@ export const credentialsContent: CredentialGroup[] = [
     category: "Professional Qualifications",
     items: [
       {
-        title: "ACCA Qualification",
-        issuer: "Association of Chartered Certified Accountants (UK)",
-        statusOrDate: "[CURRENT ACCA STATUS]",
+        title: "ACCA examinations completed",
+        issuer: "Studied at SKANS School of Accountancy",
+        statusOrDate: "All examinations passed",
         details:
           "Comprehensive mastery in Financial Reporting, Audit & Assurance, Financial Management, Taxation, Performance Management, and Strategic Business Leader competencies.",
       },

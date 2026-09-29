@@ -10,7 +10,7 @@ export default function SiteFooter() {
     <footer className="relative bg-[#050505] border-t border-white/[0.08] overflow-hidden">
       <div className="border-b border-white/[0.06]">
         <div className="max-w-[1532px] mx-auto px-4 sm:px-8 md:px-14 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em]">
-          <span className="text-white/80">Humza <span className="text-[#C6956C]">·</span> ACCA</span>
+          <span className="text-white/80">Humza <span className="text-[#C6956C]">·</span> Finance</span>
           <span className="text-white/45">Financial reporting · Governance · Tax · Valuation</span>
         </div>
       </div>
@@ -23,11 +23,11 @@ export default function SiteFooter() {
               <Image src="/images/sun-emblem.svg" alt="" width={28} height={28} />
               <div className="flex flex-col">
                 <span className="text-sm font-bold tracking-widest text-white uppercase">HUMZA</span>
-                <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C]">ACCA · FINANCE</span>
+                <span className="text-[9px] font-mono tracking-[0.2em] text-[#C6956C]">FINANCE ADVISORY</span>
               </div>
             </div>
             <p className="text-xs text-white/50 leading-relaxed max-w-sm font-light">
-              ACCA-qualified finance professional in Lahore, Pakistan, advising on financial reporting, internal audit, corporate tax, and valuation.
+              Finance professional in Lahore, Pakistan. Completed all ACCA examinations at SKANS; advising on reporting, internal audit, tax, and valuation.
             </p>
           </div>
 
@@ -118,10 +118,10 @@ export default function SiteFooter() {
         {/* Bottom Metadata Hairline */}
         <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-white/30 uppercase tracking-wider">
           <div>
-            © {new Date().getFullYear()} Humza, ACCA · Lahore, Pakistan
+            © {new Date().getFullYear()} Humza · Lahore, Pakistan
           </div>
           <div className="flex items-center gap-4">
-            <span>Upholding the ACCA Code of Ethics</span>
+            <span>ACCA examinations completed · SKANS</span>
             <span className="text-[#C6956C]">●</span>
             <span>Lahore, PK</span>
           </div>

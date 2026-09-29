@@ -23,23 +23,23 @@ const bebas = Bebas_Neue({
 export const metadata: Metadata = {
   metadataBase: new URL("https://humza-finance.com"),
   title: {
-    default: "Humza, ACCA | Finance Advisory in Lahore, Pakistan",
-    template: "%s | Humza, ACCA",
+    default: "Humza | Finance Advisory in Lahore, Pakistan",
+    template: "%s | Humza",
   },
   description:
-    "ACCA-qualified finance professional in Lahore advising on IFRS reporting, tax, governance, and valuation for organizations in Pakistan and the GCC.",
-  authors: [{ name: "Humza, ACCA", url: "https://humza-finance.com" }],
-  creator: "Humza, ACCA",
+    "Finance professional in Lahore who completed all ACCA examinations at SKANS, advising on reporting, tax, governance, and valuation in Pakistan and the GCC.",
+  authors: [{ name: "Humza", url: "https://humza-finance.com" }],
+  creator: "Humza",
   publisher: "Humza Advisory",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Humza, ACCA | Finance Advisory",
+    title: "Humza | Finance Advisory",
     description:
       "Clear finance advice across reporting, tax, governance, and valuation. Based in Lahore, serving Pakistan and the GCC.",
     url: "https://humza-finance.com",
-    siteName: "HUMZA · ACCA Portfolio",
+    siteName: "Humza Finance Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
         url: "/images/humza-social.webp",
         width: 1200,
         height: 630,
-        alt: "Humza — ACCA Corporate Financial Advisory",
+        alt: "Humza — Finance Advisory",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Humza, ACCA | Finance Advisory",
+    title: "Humza | Finance Advisory",
     description: "Finance advisory across reporting, tax, governance, and valuation in Pakistan and the GCC.",
     images: ["/images/humza-social.webp"],
   },
@@ -77,23 +77,11 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://humza-finance.com/#person",
       name: "Humza",
-      jobTitle: "ACCA Qualified Corporate Financial Strategist & Advisor",
+      jobTitle: "Finance Advisor",
       description:
-        "ACCA-qualified financial expert based in Lahore, Pakistan, advising enterprises on complex IFRS reporting, internal audit, corporate tax optimization, and DCF valuation.",
+        "Finance professional based in Lahore, Pakistan. Completed all ACCA examinations at SKANS; advises on IFRS reporting, internal audit, corporate tax, and valuation.",
       url: "https://humza-finance.com",
       image: "https://humza-finance.com/images/humza-about-executive.webp",
-      alumniOf: "ACCA UK",
-      hasCredential: [
-        {
-          "@type": "EducationalOccupationalCredential",
-          name: "ACCA Chartered Certified Accountant",
-          credentialCategory: "Chartered Professional Qualification",
-          recognizedBy: {
-            "@type": "Organization",
-            name: "Association of Chartered Certified Accountants",
-          },
-        },
-      ],
       knowsAbout: [
         "IFRS 9, 15 & 16 Standards",
         "Statutory FBR Corporate Tax Strategy",

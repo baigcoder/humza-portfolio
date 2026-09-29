@@ -76,7 +76,7 @@ export default function Preloader() {
             HUMZA
           </span>
           <span className="text-[11px] sm:text-xs font-mono tracking-[0.32em] text-[#C6956C] uppercase font-semibold drop-shadow-[0_0_12px_rgba(198,149,108,0.3)]">
-            ACCA · FINANCE
+            FINANCE ADVISORY
           </span>
         </div>
 
