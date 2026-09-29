@@ -105,7 +105,7 @@ export default function ExecutiveDossierModal() {
                 Humza
               </h2>
               <p className="text-sm font-mono text-[#C6956C] mt-1 font-semibold tracking-wide">
-                ACCA Chartered Certified Accountant · Corporate Financial Strategist
+                Finance Advisor · ACCA examinations completed
               </p>
               <p className="text-xs text-white/50 mt-2 font-light max-w-lg leading-relaxed">
                 Operating at the confluence of capital allocation, statutory regulatory architecture, and board governance across Pakistan and the GCC.
@@ -118,12 +118,12 @@ export default function ExecutiveDossierModal() {
                 <span className="text-white/80">Lahore, Pakistan</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-white/40">Standing:</span>
-                <span className="text-[#10B981] font-semibold">Active · CPD Compliant</span>
+                <span className="text-white/40">ACCA education:</span>
+                <span className="text-[#10B981] font-semibold">All examinations passed · SKANS</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-white/40">Charter Body:</span>
-                <span className="text-white/80">ACCA (London, UK)</span>
+                <span className="text-white/40">Accountancy studies:</span>
+                <span className="text-white/80">SKANS · Lahore</span>
               </div>
               <div className="flex justify-between items-center pt-1 border-t border-white/[0.06]">
                 <span className="text-white/40">Direct:</span>
@@ -148,21 +148,21 @@ export default function ExecutiveDossierModal() {
             </div>
           </div>
 
-          {/* Section: Chartered Qualifications & Education */}
+          {/* Section: Professional Education */}
           <div className="space-y-4">
             <h3 className="text-xs font-mono tracking-[0.2em] text-[#C6956C] uppercase font-bold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C6956C]" />
-              Chartered Qualifications & Academic Standing
+              Professional Education
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-5 rounded-xl bg-[#111111] border border-[#C6956C]/30">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-bold text-white">ACCA Chartered Certified Accountant</span>
-                  <span className="text-[10px] font-mono text-[#10B981] px-2 py-0.5 rounded bg-[#10B981]/10 border border-[#10B981]/20">Chartered</span>
+                  <span className="text-sm font-bold text-white">ACCA examinations</span>
+                  <span className="text-[10px] font-mono text-[#10B981] px-2 py-0.5 rounded bg-[#10B981]/10 border border-[#10B981]/20">Completed</span>
                 </div>
-                <p className="text-xs font-mono text-white/50 mb-3">Association of Chartered Certified Accountants · London, UK</p>
+                <p className="text-xs font-mono text-white/50 mb-3">Studied at SKANS School of Accountancy</p>
                 <p className="text-xs text-white/70 leading-relaxed font-light">
-                  Complete professional syllabus examined across Strategic Business Leader (SBL), Advanced Audit & Assurance (AAA), Advanced Financial Management (AFM), and Advanced Taxation (ATX).
+                  All ACCA examinations passed.
                 </p>
               </div>
 
@@ -235,7 +235,7 @@ export default function ExecutiveDossierModal() {
 
           {/* Footer Note */}
           <div className="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono text-white/40">
-            <span>Upholding the International ACCA Code of Ethics and Conduct.</span>
+            <span>Studied at SKANS School of Accountancy.</span>
             <span className="text-[#C6956C]">Professional Profile · Lahore, Pakistan</span>
           </div>
         </div>

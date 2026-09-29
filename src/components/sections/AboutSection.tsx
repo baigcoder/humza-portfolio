@@ -39,8 +39,8 @@ export default function AboutSection() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <div className="group relative p-4 rounded-xl bg-[#0C0C0C] border border-white/[0.08] hover:border-[#C6956C]/50 hover:bg-[#110E0B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(198,149,108,0.12)] cursor-default">
                 <div className="text-xl sm:text-2xl font-bold text-white mb-0.5 group-hover:text-[#FAF8F5] transition-colors">ACCA</div>
-                <div className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-medium">Qualified</div>
-                <p className="text-[10px] text-white/40 mt-1">Professional qualification</p>
+                <div className="text-[9px] font-mono tracking-widest text-[#C6956C] uppercase font-medium">All exams passed</div>
+                <p className="text-[10px] text-white/40 mt-1">Studied at SKANS</p>
                 <div className="absolute top-0 right-0 w-12 h-12 bg-[#C6956C]/[0.06] rounded-bl-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
 
@@ -95,7 +95,7 @@ export default function AboutSection() {
                 {/* Full Color Executive Portrait with Complete Double-Breasted Suit & Watch Visible */}
                 <Image
                   src="/images/humza-about-executive.webp"
-                  alt="Humza – ACCA Qualified Finance Expert"
+                  alt="Humza – Finance professional"
                   fill
                   quality={85}
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"

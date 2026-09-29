@@ -67,7 +67,7 @@ export const InsightsSection: React.FC = () => {
                   ))}
                   <div className="pt-4 flex items-center gap-3">
                     <span className="text-xs font-mono text-[#C6956C]">Author:</span>
-                    <span className="text-xs font-medium text-white">Humza, ACCA</span>
+                    <span className="text-xs font-medium text-white">Humza</span>
                   </div>
                 </div>
               )}

@@ -46,7 +46,7 @@ const engagements: GalleryEngagement[] = [
         badge: "Federal Cabinet",
       },
       {
-        name: "Humza, ACCA",
+        name: "Humza",
         role: "Corporate Financial Strategist & Advisory Practitioner",
         badge: "Practitioner",
       },
@@ -354,7 +354,7 @@ export default function GallerySection() {
                 </div>
               </div>
               <span className="text-[10px] font-mono text-[#C6956C] uppercase tracking-wider font-semibold">
-                HUMZA · ACCA
+                HUMZA · FINANCE
               </span>
             </div>
           </div>
